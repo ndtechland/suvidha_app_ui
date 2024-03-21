@@ -5,9 +5,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
+import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
 
 List<Color> colorList = [
   Colors.red,
@@ -98,11 +98,30 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.a15,
         centerTitle: true,
-        leading: Icon(
-          Icons.support_agent,
-          color: Colors.white,
-          size: size.width * 0.09,
+        leading: Material(
+          elevation: 0,
+          // color: Colors.black12,
+          //shadowColor: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(100),
+          child: Container(
+            height: size.height * 0.04,
+            width: size.width * 0.08,
+            decoration: BoxDecoration(
+                //shape: BoxShape.circle,
+                color: AppColors.a15,
+                image: DecorationImage(
+                    image: AssetImage('lib/assets/video/contact.gif'
+                        //'lib/assets/video/right-arrow.gif'
+                        ),
+                    fit: BoxFit.fitWidth)),
+            // child: Image.asset('lib/assets/images/right-arrow.gif')
+          ),
         ),
+        // Icon(
+        //   Icons.support_agent,
+        //   color: Colors.white,
+        //   size: size.width * 0.09,
+        // ),
         title: Container(
           height: size.height * 0.05,
           width: size.width * 0.2,
@@ -123,17 +142,37 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Get.to(() => LanguagePagess());
             },
-            child: Lottie.network(
-              //https://lottie.host/b14c01a1-d38b-403e-ad43-c02da3404a19/QaZZTqLEwp.lottie
-              'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
-              //'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
-              //'https://app.lottiefiles.com/animation/2fbfe658-4d63-4348-8cbf-254f00a89a29?panel=download',
-              //'https://assets1.lottiefiles.com/private_files/lf30_QLsD8M.json',
-              height: 400.0,
-              repeat: true,
-              reverse: true,
-              animate: true,
+            child: Material(
+              elevation: 0,
+              // color: Colors.black12,
+              //shadowColor: Colors.grey.shade100,
+              borderRadius: BorderRadius.circular(100),
+              child: Container(
+                height: size.height * 0.07,
+                width: size.width * 0.15,
+                decoration: BoxDecoration(
+                    //shape: BoxShape.circle,
+                    color: AppColors.a15,
+                    image: DecorationImage(
+                        image: AssetImage('lib/assets/video/language23.gif'
+                            //'lib/assets/video/right-arrow.gif'
+                            ),
+                        fit: BoxFit.fill)),
+                // child: Image.asset('lib/assets/images/right-arrow.gif')
+              ),
             ),
+            // Lottie.network(
+            //   //https://lottie.host/b14c01a1-d38b-403e-ad43-c02da3404a19/QaZZTqLEwp.lottie
+            //   'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
+            //   //'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
+            //   //'https://app.lottiefiles.com/animation/2fbfe658-4d63-4348-8cbf-254f00a89a29?panel=download',
+            //   //'https://assets1.lottiefiles.com/private_files/lf30_QLsD8M.json',
+            //   height: 400.0,
+            //   repeat: true,
+            //   reverse: true,
+            //   animate: true,
+            // ),
+            ///
             // Icon(
             //   Icons.translate,
             //   color: Colors.white,
@@ -204,47 +243,71 @@ class HomePage extends StatelessWidget {
                 height: size.height * 0.0,
               ),
               //Spacer(),
-              Container(
-                height: size.height * 0.06,
-                width: size.width,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.grey)),
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Container(
-                    height: size.height * 0.05,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                      color: AppColors.a19,
+              InkWell(
+                onTap: () {
+                  Get.to(NewConnectionPage1());
+                },
+                child: Container(
+                  height: size.height * 0.06,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            'New Connection Services'.tr,
-                            style: GoogleFonts.poppins(
-                              fontSize: size.width * 0.027,
-                              fontWeight: FontWeight.w800,
+                      border: Border.all(color: Colors.grey)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container(
+                      height: size.height * 0.05,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                        color: AppColors.a19,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              'New Connection Services'.tr,
+                              style: GoogleFonts.poppins(
+                                fontSize: size.width * 0.027,
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            'My Connection'.tr,
-                            style: GoogleFonts.poppins(
-                                fontSize: size.height * 0.015,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.a15),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: size.width * 0.01),
+                            child: Material(
+                              elevation: 2,
+                              // color: Colors.black12,
+                              //shadowColor: Colors.grey.shade100,
+                              borderRadius: BorderRadius.circular(100),
+                              child: Container(
+                                height: size.height * 0.04,
+                                width: size.width * 0.08,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            //'lib/assets/video/contact.gif'
+                                            'lib/assets/video/right-arrow.gif'),
+                                        fit: BoxFit.fitWidth)),
+                                // child: Image.asset('lib/assets/images/right-arrow.gif')
+                              ),
+                            ),
+                            // Text(
+                            //   'My Connection'.tr,
+                            //   style: GoogleFonts.poppins(
+                            //       fontSize: size.height * 0.015,
+                            //       fontWeight: FontWeight.w600,
+                            //       color: AppColors.a15),
+                            // ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
