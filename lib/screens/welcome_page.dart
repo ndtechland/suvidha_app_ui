@@ -41,7 +41,14 @@ class _WelcomePageState extends State<WelcomePage> {
             print("accdata${accountData}");
             await Future.delayed(Duration(seconds: 2), () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          //UploadReport1()
+
+                          HomePage()
+                      //
+                      ));
             });
             // Future.delayed(Duration(seconds: 5), () {
 
@@ -54,7 +61,14 @@ class _WelcomePageState extends State<WelcomePage> {
             print("accdata2${accountData}");
             await Future.delayed(Duration(seconds: 2), () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          //UploadReport1()
+
+                          HomePage()
+                      //
+                      ));
             });
 
             ///todo: through exception....

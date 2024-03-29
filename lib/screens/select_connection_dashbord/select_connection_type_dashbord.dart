@@ -3,6 +3,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/reusable_3Dtext/3dtext2.dart';
+import 'package:suvidha_app_ui/screens/select_connection_dashbord/industry_high_tension.dart';
 import 'package:suvidha_app_ui/screens/select_connection_dashbord/select_phase_line.dart';
 
 import '../../constants/reusable_appbar/reusable_appbar.dart';
@@ -82,7 +83,29 @@ class SelectConnectionDashbord extends StatelessWidget {
               ),
               child: InkWell(
                 onTap: () async {
-                  Get.to(SelectPahseLineRange());
+                  //Get.to(() => IndustryHighTension());
+
+                  if (index == 0) {
+                    Get.to(SelectPahseLineRange());
+
+                    ///Get.to(() => FranchisesProfilePage());
+                  } else if (index == 1) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 2) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 3) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 4) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 5) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 6) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 7) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 8) {
+                    Get.to(() => IndustryHighTension());
+                  } else if (index == 9) {}
                   // Handle onTap
                 },
                 child: Container(
@@ -98,6 +121,7 @@ class SelectConnectionDashbord extends StatelessWidget {
                       ),
                       SizedBox(
                         width: size.width,
+                        height: size.height * 0.051,
                         child: ThreeDtext2(
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,
@@ -109,7 +133,8 @@ class SelectConnectionDashbord extends StatelessWidget {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: AppColors.a15,
+                          //color: AppColors.a16,
+                          gradient: AppColors.gradient11,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10),
                             bottomRight: Radius.circular(10),
@@ -129,18 +154,19 @@ class SelectConnectionDashbord extends StatelessWidget {
                     ],
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    //color: AppColors.whiteColor,
+                    gradient: AppColors.sweepGradient1,
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: AppColors.a3),
+                    // border: Border.all(color: AppColors.a24),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.a6,
+                        color: AppColors.a24,
                         offset: Offset(4, 4),
                         blurRadius: 0,
                         spreadRadius: 0,
                       ),
-                      const BoxShadow(
-                        color: Colors.black26,
+                      BoxShadow(
+                        color: AppColors.a1,
                         offset: Offset(0, -0),
                         blurRadius: 0,
                         spreadRadius: 0,

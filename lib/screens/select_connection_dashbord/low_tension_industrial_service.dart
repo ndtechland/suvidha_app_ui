@@ -7,34 +7,35 @@ import 'package:suvidha_app_ui/constants/reusable_3Dtext/3dtext2.dart';
 
 import '../../constants/reusable_appbar/reusable_appbar.dart';
 
-class SelectPahseLineRange extends StatelessWidget {
-  const SelectPahseLineRange({Key? key}) : super(key: key);
+class Lowtenindustralservice extends StatelessWidget {
+  const Lowtenindustralservice({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final List<String> title1 = [
-      'KJ_BPL_MTR',
-      'DS-IID',
-      'DS-IID',
-      'DS-III(D)',
-      'KJ_BPL_MTR',
-      'DS-IID',
-      'DS-IID',
-      'DS-III(D)',
-      'KJ_BPL_MTR',
-      'DS-IID',
+      'LTIS1D',
+      'LTIS1D',
+      'LTIS2D',
+      'LTIS1D',
+      'LTIS1D',
+      'LTIS2D',
+      'LTIS1D',
+      'LTIS1D',
+      'LTIS2D',
+      'LTIS1D',
     ];
     final List<String> subtitle1 = [
-      'DOMESTIC',
-      'DOMESTIC',
-      'DOMESTIC',
-      'DOMESTIC',
-      'COMMERCIAL',
-      'COMMERCIAL',
-      'COMMERCIAL',
-      'COMMERCIAL',
-      'COMMERCIAL',
-      'COMMERCIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
+      'INDUSTRIAL',
     ];
 
     final List<String> title2 = [
@@ -51,9 +52,9 @@ class SelectPahseLineRange extends StatelessWidget {
     ];
     final List<String> subtitle2 = [
       '1',
-      '2',
-      '2',
       '3',
+      '3',
+      '2',
       '1',
       '3',
       '2',
@@ -74,20 +75,20 @@ class SelectPahseLineRange extends StatelessWidget {
       'Load Range',
     ];
     final List<String> subtitle3 = [
-      '0.01 - 0.25 KW',
       '1 - 7 KW',
-      '5 - 70 KW',
-      '20 - 70 KW',
-      '0.01 - 0.25 KW',
+      '1 - 19 KW',
+      '20 - 74 KW',
       '1 - 7 KW',
-      '5 - 70 KW',
-      '20 - 70 KW',
-      '0.01 - 0.25 KW',
+      '1 - 19 KW',
+      '20 - 74 KW',
+      '1 - 7 KW',
+      '1 - 19 KW',
+      '20 - 74 KW',
       '1 - 7 KW',
     ];
     final List<Color> tileColors = [
-      AppColors.a3,
-      AppColors.a5,
+      AppColors.a24,
+      AppColors.a16,
       // AppColors.a14,
       //AppColors.a6,
       //AppColors.a7,
@@ -96,6 +97,10 @@ class SelectPahseLineRange extends StatelessWidget {
       //AppColors.a14,
       //AppColors.a6,
       //AppColors.a7,
+    ];
+    final List<Gradient> tilegradient = [
+      AppColors.gradient7,
+      AppColors.gradient11,
     ];
 
     Size size = MediaQuery.of(context).size;
@@ -130,6 +135,7 @@ class SelectPahseLineRange extends StatelessWidget {
           // Ensure the index is within bounds of tileColors list
           int colorIndex = index % tileColors.length;
           Color tileColor = tileColors[colorIndex];
+          Gradient gradient = tilegradient[index % tilegradient.length];
 
           return Padding(
             padding: const EdgeInsets.all(4.0),
@@ -140,7 +146,8 @@ class SelectPahseLineRange extends StatelessWidget {
                 height: size.height * 0.09,
                 width: size.width,
                 decoration: BoxDecoration(
-                  color: tileColor,
+                  // color: tileColor,
+                  gradient: gradient,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
@@ -160,7 +167,7 @@ class SelectPahseLineRange extends StatelessWidget {
                           ThreeDtext2(
                             text: subtitle1[index],
                             fontColor: Colors.white,
-                            fontSize: size.width * 0.03,
+                            fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
                         ],
@@ -178,7 +185,7 @@ class SelectPahseLineRange extends StatelessWidget {
                           ThreeDtext2(
                             text: subtitle2[index],
                             fontColor: Colors.white,
-                            fontSize: size.width * 0.03,
+                            fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
                         ],
@@ -196,7 +203,7 @@ class SelectPahseLineRange extends StatelessWidget {
                           ThreeDtext2(
                             text: subtitle3[index],
                             fontColor: Colors.white,
-                            fontSize: size.width * 0.03,
+                            fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
                         ],

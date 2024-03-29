@@ -50,6 +50,18 @@ class AppColors {
   static var a18 = Color(0xff86B6F6);
   static var a19 = Color(0xffEEF5FF);
   static var a20 = Color(0xffFEFBF6);
+  static var a21 = Color(0xff1B1A55);
+  static var a22 = Color(0xff535C91);
+  static var a23 = Color(0xff9290C3);
+  static var a24 = Color(0xff337CCF);
+  //  static var a22 = Color(0xff535C91);
+  //static var a22 = Color(0xff535C91);
+
+  //535C91
+
+  //535C91
+
+  //1B1A55
 
   //F6F5F5
 
@@ -235,11 +247,12 @@ class AppColors {
       //Colors.blueGrey.shade500,
       const Color(0xff00B3CC)
     ],
+  );
 
-    // begin: const FractionalOffset(0.0, 0.0),
-    // end: const FractionalOffset(1.0, 0.0),
-    // stops: [0.0, 1.0],
-    // tileMode: TileMode.clamp,
+  ///todo: circle button..... gradient
+
+  static LinearGradient gradient13 = LinearGradient(
+    colors: [Color(0xff43cea2), Color(0xff185a9d)],
   );
 
   static LinearGradient gradient12 = LinearGradient(
@@ -248,17 +261,55 @@ class AppColors {
       const Color(0xffb5d047),
       //Colors.blueGrey.shade500,
     ],
+  );
 
-    // begin: const FractionalOffset(0.0, 0.0),
-    // end: const FractionalOffset(1.0, 0.0),
-    // stops: [0.0, 1.0],
-    // tileMode: TileMode.clamp,
+  static LinearGradient gradient14 = LinearGradient(
+    colors: [
+      Colors.black38,
+      Colors.black12,
+      Colors.black12,
+      Colors.black38,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    tileMode: TileMode.clamp,
   );
 
   static LinearGradient gradient7 = LinearGradient(
     colors: [
       Color(0xFF0061ff),
       Color(0xFF60efff),
+    ],
+    begin: const FractionalOffset(0.0, 0.0),
+    end: const FractionalOffset(1.0, 0.0),
+    stops: [0.0, 1.0],
+    tileMode: TileMode.clamp,
+  );
+
+  static LinearGradient gradient10 = LinearGradient(
+    colors: [
+      Color(0xFF7CB9E8),
+      Color(0xFF0066b2),
+      //Color(0xFF0000FF),
+      /// Color(0xFF002D62),
+      //#0000FF
+      //#002D62
+    ],
+    begin: const FractionalOffset(0.0, 0.0),
+    end: const FractionalOffset(1.0, 0.0),
+    stops: [0.0, 1.0],
+    tileMode: TileMode.clamp,
+  );
+
+  static LinearGradient gradient11 = LinearGradient(
+    colors: [
+      Color(0xFF7CB9E8),
+      //Color(0xFF0066b2),
+      Color(0xFF0000FF),
+
+      /// Color(0xFF002D62),
+      //#0000FF
+      //#002D62
     ],
     begin: const FractionalOffset(0.0, 0.0),
     end: const FractionalOffset(1.0, 0.0),

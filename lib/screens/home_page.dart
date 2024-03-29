@@ -1,13 +1,21 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
+import 'package:suvidha_app_ui/constants/reusable_webview/webview_reusable.dart';
 import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<Color> colorList = [
   Colors.red,
@@ -88,6 +96,71 @@ List<String> imageList = [
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
+
+  String micccallnumber = "7666008833";
+
+  String customercare = "1912";
+
+  final Uri _url = Uri.parse(
+      'http://hargharbijli.bsphcl.co.in/Grievanceportal/default.aspx');
+
+  //http://hargharbijli.bsphcl.co.in/Grievanceportal/default.aspx
+  ///whats app launcher for mobile..
+
+  _launchWhatsApp() async {
+    var whatsapp = "+917033355555";
+    var message = "Hi SUVIDHA";
+
+    if (Platform.isIOS) {
+      var whatsappIOS =
+          "whatsapp://wa.me/$whatsapp/?text=${Uri.encodeComponent(message)}";
+      if (await canLaunch(whatsappIOS)) {
+        await launch(whatsappIOS);
+      } else {
+        Get.snackbar(
+          "WhatsApp not installed",
+          "Please install WhatsApp",
+          colorText: Colors.red.shade400,
+          backgroundColor: Colors.white10,
+          icon: Icon(Icons.person, color: Colors.red),
+          snackPosition: SnackPosition.TOP,
+        );
+      }
+    } else if (Platform.isAndroid) {
+      var whatsappAndroid =
+          "whatsapp://send?phone=$whatsapp&text=${Uri.encodeComponent(message)}";
+      if (await canLaunch(whatsappAndroid)) {
+        await launch(whatsappAndroid);
+      } else {
+        Get.snackbar(
+          "WhatsApp not installed",
+          "Please install WhatsApp",
+          colorText: Colors.red.shade400,
+          backgroundColor: Colors.white10,
+          icon: Icon(Icons.person, color: Colors.red),
+          snackPosition: SnackPosition.TOP,
+        );
+      }
+    } else {
+      // Platform not recognized
+      Get.snackbar(
+        "WhatsApp not supported on this platform",
+        "WhatsApp is not supported on this platform",
+        colorText: Colors.red.shade400,
+        backgroundColor: Colors.white10,
+        icon: Icon(Icons.person, color: Colors.red),
+        snackPosition: SnackPosition.TOP,
+      );
+    }
+  }
+
+  ///url launcher for web...
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -329,18 +402,49 @@ class HomePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Container(
-                        height: size.height * 0.07,
-                        width: size.width * 0.14,
-                        decoration: BoxDecoration(
-                          color: AppColors.black,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            iconList1[index],
-                            size: size.height * 0.04,
-                            color: Colors.white,
+                      InkWell(
+                        onTap: () async {
+                          //Get.to(() => IndustryHighTension());
+
+                          if (index == 0) {
+                            await FlutterPhoneDirectCaller.callNumber(
+                                micccallnumber);
+                            // makePhoneCall(
+                            //     "123"); // Replace with the desired phone number
+
+                            //Get.to(SelectPahseLineRange());
+
+                            ///Get.to(() => FranchisesProfilePage());
+                          } else if (index == 1) {
+                            await FlutterPhoneDirectCaller.callNumber(
+                                customercare);
+                            //Get.to(() => IndustryHighTension());
+                          } else if (index == 2) {
+                            _launchWhatsApp();
+                            //Get.to(() => IndustryHighTension());
+
+                          } else if (index == 3) {
+                            //_launchUrl();
+
+                            Get.to(WebViewwebsitess(url: "$_url"));
+
+                            //Get.to(() => IndustryHighTension());
+
+                          }
+                        },
+                        child: Container(
+                          height: size.height * 0.07,
+                          width: size.width * 0.14,
+                          decoration: BoxDecoration(
+                            color: AppColors.black,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              iconList1[index],
+                              size: size.height * 0.04,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -429,18 +533,40 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: size.height * 0.012,
                         ),
-                        Container(
-                          height: size.height * 0.07,
-                          width: size.width * 0.14,
-                          decoration: BoxDecoration(
-                            color: AppColors.a1,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              iconList2[index],
-                              size: size.height * 0.04,
-                              color: Colors.grey.shade700,
+                        InkWell(
+                          onTap: () async {
+                            //Get.to(() => IndustryHighTension());
+
+                            if (index == 0) {
+                              //makePhoneCall(
+                              //  '1234567890'); // Replace with the desired phone number
+
+                              //Get.to(SelectPahseLineRange());
+
+                              ///Get.to(() => FranchisesProfilePage());
+                            } else if (index == 1) {
+                              //Get.to(() => IndustryHighTension());
+                            } else if (index == 2) {
+                              //Get.to(() => IndustryHighTension());
+
+                            } else if (index == 3) {
+                              //Get.to(() => IndustryHighTension());
+
+                            }
+                          },
+                          child: Container(
+                            height: size.height * 0.07,
+                            width: size.width * 0.14,
+                            decoration: BoxDecoration(
+                              color: AppColors.a1,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                iconList2[index],
+                                size: size.height * 0.04,
+                                color: Colors.grey.shade700,
+                              ),
                             ),
                           ),
                         ),

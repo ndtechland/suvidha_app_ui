@@ -156,7 +156,6 @@ class DiscomeLoginPage extends StatelessWidget {
                   //   return null;
                   // },
                   //suffixIcon: Icon(Icons.remove_red_eye_outlined),
-
                   prefixIcon: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
