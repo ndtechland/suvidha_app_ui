@@ -17,6 +17,7 @@ class AppColors {
   static var background = Color(0xffECF0F1);
   static var primaryColor2 = Color(0xff3847a6);
   static var textfieldColor = Color(0xff8f98d0);
+  //6f1712
 
   static Map<int, Color> primaryColorMap = {
     50: Color(0xff7E00FC),
@@ -28,6 +29,13 @@ class AppColors {
   static Color white = Colors.white;
   static Color grey400 = Colors.grey.shade400;
   static Color backgroundColor = Color(0xFF3284D6);
+
+  static var textmaroon = Color(0xff6F1712);
+  static var textmaroon2 = Color(0xff631410);
+  static var textmaroon3 = Color(0xff58120e);
+  static var textmaroon4 = Color(0xff4D100C);
+
+  //#4D100C
 
   ///
   static var a1 = Color(0xffFFF7F3);
@@ -86,6 +94,9 @@ class AppColors {
   static Color g2 = Color(0xff0ab68b);
   static Color g3 = Color(0xff92de8b);
   static Color g4 = Color(0xffffe3b3);
+  static Color g33 = Color(0xffEAFFE1);
+
+  //
 
   ///
   static Color g5 = Color(0xff006bbb);
@@ -241,6 +252,11 @@ class AppColors {
     //Colors.yellowAccent
   ]);
 
+  static LinearGradient gradient18 = LinearGradient(colors: [
+    Color(0xfffce38a), Color(0xfff38181)
+    //Colors.yellowAccent
+  ]);
+
   static LinearGradient gradient6 = LinearGradient(
     colors: [
       const Color(0xffD6FF7F),
@@ -301,6 +317,38 @@ class AppColors {
     tileMode: TileMode.clamp,
   );
 
+  static LinearGradient gradient19 = LinearGradient(
+    colors: [
+      Color(0xff57606F
+          //0xFF1B2845
+          ),
+      //Color(0xFF0066b2),
+      Color(0xFFFFFFFF),
+
+      /// Color(0xFF002D62),
+      //#0000FF
+      //#002D62
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
+  static LinearGradient gradient21 = LinearGradient(
+    colors: [
+      Color(0xffe8f5e9
+          //0xFF1B2845
+          ),
+      //Color(0xFF0066b2),
+      Color(0xFFc8e6c9),
+
+      /// Color(0xFF002D62),
+      //#0000FF
+      //#002D62
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static LinearGradient gradient11 = LinearGradient(
     colors: [
       Color(0xFF7CB9E8),
@@ -311,10 +359,10 @@ class AppColors {
       //#0000FF
       //#002D62
     ],
-    begin: const FractionalOffset(0.0, 0.0),
-    end: const FractionalOffset(1.0, 0.0),
+    begin: FractionalOffset(1.0, 0.0),
+    end: FractionalOffset(0.0, 1.0),
     stops: [0.0, 1.0],
-    tileMode: TileMode.clamp,
+    tileMode: TileMode.decal,
   );
 
   static LinearGradient gradient8 =

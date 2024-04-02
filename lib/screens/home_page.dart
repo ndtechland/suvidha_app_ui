@@ -13,6 +13,10 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/reusable_webview/webview_reusable.dart';
+import 'package:suvidha_app_ui/screens/apply_disconnection/apply_disconnection1.dart';
+import 'package:suvidha_app_ui/screens/apply_solar_roof_net_material/apply_solar_roof_net_1.dart';
+import 'package:suvidha_app_ui/screens/bill_and_payment_service/billingdashbord.dart';
+import 'package:suvidha_app_ui/screens/go_green_pages/go_green_1.dart';
 import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -545,7 +549,7 @@ class HomePage extends StatelessWidget {
 
                               ///Get.to(() => FranchisesProfilePage());
                             } else if (index == 1) {
-                              //Get.to(() => IndustryHighTension());
+                              Get.to(() => BillingDashbord());
                             } else if (index == 2) {
                               //Get.to(() => IndustryHighTension());
 
@@ -643,18 +647,38 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: size.height * 0.012,
                         ),
-                        Container(
-                          height: size.height * 0.07,
-                          width: size.width * 0.15,
-                          decoration: BoxDecoration(
-                            color: AppColors.golden,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              iconList3[index],
-                              size: size.height * 0.04,
-                              color: Colors.grey.shade700,
+                        InkWell(
+                          onTap: () async {
+                            //Get.to(() => IndustryHighTension());
+
+                            if (index == 0) {
+                              ///await FlutterPhoneDirectCaller.callNumber(
+                              /// micccallnumber);
+                              // makePhoneCall(
+                              //     "123"); // Replace with the desired phone number
+
+                              //Get.to(SelectPahseLineRange());
+
+                              ///Get.to(() => FranchisesProfilePage());
+                            } else if (index == 1) {
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              Get.to(() => ApplySolarRoofNetMaterial1());
+                            }
+                          },
+                          child: Container(
+                            height: size.height * 0.07,
+                            width: size.width * 0.15,
+                            decoration: BoxDecoration(
+                              color: AppColors.golden,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                iconList3[index],
+                                size: size.height * 0.04,
+                                color: Colors.grey.shade700,
+                              ),
                             ),
                           ),
                         ),
@@ -731,19 +755,48 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: size.height * 0.012,
                         ),
-                        Container(
-                          height: size.height * 0.07,
-                          width: size.width * 0.14,
-                          decoration: BoxDecoration(
-                            color: AppColors.a19,
-                            shape: BoxShape.circle,
-                            //borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              iconList4[index],
-                              size: size.height * 0.04,
-                              color: AppColors.a15,
+                        InkWell(
+                          onTap: () async {
+                            //Get.to(() => IndustryHighTension());
+
+                            if (index == 0) {
+                            } else if (index == 1) {
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              //Get.to(() => ApplySolarRoofNetMaterial1());
+                            } else if (index == 2) {
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              //Get.to(() => ApplySolarRoofNetMaterial1());
+                            } else if (index == 3) {
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              Get.to(() => ApplyDisconnection1());
+                            } else if (index == 4) {
+                              Get.to(() => Go_Green_1());
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              //Get.to(() => ApplySolarRoofNetMaterial1());
+                            } else if (index == 5) {
+                              // await FlutterPhoneDirectCaller.callNumber(
+                              //     customercare);
+                              //Get.to(() => ApplySolarRoofNetMaterial1());
+                            }
+                          },
+                          child: Container(
+                            height: size.height * 0.07,
+                            width: size.width * 0.14,
+                            decoration: BoxDecoration(
+                              color: AppColors.a19,
+                              shape: BoxShape.circle,
+                              //borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                iconList4[index],
+                                size: size.height * 0.04,
+                                color: AppColors.a15,
+                              ),
                             ),
                           ),
                         ),

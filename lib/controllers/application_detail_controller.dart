@@ -13,6 +13,8 @@ import 'package:image_picker/image_picker.dart';
 class SelectionController extends GetxController {
   RxString selectedPDFName = ''.obs;
   RxString selectedPDFPath = ''.obs;
+  RxInt selectedValueradio = 0.obs;
+
   final selectedIndices = <int>[].obs;
   var isChecked = false.obs;
   RxInt selectedimg = 0.obs;
@@ -35,6 +37,11 @@ class SelectionController extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.blueGrey[100]);
     }
+  }
+
+  ///radio button..
+  void setSelectedValue(int value) {
+    selectedValueradio.value = value;
   }
 
   ///todo: file picker....
