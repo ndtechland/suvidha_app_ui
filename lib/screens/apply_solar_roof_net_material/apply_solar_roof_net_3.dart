@@ -34,15 +34,12 @@ class ApplySolarRoofNetMaterial3 extends StatelessWidget {
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Apply for Solar net Roof 3',
-
         leadingIcon: Icons.arrow_back_ios_outlined,
 
         centerTitle: true,
         titleFontSize: size.width * 0.042, // Specify font size here
-
         onLeadingPressed: () {
           Get.back();
-
           // Handle leading icon press
         },
         searchIcon: null,

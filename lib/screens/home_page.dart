@@ -16,9 +16,11 @@ import 'package:suvidha_app_ui/constants/reusable_webview/webview_reusable.dart'
 import 'package:suvidha_app_ui/screens/apply_disconnection/apply_disconnection1.dart';
 import 'package:suvidha_app_ui/screens/apply_solar_roof_net_material/apply_solar_roof_net_1.dart';
 import 'package:suvidha_app_ui/screens/bill_and_payment_service/billingdashbord.dart';
+import 'package:suvidha_app_ui/screens/bill_sgenerated_self_servicess/bill_generated_self_service.dart';
 import 'package:suvidha_app_ui/screens/go_green_pages/go_green_1.dart';
 import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
+import 'package:suvidha_app_ui/screens/smart_meter_service/smart_meter_services_1.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 List<Color> colorList = [
@@ -394,7 +396,6 @@ class HomePage extends StatelessWidget {
               ),
               GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
-
                 shrinkWrap: true,
                 itemCount: Services1.length, // Number of items in the grid
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -542,21 +543,20 @@ class HomePage extends StatelessWidget {
                             //Get.to(() => IndustryHighTension());
 
                             if (index == 0) {
+                              Get.to(BillGeneratedSelfServicePage());
                               //makePhoneCall(
                               //  '1234567890'); // Replace with the desired phone number
 
                               //Get.to(SelectPahseLineRange());
 
-                              ///Get.to(() => FranchisesProfilePage());
                             } else if (index == 1) {
                               Get.to(() => BillingDashbord());
                             } else if (index == 2) {
+                              Get.to(() => SmartMeterService1());
+
                               //Get.to(() => IndustryHighTension());
 
-                            } else if (index == 3) {
-                              //Get.to(() => IndustryHighTension());
-
-                            }
+                            } else if (index == 3) {}
                           },
                           child: Container(
                             height: size.height * 0.07,

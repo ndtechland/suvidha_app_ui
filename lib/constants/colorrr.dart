@@ -36,6 +36,29 @@ class AppColors {
   static var textmaroon4 = Color(0xff4D100C);
 
   //#4D100C
+  ///
+
+  static var newbacbakground = Color(0xffFFFFFF);
+  static var newerror = Color(0xffB00020);
+  static var neweblack = Color(0xff000000);
+  static var newpink = Color(0xffFEE0FA);
+  static var newpink1 = Color(0xffF0B6EB);
+  static var newredlite = Color(0xfff0b6ce);
+  static var newredlite2 = Color(0xfff9e2eb);
+  static var newpurplelite = Color(0xfff0e2f9);
+  static var newpurplelite2 = Color(0xfff0b6ce);
+  //FF9E80
+
+  static var neworange1 = Color(0xfffbe9e7);
+  static var neworange2 = Color(0xffffccbc);
+  static var neworange3 = Color(0xffFF9E80);
+
+  static var newbrown = Color(0xffefebe9);
+  static var newgray = Color(0xfffafafa);
+  static var newgray1 = Color(0xfff5f5f5);
+  static var newgray2 = Color(0xffeeeeee);
+  static var newgray3 = Color(0xffe0e0e0);
+  static var newbluegray = Color(0xffeceff1);
 
   ///
   static var a1 = Color(0xffFFF7F3);
