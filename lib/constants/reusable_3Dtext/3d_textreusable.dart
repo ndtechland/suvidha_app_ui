@@ -8,7 +8,11 @@ class ThreeDtext extends StatelessWidget {
   final FontWeight fontWeight;
   final int maxLines;
   final TextOverflow overflow;
-  final Color fontColor;
+  final Color? fontColor;
+  final double? letterSpacing;
+  final Color? shadowColor; // Make shadowColor optional
+  final double? shadowBlurRadius; // Make letterSpacing optional
+// Make fontColor optional by using Color?
 
   const ThreeDtext({
     Key? key,
@@ -18,7 +22,12 @@ class ThreeDtext extends StatelessWidget {
     this.fontWeight = FontWeight.normal, // Default font weight
     this.maxLines = 1, // Default max lines
     this.overflow = TextOverflow.ellipsis, // Default overflow
-    this.fontColor = Colors.black87, // Default font color
+    this.fontColor,
+    this.letterSpacing,
+    this.shadowColor, // Make shadowColor optional
+    this.shadowBlurRadius,
+    // Make letterSpacing optional
+// Make fontColor optional
   }) : super(key: key);
 
   @override
@@ -29,14 +38,19 @@ class ThreeDtext extends StatelessWidget {
         style: GoogleFonts.poppins(
           fontSize: fontSize,
           fontWeight: fontWeight,
-          color: fontColor, // Use fontColor parameter here
-          shadows: [
-            Shadow(
-              color: Colors.black45,
-              blurRadius: 1,
-              offset: Offset(1, 1),
-            ),
-          ],
+          color: fontColor ?? Colors.black87,
+          letterSpacing: letterSpacing,
+          shadows: shadowColor != null &&
+                  shadowBlurRadius !=
+                      null // Check if both shadowColor and shadowBlurRadius are provided
+              ? [
+                  Shadow(
+                    color: shadowColor!,
+                    blurRadius: shadowBlurRadius!,
+                    offset: Offset(1, 1),
+                  ),
+                ]
+              : null, // If either shadowColor or shadowBlurRadius is not provided, don't apply shadow
         ),
         maxLines: maxLines,
         overflow: overflow,

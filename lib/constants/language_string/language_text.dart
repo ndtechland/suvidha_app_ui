@@ -4,6 +4,7 @@ class AppTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_US': {
+          'English': 'English',
           'YourLanguages': 'Your Selected Language is :-',
           'language': 'English',
           'New Connection Services': 'New Connection Services',
@@ -16,7 +17,7 @@ class AppTranslations extends Translations {
           'Customer Care 1912': 'Customer Care 1912',
           'Report Electricity Theft': 'Report Electricity Theft',
           'Consumer Grievance': 'Consumer\nGrievance',
-          'Bill Generated Self Service': 'Bill Generated Self Service',
+          'Bill Generated\n   Self Service': 'Bill Generated\n   Self Service',
           'Bill & Payment Service': 'Bill & Payment Service',
           'Smart Meter Services': 'Smart Meter Services',
           'Apply New Connection for Solar Rooftop':
@@ -31,6 +32,7 @@ class AppTranslations extends Translations {
           'Refund Security Deposite': 'Refund Security Deposite',
         },
         'hi_IN': {
+          'English': 'हिन्दी',
           'YourLanguages': 'आपकी चयनित भाषा है:-',
           'language': 'हिन्दी',
           'New Connection Services': 'नई कनेक्शन सेवाएँ',
@@ -43,7 +45,7 @@ class AppTranslations extends Translations {
           'Customer Care 1912': 'ग्राहक सेवा 1912',
           'Report Electricity Theft': 'बिजली चोरी की रिपोर्ट करें',
           'Consumer Grievance': 'उपभोक्ता शिकायत',
-          'Bill Generated Self Service': 'बिल जनित स्वयं सेवा',
+          'Bill Generated\n   Self Service': 'बिल जनित स्वयं सेवा',
           'Bill & Payment Service': 'बिल एवं भुगतान सेवा',
           'Smart Meter Services': 'स्मार्ट मीटर सेवाएँ',
           'Apply New Connection for Solar Rooftop':
@@ -58,6 +60,7 @@ class AppTranslations extends Translations {
           'Refund Security Deposite': 'सुरक्षा जमा राशि वापस करें',
         },
         'bho_IN': {
+          'English': 'भोजपुरी',
           'YourLanguages': 'राउर चुनल भाषा बा :-',
           'language': 'भोजपुरी',
           'New Connection Services': 'नया कनेक्शन सेवा के बारे में बतावल गइल',
@@ -71,7 +74,8 @@ class AppTranslations extends Translations {
           'Customer Care 1912': 'ग्राहक देखभाल 1912 के बा',
           'Report Electricity Theft': 'बिजली चोरी के रिपोर्ट करीं',
           'Consumer Grievance': 'उपभोक्ता के शिकायत बा',
-          'Bill Generated Self Service': 'बिल से जनरेट कइल गइल स्वयंसेवी सेवा',
+          'Bill Generated\n   Self Service':
+              'बिल से जनरेट कइल गइल स्वयंसेवी सेवा',
           'Bill & Payment Service':
               'बिल अउर भुगतान सेवा के बारे में बतावल गइल बा',
           'Smart Meter Services': 'स्मार्ट मीटर सेवा के बारे में बतावल गईल बा',
@@ -87,6 +91,7 @@ class AppTranslations extends Translations {
           'Refund Security Deposite': 'वापसी सुरक्षा जमा के बा',
         },
         'mai_IN': {
+          'English': 'मैथिली',
           'YourLanguages': 'अहाँक चयनित भाषा अछि ',
           'language': 'मैथिली',
           'New Connection Services': 'नए कनेक्शन सेवाएँ',
@@ -99,7 +104,7 @@ class AppTranslations extends Translations {
           'Customer Care 1912': 'ग्राहक देखभाल 1912',
           'Report Electricity Theft': 'बिजली चोरी के रिपोर्ट करू',
           'Consumer Grievance': 'उपभोक्ता शिकायत',
-          'Bill Generated Self Service': 'बिल उत्पन्न स्वयंसेवी सेवा',
+          'Bill Generated\n   Self Service': 'बिल उत्पन्न स्वयंसेवी सेवा',
           'Bill & Payment Service': 'बिल एवं भुगतान सेवा',
           'Smart Meter Services': 'स्मार्ट मीटर सेवा',
           'Apply New Connection for Solar Rooftop':

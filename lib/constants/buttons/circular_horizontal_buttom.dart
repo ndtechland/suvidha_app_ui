@@ -6,6 +6,7 @@ class HorizontalCircularButton extends StatefulWidget {
   final double width;
   final String text;
   final VoidCallback? onPressed;
+  final double borderRadius; // New parameter for border radius
 
   const HorizontalCircularButton({
     Key? key,
@@ -13,6 +14,7 @@ class HorizontalCircularButton extends StatefulWidget {
     required this.width,
     required this.text,
     required this.onPressed,
+    this.borderRadius = 80, // Default border radius
   }) : super(key: key);
 
   @override
@@ -52,7 +54,7 @@ class _HorizontalCircularButtonState extends State<HorizontalCircularButton> {
         width: widget.width,
         decoration: BoxDecoration(
           gradient: AppColors.gradient5,
-          borderRadius: BorderRadius.circular(80),
+          borderRadius: BorderRadius.circular(widget.borderRadius),
           boxShadow: _isPressed
               ? [
                   BoxShadow(

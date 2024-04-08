@@ -9,6 +9,7 @@ class ThreeDtext2 extends StatelessWidget {
   final int maxLines;
   final TextOverflow overflow;
   final Color fontColor;
+  final double? letterSpacing; // Make letterSpacing optional
 
   const ThreeDtext2({
     Key? key,
@@ -18,7 +19,9 @@ class ThreeDtext2 extends StatelessWidget {
     this.fontWeight = FontWeight.normal, // Default font weight
     this.maxLines = 1, // Default max lines
     this.overflow = TextOverflow.ellipsis, // Default overflow
-    this.fontColor = Colors.black87, // Default font color
+    this.fontColor = Colors.black87,
+    this.letterSpacing, // Make letterSpacing optional
+// Default font color
   }) : super(key: key);
 
   @override

@@ -5,6 +5,7 @@ import 'package:suvidha_app_ui/constants/colorrr.dart';
 
 class ReusableCustomDialog extends StatelessWidget {
   final String titleText;
+  final double? titleFontSize; // New parameter for title text size
   final String contentText;
   final String cancelText;
   final String submitText;
@@ -21,6 +22,8 @@ class ReusableCustomDialog extends StatelessWidget {
 
   ReusableCustomDialog({
     required this.titleText,
+    this.titleFontSize, // Optional title text size
+
     required this.contentText,
     required this.cancelText,
     required this.submitText,
@@ -41,13 +44,16 @@ class ReusableCustomDialog extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return CupertinoAlertDialog(
       title: Container(
-        height: size.height * 0.029,
+        height: size.height * 0.033,
+        //width: size.width * 0.7,
         color: AppColors.a14,
         child: Center(
           child: Text(
             titleText,
             style: GoogleFonts.poppins(
-              fontSize: size.height * 0.021,
+              //titleTextSize
+              fontSize: titleFontSize ??
+                  size.height * 0.019, // Use provided or default font size
               fontWeight: FontWeight.w600,
               color: titleColor ?? Colors.black,
             ),

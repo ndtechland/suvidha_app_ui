@@ -18,6 +18,16 @@ class AppColors {
   static var primaryColor2 = Color(0xff3847a6);
   static var textfieldColor = Color(0xff8f98d0);
   //6f1712
+  //A52A2A
+  static var textbrown = Color(0xffA52A2A);
+
+  static var textbrown2 = Color(0xff8A3324);
+  static var textbrown3 = Color(0xff532915);
+  static var textbrown4 = Color(0xff481f01);
+  static var textbrown5 = Color(0xff652a0e);
+  static var textbrown6 = Color(0xff704241);
+
+  //704241
 
   static Map<int, Color> primaryColorMap = {
     50: Color(0xff7E00FC),
@@ -34,6 +44,8 @@ class AppColors {
   static var textmaroon2 = Color(0xff631410);
   static var textmaroon3 = Color(0xff58120e);
   static var textmaroon4 = Color(0xff4D100C);
+  static var textmaroon505 =
+      Color(0xff521B38); //this is the suvidha dashboard color
 
   //#4D100C
   ///
