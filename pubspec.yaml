@@ -40,7 +40,7 @@ dependencies:
   google_fonts:
   image_picker: ^0.8.6
   flutter_inappwebview:
-
+  sms_autofill:
   #file_picker:
 
   webview_flutter:

@@ -33,7 +33,9 @@ class CustomTextField extends StatelessWidget {
       width: width,
       margin: EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
-        color: AppColors.a18,
+        color: AppColors.
+            //th1wht2,
+            a18,
         //a8,
         //t1bacgroundcolors1,
         borderRadius: BorderRadius.circular(10.0),
@@ -44,16 +46,19 @@ class CustomTextField extends StatelessWidget {
           fontWeight: FontWeight.w500,
           color: Colors.black, // Added text color
         ),
+
         cursorHeight: height * 0.03,
         obscureText: obscureText,
         cursorColor: AppColors.black,
         controller: controller,
         validator: validator,
         keyboardType: keyboardType,
+
         // maxLength: 10, // Limit the input to 10 digits
 
         decoration: InputDecoration(
           border: InputBorder.none,
+
           prefixIcon: prefixIcon ?? SizedBox(), // Use prefixIcon if provided
           suffixIcon:
               suffixIcon ?? SizedBox(), // Used ?? operator for null check

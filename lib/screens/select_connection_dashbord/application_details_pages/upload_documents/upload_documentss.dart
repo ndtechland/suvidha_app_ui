@@ -42,7 +42,7 @@ class UploadReport1 extends StatelessWidget {
     //String filteredText = text.replaceAll(RegExp(r'[^\w\s.,!*\'$\\\/]'), '');
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: """Upload Documents""",
@@ -258,28 +258,36 @@ class UploadReport1 extends StatelessWidget {
 
                               ///
 
-                              : Container(
-                                  height: size.height * 0.13,
-                                  width: size.width * 0.45,
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                    border: Border.all(
-                                      width: size.width * 0.01,
-                                      color: Colors.red,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.red.withOpacity(0.5),
-                                        spreadRadius: 2,
-                                        blurRadius: 1,
-                                        offset: Offset(0, 1),
+                              : PhysicalModel(
+                                  color: AppColors.white,
+                                  shadowColor: Colors.black,
+                                  borderRadius: BorderRadius.circular(10),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: size.height * 0.13,
+                                    width: size.width * 0.45,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      border: Border.all(
+                                        width: size.width * 0.01,
+                                        color: AppColors.th1wht2,
                                       ),
-                                    ],
-                                  ),
-                                  child: Icon(
-                                    Icons.add_box,
-                                    color: Colors.black,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: AppColors.th1wht3,
+                                          //Colors.red.withOpacity(0.5),
+                                          spreadRadius: 0,
+                                          blurRadius: 2,
+                                          offset: Offset(0, 0),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Icon(
+                                      Icons.camera_alt,
+                                      color: AppColors.th1gry,
+                                      size: size.width * 0.13,
+                                    ),
                                   ),
                                 ),
                         ),
@@ -313,15 +321,19 @@ class UploadReport1 extends StatelessWidget {
                               ),
                             );
                           } else {
-                            return IconButton(
-                              icon: Icon(
-                                Icons.add,
-                                color: Colors.transparent,
-                              ),
-                              onPressed: () {
-                                // Handle add action
-                              },
+                            return Icon(
+                              Icons.add,
+                              color: Colors.transparent,
                             );
+                            //   IconButton(
+                            //   icon: Icon(
+                            //     Icons.add,
+                            //     color: Colors.transparent,
+                            //   ),
+                            //   onPressed: () {
+                            //     // Handle add action
+                            //   },
+                            // );
                           }
                         }),
                       ),
@@ -601,30 +613,38 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///todo: id proof 1
 
-                                  : Container(
-                                      height: size.height * 0.13,
-                                      width: size.width * 0.46,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        border: Border.all(
-                                          width: size.width * 0.01,
-                                          color: Colors.red,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.red.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 1,
-                                            offset: Offset(0, 1),
+                                  : PhysicalModel(
+                                      color: AppColors.white,
+                                      shadowColor: Colors.black,
+                                      borderRadius: BorderRadius.circular(10),
+                                      elevation: 5,
+                                      child: Container(
+                                        height: size.height * 0.13,
+                                        width: size.width * 0.45,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          border: Border.all(
+                                            width: size.width * 0.01,
+                                            color: AppColors.th1wht2,
                                           ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.add_box,
-                                        color: Colors.black,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: AppColors.th1wht3,
+                                              //Colors.red.withOpacity(0.5),
+                                              spreadRadius: 0,
+                                              blurRadius: 2,
+                                              offset: Offset(0, 0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          color: AppColors.th1gry,
+                                          size: size.width * 0.13,
+                                        ),
                                       ),
                                     ),
                             ),
@@ -659,15 +679,19 @@ class UploadReport1 extends StatelessWidget {
                                   ),
                                 );
                               } else {
-                                return IconButton(
-                                  icon: Icon(
-                                    Icons.add,
-                                    color: Colors.transparent,
-                                  ),
-                                  onPressed: () {
-                                    // Handle add action
-                                  },
+                                return Icon(
+                                  Icons.add,
+                                  color: Colors.transparent,
                                 );
+                                //   IconButton(
+                                //   icon: Icon(
+                                //     Icons.add,
+                                //     color: Colors.transparent,
+                                //   ),
+                                //   // onPressed: () {
+                                //   //   // Handle add action
+                                //   // },
+                                // );
                               }
                             }),
                           ),
@@ -795,30 +819,38 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///todo: id proof 2
 
-                                  : Container(
-                                      height: size.height * 0.13,
-                                      width: size.width * 0.459,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        border: Border.all(
-                                          width: size.width * 0.01,
-                                          color: Colors.red,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.red.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 1,
-                                            offset: Offset(0, 1),
+                                  : PhysicalModel(
+                                      color: AppColors.white,
+                                      shadowColor: Colors.black,
+                                      borderRadius: BorderRadius.circular(10),
+                                      elevation: 5,
+                                      child: Container(
+                                        height: size.height * 0.13,
+                                        width: size.width * 0.45,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          border: Border.all(
+                                            width: size.width * 0.01,
+                                            color: AppColors.th1wht2,
                                           ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.add_box,
-                                        color: Colors.black,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: AppColors.th1wht3,
+                                              //Colors.red.withOpacity(0.5),
+                                              spreadRadius: 0,
+                                              blurRadius: 2,
+                                              offset: Offset(0, 0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          color: AppColors.th1gry,
+                                          size: size.width * 0.13,
+                                        ),
                                       ),
                                     ),
                             ),
@@ -1071,50 +1103,69 @@ class UploadReport1 extends StatelessWidget {
                                         onTap: () async {
                                           //await selectionController.pickPDF();
                                         },
-                                        child: Container(
-                                          height: size.height * 0.13,
-                                          width: size.width * 0.65,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                            border: Border.all(
-                                              width: size.width * 0.01,
-                                              color: Colors.red,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color:
-                                                    Colors.red.withOpacity(0.5),
-                                                spreadRadius: 1,
-                                                blurRadius: 1,
-                                                offset: Offset(0, 1),
+                                        child: PhysicalModel(
+                                          color: AppColors.white,
+                                          shadowColor: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          elevation: 5,
+                                          child: Container(
+                                            height: size.height * 0.13,
+                                            width: size.width * 0.65,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                              border: Border.all(
+                                                width: size.width * 0.01,
+                                                color: AppColors.th1wht2,
                                               ),
-                                            ],
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Document Pending',
-                                              style: GoogleFonts.poppins(
-                                                //fontWeight: FontWeight.w600,
-                                                fontSize: size.width * 0.033,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: AppColors.th1wht3,
+                                                  spreadRadius: 1,
+                                                  blurRadius: 1,
+                                                  offset: Offset(0, 1),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.th1gry,
+                                                    size: size.width * 0.13,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.poppins(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.033,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
 
-                                                shadows: [
-                                                  Shadow(
-                                                    color: Colors.black45,
-                                                    blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(1, 1),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
                                                   ),
                                                 ],
-                                                // color: Colors.white,
                                               ),
                                             ),
+                                            // Icon(
+                                            //   Icons.add_box,
+                                            //   color: Colors.black,
+                                            // ),
                                           ),
-                                          // Icon(
-                                          //   Icons.add_box,
-                                          //   color: Colors.black,
-                                          // ),
                                         ),
                                       ),
                               ),
@@ -1149,17 +1200,21 @@ class UploadReport1 extends StatelessWidget {
                                     ),
                                   );
                                 } else {
-                                  return IconButton(
-                                    icon: Icon(
-                                      Icons.add,
-                                      color: Colors.transparent,
-                                    ),
-                                    onPressed: () {
-                                      //await selectionController.pickPDF();
-
-                                      // Handle add action
-                                    },
+                                  return Icon(
+                                    Icons.add,
+                                    color: Colors.transparent,
                                   );
+                                  //   IconButton(
+                                  //   icon: Icon(
+                                  //     Icons.add,
+                                  //     color: Colors.transparent,
+                                  //   ),
+                                  //   onPressed: () {
+                                  //     //await selectionController.pickPDF();
+                                  //
+                                  //     // Handle add action
+                                  //   },
+                                  // );
                                 }
                               }),
                             ),
@@ -1282,49 +1337,55 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///todo: add documents........
 
                                   : InkWell(
                                       onTap: () async {
                                         await selectionController.pickPDF();
                                       },
-                                      child: Container(
-                                        height: size.height * 0.07,
-                                        width: size.width * 0.25,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20)),
-                                          border: Border.all(
-                                            width: size.width * 0.01,
-                                            color: Colors.red,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.red.withOpacity(0.5),
-                                              spreadRadius: 2,
-                                              blurRadius: 1,
-                                              offset: Offset(0, 1),
+                                      child: PhysicalModel(
+                                        color: AppColors.white,
+                                        shadowColor: Colors.black,
+                                        borderRadius: BorderRadius.circular(20),
+                                        elevation: 5,
+                                        child: Container(
+                                          height: size.height * 0.07,
+                                          width: size.width * 0.25,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20)),
+                                            border: Border.all(
+                                              width: size.width * 0.01,
+                                              color: AppColors.th1wht2,
                                             ),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Add+',
-                                            style: GoogleFonts.poppins(
-                                              //fontWeight: FontWeight.w600,
-                                              fontSize: size.width * 0.033,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: AppColors.th1wht3,
+                                                //Colors.red.withOpacity(0.5),
+                                                spreadRadius: 0,
+                                                blurRadius: 2,
+                                                offset: Offset(0, 0),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Add+',
+                                              style: GoogleFonts.poppins(
+                                                //fontWeight: FontWeight.w600,
+                                                fontSize: size.width * 0.033,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
 
-                                              shadows: [
-                                                Shadow(
-                                                  color: Colors.black45,
-                                                  blurRadius: 0,
-                                                  offset: Offset(1, 1),
-                                                ),
-                                              ],
-                                              // color: Colors.white,
+                                                shadows: [
+                                                  Shadow(
+                                                    color: Colors.black45,
+                                                    blurRadius: 0,
+                                                    offset: Offset(1, 1),
+                                                  ),
+                                                ],
+                                                // color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1810,30 +1871,38 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///todo: address proof 1...
 
-                                  : Container(
-                                      height: size.height * 0.13,
-                                      width: size.width * 0.46,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        border: Border.all(
-                                          width: size.width * 0.01,
-                                          color: Colors.red,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.red.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 1,
-                                            offset: Offset(0, 1),
+                                  : PhysicalModel(
+                                      color: AppColors.white,
+                                      shadowColor: Colors.black,
+                                      borderRadius: BorderRadius.circular(10),
+                                      elevation: 5,
+                                      child: Container(
+                                        height: size.height * 0.13,
+                                        width: size.width * 0.45,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          border: Border.all(
+                                            width: size.width * 0.01,
+                                            color: AppColors.th1wht2,
                                           ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.add_box,
-                                        color: Colors.black,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: AppColors.th1wht3,
+                                              //Colors.red.withOpacity(0.5),
+                                              spreadRadius: 0,
+                                              blurRadius: 2,
+                                              offset: Offset(0, 0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          color: AppColors.th1gry,
+                                          size: size.width * 0.13,
+                                        ),
                                       ),
                                     ),
                             ),
@@ -1868,15 +1937,19 @@ class UploadReport1 extends StatelessWidget {
                                   ),
                                 );
                               } else {
-                                return IconButton(
-                                  icon: Icon(
-                                    Icons.add,
-                                    color: Colors.transparent,
-                                  ),
-                                  onPressed: () {
-                                    // Handle add action
-                                  },
+                                return Icon(
+                                  Icons.add,
+                                  color: Colors.transparent,
                                 );
+                                //   IconButton(
+                                //   icon: Icon(
+                                //     Icons.add,
+                                //     color: Colors.transparent,
+                                //   ),
+                                //   onPressed: () {
+                                //     // Handle add action
+                                //   },
+                                // );
                               }
                             }),
                           ),
@@ -2004,30 +2077,38 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///todo: address proof back 2..
 
-                                  : Container(
-                                      height: size.height * 0.13,
-                                      width: size.width * 0.459,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        border: Border.all(
-                                          width: size.width * 0.01,
-                                          color: Colors.red,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.red.withOpacity(0.5),
-                                            spreadRadius: 2,
-                                            blurRadius: 1,
-                                            offset: Offset(0, 1),
+                                  : PhysicalModel(
+                                      color: AppColors.white,
+                                      shadowColor: Colors.black,
+                                      borderRadius: BorderRadius.circular(10),
+                                      elevation: 5,
+                                      child: Container(
+                                        height: size.height * 0.13,
+                                        width: size.width * 0.45,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          border: Border.all(
+                                            width: size.width * 0.01,
+                                            color: AppColors.th1wht2,
                                           ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.add_box,
-                                        color: Colors.black,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: AppColors.th1wht3,
+                                              //Colors.red.withOpacity(0.5),
+                                              spreadRadius: 0,
+                                              blurRadius: 2,
+                                              offset: Offset(0, 0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          color: AppColors.th1gry,
+                                          size: size.width * 0.13,
+                                        ),
                                       ),
                                     ),
                             ),
@@ -2062,15 +2143,19 @@ class UploadReport1 extends StatelessWidget {
                                   ),
                                 );
                               } else {
-                                return IconButton(
-                                  icon: Icon(
-                                    Icons.add,
-                                    color: Colors.transparent,
-                                  ),
-                                  onPressed: () {
-                                    // Handle add action
-                                  },
+                                return Icon(
+                                  Icons.add,
+                                  color: Colors.transparent,
                                 );
+                                //   IconButton(
+                                //   icon: Icon(
+                                //     Icons.add,
+                                //     color: Colors.transparent,
+                                //   ),
+                                //   onPressed: () {
+                                //     // Handle add action
+                                //   },
+                                // );
                               }
                             }),
                           ),
@@ -2281,50 +2366,69 @@ class UploadReport1 extends StatelessWidget {
                                         onTap: () async {
                                           //await selectionController.pickPDF();
                                         },
-                                        child: Container(
-                                          height: size.height * 0.13,
-                                          width: size.width * 0.65,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                            border: Border.all(
-                                              width: size.width * 0.01,
-                                              color: Colors.red,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color:
-                                                    Colors.red.withOpacity(0.5),
-                                                spreadRadius: 1,
-                                                blurRadius: 1,
-                                                offset: Offset(0, 1),
+                                        child: PhysicalModel(
+                                          color: AppColors.white,
+                                          shadowColor: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          elevation: 5,
+                                          child: Container(
+                                            height: size.height * 0.13,
+                                            width: size.width * 0.65,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                              border: Border.all(
+                                                width: size.width * 0.01,
+                                                color: AppColors.th1wht2,
                                               ),
-                                            ],
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Document Pending',
-                                              style: GoogleFonts.poppins(
-                                                //fontWeight: FontWeight.w600,
-                                                fontSize: size.width * 0.033,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: AppColors.th1wht3,
+                                                  spreadRadius: 1,
+                                                  blurRadius: 1,
+                                                  offset: Offset(0, 1),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.th1gry,
+                                                    size: size.width * 0.13,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.poppins(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.033,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
 
-                                                shadows: [
-                                                  Shadow(
-                                                    color: Colors.black45,
-                                                    blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(1, 1),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
                                                   ),
                                                 ],
-                                                // color: Colors.white,
                                               ),
                                             ),
+                                            // Icon(
+                                            //   Icons.add_box,
+                                            //   color: Colors.black,
+                                            // ),
                                           ),
-                                          // Icon(
-                                          //   Icons.add_box,
-                                          //   color: Colors.black,
-                                          // ),
                                         ),
                                       ),
                               ),
@@ -2492,49 +2596,55 @@ class UploadReport1 extends StatelessWidget {
                                       ),
                                     )
 
-                                  ///
+                                  ///add button power attorney...
 
                                   : InkWell(
                                       onTap: () async {
                                         await selectionController.pickPDF();
                                       },
-                                      child: Container(
-                                        height: size.height * 0.07,
-                                        width: size.width * 0.25,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20)),
-                                          border: Border.all(
-                                            width: size.width * 0.01,
-                                            color: Colors.red,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.red.withOpacity(0.5),
-                                              spreadRadius: 2,
-                                              blurRadius: 1,
-                                              offset: Offset(0, 1),
+                                      child: PhysicalModel(
+                                        color: AppColors.white,
+                                        shadowColor: Colors.black,
+                                        borderRadius: BorderRadius.circular(20),
+                                        elevation: 5,
+                                        child: Container(
+                                          height: size.height * 0.07,
+                                          width: size.width * 0.25,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20)),
+                                            border: Border.all(
+                                              width: size.width * 0.01,
+                                              color: AppColors.th1wht2,
                                             ),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Add+',
-                                            style: GoogleFonts.poppins(
-                                              //fontWeight: FontWeight.w600,
-                                              fontSize: size.width * 0.033,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: AppColors.th1wht3,
+                                                //Colors.red.withOpacity(0.5),
+                                                spreadRadius: 0,
+                                                blurRadius: 2,
+                                                offset: Offset(0, 0),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Add+',
+                                              style: GoogleFonts.poppins(
+                                                //fontWeight: FontWeight.w600,
+                                                fontSize: size.width * 0.033,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
 
-                                              shadows: [
-                                                Shadow(
-                                                  color: Colors.black45,
-                                                  blurRadius: 0,
-                                                  offset: Offset(1, 1),
-                                                ),
-                                              ],
-                                              // color: Colors.white,
+                                                shadows: [
+                                                  Shadow(
+                                                    color: Colors.black45,
+                                                    blurRadius: 0,
+                                                    offset: Offset(1, 1),
+                                                  ),
+                                                ],
+                                                // color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -2946,50 +3056,69 @@ class UploadReport1 extends StatelessWidget {
                                         onTap: () async {
                                           //await selectionController.pickPDF();
                                         },
-                                        child: Container(
-                                          height: size.height * 0.13,
-                                          width: size.width * 0.65,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                            border: Border.all(
-                                              width: size.width * 0.01,
-                                              color: Colors.red,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color:
-                                                    Colors.red.withOpacity(0.5),
-                                                spreadRadius: 1,
-                                                blurRadius: 1,
-                                                offset: Offset(0, 1),
+                                        child: PhysicalModel(
+                                          color: AppColors.white,
+                                          shadowColor: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          elevation: 5,
+                                          child: Container(
+                                            height: size.height * 0.13,
+                                            width: size.width * 0.65,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                              border: Border.all(
+                                                width: size.width * 0.01,
+                                                color: AppColors.th1wht2,
                                               ),
-                                            ],
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Document Pending',
-                                              style: GoogleFonts.poppins(
-                                                //fontWeight: FontWeight.w600,
-                                                fontSize: size.width * 0.033,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: AppColors.th1wht3,
+                                                  spreadRadius: 1,
+                                                  blurRadius: 1,
+                                                  offset: Offset(0, 1),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.th1gry,
+                                                    size: size.width * 0.13,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.poppins(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.033,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
 
-                                                shadows: [
-                                                  Shadow(
-                                                    color: Colors.black45,
-                                                    blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(1, 1),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
                                                   ),
                                                 ],
-                                                // color: Colors.white,
                                               ),
                                             ),
+                                            // Icon(
+                                            //   Icons.add_box,
+                                            //   color: Colors.black,
+                                            // ),
                                           ),
-                                          // Icon(
-                                          //   Icons.add_box,
-                                          //   color: Colors.black,
-                                          // ),
                                         ),
                                       ),
                               ),
@@ -3163,43 +3292,49 @@ class UploadReport1 extends StatelessWidget {
                                       onTap: () async {
                                         await selectionController.pickPDF();
                                       },
-                                      child: Container(
-                                        height: size.height * 0.07,
-                                        width: size.width * 0.25,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20)),
-                                          border: Border.all(
-                                            width: size.width * 0.01,
-                                            color: Colors.red,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.red.withOpacity(0.5),
-                                              spreadRadius: 2,
-                                              blurRadius: 1,
-                                              offset: Offset(0, 1),
+                                      child: PhysicalModel(
+                                        color: AppColors.white,
+                                        shadowColor: Colors.black,
+                                        borderRadius: BorderRadius.circular(20),
+                                        elevation: 5,
+                                        child: Container(
+                                          height: size.height * 0.07,
+                                          width: size.width * 0.25,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20)),
+                                            border: Border.all(
+                                              width: size.width * 0.01,
+                                              color: AppColors.th1wht2,
                                             ),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Add+',
-                                            style: GoogleFonts.poppins(
-                                              //fontWeight: FontWeight.w600,
-                                              fontSize: size.width * 0.033,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: AppColors.th1wht3,
+                                                //Colors.red.withOpacity(0.5),
+                                                spreadRadius: 0,
+                                                blurRadius: 2,
+                                                offset: Offset(0, 0),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Add+',
+                                              style: GoogleFonts.poppins(
+                                                //fontWeight: FontWeight.w600,
+                                                fontSize: size.width * 0.033,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
 
-                                              shadows: [
-                                                Shadow(
-                                                  color: Colors.black45,
-                                                  blurRadius: 0,
-                                                  offset: Offset(1, 1),
-                                                ),
-                                              ],
-                                              // color: Colors.white,
+                                                shadows: [
+                                                  Shadow(
+                                                    color: Colors.black45,
+                                                    blurRadius: 0,
+                                                    offset: Offset(1, 1),
+                                                  ),
+                                                ],
+                                                // color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ),

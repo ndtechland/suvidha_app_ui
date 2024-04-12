@@ -4,10 +4,17 @@ import 'package:suvidha_app_ui/constants/colorrr.dart';
 
 class HorizontalButton extends StatefulWidget {
   final String text;
-  final Function onClick;
+  final Function()? onClick; // Make the onClick function nullable
+  final double? height;
+  final double? width;
 
-  const HorizontalButton({Key? key, required this.text, required this.onClick})
-      : super(key: key);
+  const HorizontalButton({
+    Key? key,
+    required this.text,
+    required this.onClick,
+    this.height,
+    this.width,
+  }) : super(key: key);
 
   @override
   _HorizontalButtonState createState() => _HorizontalButtonState();
@@ -27,7 +34,7 @@ class _HorizontalButtonState extends State<HorizontalButton> {
         setState(() {
           _position = 4;
         });
-        if (widget.onClick != null) widget.onClick();
+        if (widget.onClick != null) widget.onClick!();
       },
       onTapDown: (_) {
         setState(() {

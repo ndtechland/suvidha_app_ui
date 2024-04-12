@@ -126,15 +126,15 @@ class SelectConnectionDashbord extends StatelessWidget {
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                           text: doctorcatagary2[index],
-                          fontSize: size.height * 0.0111,
-                          fontWeight: FontWeight.w500,
+                          fontSize: size.height * 0.011,
+                          fontWeight: FontWeight.w700,
                           fontColor: AppColors.black,
                         ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          //color: AppColors.a16,
-                          gradient: AppColors.gradient11,
+                          color: AppColors.th1blue3,
+                          //gradient: AppColors.gradient11,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10),
                             bottomRight: Radius.circular(10),
@@ -154,19 +154,19 @@ class SelectConnectionDashbord extends StatelessWidget {
                     ],
                   ),
                   decoration: BoxDecoration(
-                    //color: AppColors.whiteColor,
-                    gradient: AppColors.sweepGradient1,
+                    color: AppColors.white,
+                    //gradient: AppColors.gradient19,
                     borderRadius: BorderRadius.circular(10),
-                    // border: Border.all(color: AppColors.a24),
+                    border: Border.all(color: AppColors.th1blue3),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.a24,
+                        color: AppColors.th1blue3,
                         offset: Offset(4, 4),
                         blurRadius: 0,
                         spreadRadius: 0,
                       ),
                       BoxShadow(
-                        color: AppColors.a1,
+                        color: AppColors.black,
                         offset: Offset(0, -0),
                         blurRadius: 0,
                         spreadRadius: 0,

@@ -105,7 +105,7 @@ class Lowtenindustralservice extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Select Phase/Line and Load Range',
@@ -140,14 +140,18 @@ class Lowtenindustralservice extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: PhysicalModel(
-              color: tileColor,
+              color: AppColors.th1wht2,
               elevation: 5,
+              borderRadius: BorderRadius.circular(10),
               child: Container(
                 height: size.height * 0.09,
                 width: size.width,
                 decoration: BoxDecoration(
                   // color: tileColor,
-                  gradient: gradient,
+                  color: AppColors.th1wht2,
+                  borderRadius: BorderRadius.circular(10),
+
+                  ///  gradient: gradient,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
@@ -159,14 +163,14 @@ class Lowtenindustralservice extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title1[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle1[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
@@ -177,14 +181,14 @@ class Lowtenindustralservice extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title2[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle2[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
@@ -195,14 +199,14 @@ class Lowtenindustralservice extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title3[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle3[index],
-                            fontColor: Colors.white,
+                            fontColor: AppColors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),

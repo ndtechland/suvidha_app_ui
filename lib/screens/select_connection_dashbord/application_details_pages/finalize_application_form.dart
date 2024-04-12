@@ -34,7 +34,7 @@ class FinalizeFormms extends StatelessWidget {
     //String filteredText = text.replaceAll(RegExp(r'[^\w\s.,!*\'$\\\/]'), '');
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: """Finalize Application""",
@@ -63,19 +63,20 @@ class FinalizeFormms extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(
-            color: Colors.white30,
-            image: DecorationImage(
-                image: NetworkImage(
-                    'https://images.unsplash.com/photo-1554735231-2250c114a31d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1509453721491-c3af5961df76?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1595428645453-309f41e373e0?q=80&w=2265&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
-                    ///
-                    ),
-                fit: BoxFit.fitHeight)),
+          color: Colors.white30,
+          // image: DecorationImage(
+          //     image: NetworkImage(
+          //         'https://images.unsplash.com/photo-1554735231-2250c114a31d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //         //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //         //'https://images.unsplash.com/photo-1509453721491-c3af5961df76?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //         //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //         //'https://images.unsplash.com/photo-1595428645453-309f41e373e0?q=80&w=2265&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //         //'https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          //
+          //         ///
+          //         ),
+          //     fit: BoxFit.fitHeight)
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -83,6 +84,7 @@ class FinalizeFormms extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
               child: PhysicalModel(
                 color: Colors.black,
+                shadowColor: AppColors.blackColor,
                 elevation: 5,
                 child: Container(
                   height: size.height * 0.27,
@@ -97,7 +99,8 @@ class FinalizeFormms extends StatelessWidget {
                       height: size.height * 0.25,
                       width: size.width,
                       decoration: BoxDecoration(
-                        gradient: AppColors.gradient14,
+                        ///gradient: AppColors.gradient14,
+                        color: AppColors.th1wht3,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -111,30 +114,42 @@ class FinalizeFormms extends StatelessWidget {
                               Get.to(PreviewFormmsDetails());
                             },
                             child: Obx(
-                              () => Container(
-                                height: size.height * 0.07,
-                                width: size.width * 0.8,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                              () => PhysicalModel(
+                                color: Colors.white,
+                                shadowColor: AppColors.greyColor,
+                                elevation: 5,
+                                borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  height: size.height * 0.07,
+                                  width: size.width * 0.8,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: selectionController.selectedIndices
+                                              .contains(0)
+                                          ? AppColors.th1org
+                                          : Colors.transparent,
+                                      width: 3,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
                                     color: selectionController.selectedIndices
                                             .contains(0)
-                                        ? Colors.white
-                                        : Colors.transparent,
-                                    width: 3,
+                                        ? AppColors.th1org
+                                        : AppColors.th1wht2,
+                                    // gradient: selectionController.selectedIndices
+                                    //         .contains(0)
+                                    //     ? AppColors.gradient5
+                                    //     : AppColors.gradient14,
                                   ),
-                                  gradient: selectionController.selectedIndices
-                                          .contains(0)
-                                      ? AppColors.gradient5
-                                      : AppColors.gradient14,
-                                ),
-                                child: ThreeDtext(
-                                  text: "Preview Form",
-                                  fontColor: selectionController.selectedIndices
-                                          .contains(0)
-                                      ? Colors.white
-                                      : Colors.black,
-                                  fontSize: size.width * 0.045,
-                                  fontWeight: FontWeight.bold,
+                                  child: ThreeDtext(
+                                    text: "Preview Form",
+                                    fontColor: selectionController
+                                            .selectedIndices
+                                            .contains(0)
+                                        ? Colors.white
+                                        : Colors.black,
+                                    fontSize: size.width * 0.045,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -145,34 +160,44 @@ class FinalizeFormms extends StatelessWidget {
                               showAppleStyleDialog(context);
                             },
                             child: Obx(
-                              () => Container(
-                                height: size.height * 0.07,
-                                width: size.width * 0.8,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                              () => PhysicalModel(
+                                color: Colors.white,
+                                shadowColor: AppColors.greyColor,
+                                elevation: 5,
+                                borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  height: size.height * 0.07,
+                                  width: size.width * 0.8,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: selectionController.selectedIndices
+                                              .contains(1)
+                                          ? AppColors.th1org
+                                          : Colors.transparent,
+                                      width: 3,
+                                    ),
                                     color: selectionController.selectedIndices
                                             .contains(1)
-                                        ? Colors.white
-                                        : Colors.transparent,
-                                    width: 3,
+                                        ? AppColors.th1org
+                                        : AppColors.th1wht2,
+
+                                    ///
+                                    // gradient: selectionController.selectedIndices
+                                    //         .contains(1)
+                                    //     ? AppColors.gradient5
+                                    //     : AppColors.gradient14,
                                   ),
-                                  // color: selectionController.selectedIndices
-                                  //         .contains(1)
-                                  //     ? Colors.blue
-                                  //     : Colors.red,
-                                  gradient: selectionController.selectedIndices
-                                          .contains(1)
-                                      ? AppColors.gradient5
-                                      : AppColors.gradient14,
-                                ),
-                                child: ThreeDtext(
-                                  text: "Submit Basic Details",
-                                  fontColor: selectionController.selectedIndices
-                                          .contains(1)
-                                      ? Colors.white
-                                      : Colors.black,
-                                  fontSize: size.width * 0.045,
-                                  fontWeight: FontWeight.bold,
+                                  child: ThreeDtext(
+                                    text: "Submit Basic Details",
+                                    fontColor: selectionController
+                                            .selectedIndices
+                                            .contains(1)
+                                        ? Colors.white
+                                        : Colors.black,
+                                    fontSize: size.width * 0.045,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),

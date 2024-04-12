@@ -54,7 +54,9 @@ class IndustryHighTension extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
+
+      //  backgroundColor: AppColors.white,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Select Industrial Connection',
@@ -83,18 +85,19 @@ class IndustryHighTension extends StatelessWidget {
           height: size.height,
           width: size.width,
           decoration: BoxDecoration(
-              color: Colors.white,
-              image: DecorationImage(
-                  image: NetworkImage(
-                      'https://images.unsplash.com/photo-1509391111737-9b07f052f6b6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                      // 'https://images.unsplash.com/photo-1598024264708-b4328f4e191b?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                      //'https://images.unsplash.com/photo-1610720707798-6fe21dc165ba?q=80&w=2215&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                      // 'https://images.unsplash.com/photo-1519626504899-7a03a8a9ab51?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
-                      // 'https://images.unsplash.com/photo-1672545556384-369582b1b7f5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                      //  'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                      // 'lib/assets/video/electricaaa.png'
-                      ),
-                  fit: BoxFit.fitHeight)),
+            color: Colors.white,
+            // image: DecorationImage(
+            //     image: NetworkImage(
+            //         'https://images.unsplash.com/photo-1509391111737-9b07f052f6b6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         // 'https://images.unsplash.com/photo-1598024264708-b4328f4e191b?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1610720707798-6fe21dc165ba?q=80&w=2215&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         // 'https://images.unsplash.com/photo-1519626504899-7a03a8a9ab51?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
+            //         // 'https://images.unsplash.com/photo-1672545556384-369582b1b7f5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //  'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         // 'lib/assets/video/electricaaa.png'
+            //         ),
+            //     fit: BoxFit.fitHeight)
+          ),
           child: Column(
             children: [
               Spacer(),
@@ -130,8 +133,8 @@ class IndustryHighTension extends StatelessWidget {
                             height: size.height * 0.19,
                             width: size.width,
                             decoration: BoxDecoration(
-                              // color: AppColors.g1,
-                              gradient: AppColors.gradient5,
+                              color: AppColors.g1,
+                              // gradient: AppColors.gradient5,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Padding(
@@ -141,7 +144,7 @@ class IndustryHighTension extends StatelessWidget {
                                 width: size.width,
                                 decoration: BoxDecoration(
                                   color: AppColors.a20,
-                                  gradient: AppColors.gradient5,
+                                  //gradient: AppColors.gradient5,
                                   //tileColor,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -154,13 +157,13 @@ class IndustryHighTension extends StatelessWidget {
                                         height: size.height * 0.088,
                                         width: size.width,
                                         decoration: BoxDecoration(
-                                            color: AppColors.white,
+                                            color: AppColors.th1wht3,
                                             borderRadius: BorderRadius.only(
                                                 topRight: Radius.circular(10),
                                                 topLeft: Radius.circular(10))),
                                         child: ThreeDtext(
                                           text: title1[index],
-                                          fontColor: AppColors.black,
+                                          fontColor: AppColors.textmaroon505,
                                           fontSize: size.width * 0.04,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -169,8 +172,8 @@ class IndustryHighTension extends StatelessWidget {
                                         height: size.height * 0.09,
                                         width: size.width,
                                         decoration: BoxDecoration(
-                                            // color: AppColors.a17,
-                                            gradient: AppColors.gradient5,
+                                            color: AppColors.th1blue3,
+                                            // gradient: AppColors.gradient5,
                                             borderRadius: BorderRadius.only(
                                                 bottomRight:
                                                     Radius.circular(10),
@@ -180,7 +183,7 @@ class IndustryHighTension extends StatelessWidget {
                                           padding: const EdgeInsets.all(10.0),
                                           child: ThreeDtext2(
                                             text: subtitle1[index],
-                                            fontColor: Colors.black,
+                                            fontColor: Colors.white,
                                             fontSize: size.width * 0.03,
                                             fontWeight: FontWeight.w500,
                                             overflow: TextOverflow.ellipsis,

@@ -16,7 +16,7 @@ class NewConnectionPage1 extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     //  MyConnectionController _myconnection = Get.put(MyConnectionController());
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'New Connection Services',

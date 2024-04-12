@@ -109,11 +109,12 @@ class EnterLoad extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Enter Load',
 
+        ///
         leadingIcon: Icons.arrow_back_ios_outlined,
 
         centerTitle: true,
@@ -165,17 +166,19 @@ class EnterLoad extends StatelessWidget {
             height: size.height * 0.02,
           ),
           Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
             child: PhysicalModel(
               color: Colors.black,
               elevation: 5,
+              borderRadius: BorderRadius.circular(10),
               child: Container(
                 height: size.height * 0.09,
                 width: size.width,
                 decoration: BoxDecoration(
-                  // color: tileColor,
-                  gradient: AppColors.gradient11,
-                ),
+                    color: AppColors.th1wht2,
+                    borderRadius: BorderRadius.circular(10)
+                    // gradient: AppColors.gradient11,
+                    ),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Row(
@@ -187,7 +190,7 @@ class EnterLoad extends StatelessWidget {
                           ThreeDtext(
                             text: "HTS-I",
                             //title1[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
@@ -196,7 +199,7 @@ class EnterLoad extends StatelessWidget {
                             text: "INDUSTRIAL",
                             //subtitle1
                             //[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
@@ -207,14 +210,14 @@ class EnterLoad extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: "Line",
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: '11',
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
@@ -225,14 +228,14 @@ class EnterLoad extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: 'Phase',
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: '3',
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),
@@ -243,14 +246,14 @@ class EnterLoad extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: 'Load Range',
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: '50 - 1500 KVA',
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.w500,
                           ),

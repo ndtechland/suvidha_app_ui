@@ -101,9 +101,9 @@ class HighTensionConnectionService extends StatelessWidget {
       '260kV',
     ];
     final List<Color> tileColors = [
-      AppColors.a3,
-      AppColors.a14,
-      // AppColors.a14,
+      //AppColors.a3,
+      AppColors.a24,
+      AppColors.a16, // AppColors.a14,
       //AppColors.a6,
       //AppColors.a7,
       // AppColors.a3,
@@ -120,7 +120,7 @@ class HighTensionConnectionService extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Select Phase/Line and Load Range',
@@ -157,7 +157,8 @@ class HighTensionConnectionService extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: size.width * .013, vertical: size.height * 0.005),
             child: PhysicalModel(
-              color: tileColor,
+              color: AppColors.th1wht2,
+              borderRadius: BorderRadius.circular(10),
               elevation: 5,
               child: InkWell(
                 onTap: () {
@@ -167,8 +168,10 @@ class HighTensionConnectionService extends StatelessWidget {
                   height: size.height * 0.09,
                   width: size.width,
                   decoration: BoxDecoration(
-                    // color: tileColor,
-                    gradient: gradient,
+                    color: AppColors.th1wht2,
+                    borderRadius: BorderRadius.circular(10),
+
+                    ///gradient: gradient,
                     //tilegradient[index % tilegradient.length], // Access gradient based on index
                     //AppColors.gradient2
                   ),
@@ -184,14 +187,14 @@ class HighTensionConnectionService extends StatelessWidget {
                             children: [
                               ThreeDtext(
                                 text: title1[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.035,
                                 fontWeight: FontWeight.bold,
                               ),
                               //ThreeDtext2
                               ThreeDtext2(
                                 text: subtitle1[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.03,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -205,14 +208,15 @@ class HighTensionConnectionService extends StatelessWidget {
                             children: [
                               ThreeDtext(
                                 text: 'Line',
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.035,
                                 fontWeight: FontWeight.bold,
+                                //color: AppColors.black,
                               ),
                               //ThreeDtext2
                               ThreeDtext2(
                                 text: subtitle4[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.03,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -226,14 +230,14 @@ class HighTensionConnectionService extends StatelessWidget {
                             children: [
                               ThreeDtext(
                                 text: title2[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.035,
                                 fontWeight: FontWeight.bold,
                               ),
                               //ThreeDtext2
                               ThreeDtext2(
                                 text: subtitle2[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.035,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -247,14 +251,14 @@ class HighTensionConnectionService extends StatelessWidget {
                             children: [
                               ThreeDtext(
                                 text: title3[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.035,
                                 fontWeight: FontWeight.bold,
                               ),
                               //ThreeDtext2
                               ThreeDtext2(
                                 text: subtitle3[index],
-                                fontColor: Colors.white,
+                                fontColor: AppColors.black,
                                 fontSize: size.width * 0.03,
                                 fontWeight: FontWeight.w500,
                               ),

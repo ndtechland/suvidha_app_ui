@@ -30,7 +30,7 @@ class PreviewFormmsDetails extends StatelessWidget {
     //String filteredText = text.replaceAll(RegExp(r'[^\w\s.,!*\'$\\\/]'), '');
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: """Application Form Details""",
@@ -66,7 +66,7 @@ class PreviewFormmsDetails extends StatelessWidget {
               height: size.height * 0.05,
               width: size.width,
               decoration: BoxDecoration(
-                color: Colors.transparent,
+                color: AppColors.th1wht2,
                 borderRadius: BorderRadius.circular(0),
                 // border: Border.all(color: Colors.grey)
               ),
@@ -76,7 +76,7 @@ class PreviewFormmsDetails extends StatelessWidget {
                   height: size.height * 0.04,
                   width: size.width,
                   decoration: BoxDecoration(
-                    color: AppColors.a19,
+                    color: AppColors.th1wht2,
                     borderRadius: BorderRadius.circular(0),
                   ),
                   child: Center(
@@ -94,210 +94,223 @@ class PreviewFormmsDetails extends StatelessWidget {
             SizedBox(
               height: size.height * 0.001,
             ),
-            Container(
-              height: size.height * 0.43,
-              width: size.width,
-              decoration: BoxDecoration(
-                  //color: Colors.white30,
-                  gradient: AppColors.gradient10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: size.height * 0.43,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Request No',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            '5233445555',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'District',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'LAKHISARAI',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Panchayat',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'SURAJGARHA',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Division',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'MUNGER',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-                          title: Text(
-                            'Section',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Lakhisarai',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.02, vertical: size.height * 0.01),
+              child: PhysicalModel(
+                elevation: 10,
+                color: AppColors.th1wht3,
+                shadowColor: AppColors.blackColor,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  height: size.height * 0.43,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    color: AppColors.th1blue2,
+                    borderRadius: BorderRadius.circular(10),
+                    // gradient: AppColors.gradient10
                   ),
-                  Container(
-                    height: size.height * 0.43,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Mobile No',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: size.height * 0.43,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
                             ),
-                          ),
-                          subtitle: Text(
-                            '7987664533',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                        child: Column(
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'Block',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                              title: Text(
+                                'Request No:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                '5233445555',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: size.width * 0.040,
+                                  color: AppColors.white,
+                                ),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            'Surajgarha',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'Village',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                              title: Text(
+                                'District:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'LAKHISARAI',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            'Salempur',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'SubDivision',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                              title: Text(
+                                'Panchayat:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'SURAJGARHA',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            'Lakhisarai',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Division:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'MUNGER',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+                              title: Text(
+                                'Section:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Lakhisarai',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        height: size.height * 0.43,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
+                            ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Mobile No:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                '7987664533',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Block:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Surajgarha',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Village:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Salempur',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'SubDivision:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Lakhisarai',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(
@@ -319,7 +332,7 @@ class PreviewFormmsDetails extends StatelessWidget {
                   height: size.height * 0.04,
                   width: size.width,
                   decoration: BoxDecoration(
-                    color: AppColors.a19,
+                    color: AppColors.th1wht2,
                     borderRadius: BorderRadius.circular(0),
                   ),
                   child: Center(
@@ -337,135 +350,148 @@ class PreviewFormmsDetails extends StatelessWidget {
             SizedBox(
               height: size.height * 0.001,
             ),
-            Container(
-              height: size.height * 0.26,
-              width: size.width,
-              decoration: BoxDecoration(
-                  //color: Colors.white30,
-                  gradient: AppColors.gradient10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: size.height * 0.26,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Connection Type',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Industrial',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Tariff',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'HTS-I',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Phase',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
-                            ),
-                          ),
-                          subtitle: Text(
-                            '3',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.02, vertical: size.height * 0.01),
+              child: PhysicalModel(
+                elevation: 10,
+                color: AppColors.th1wht3,
+                shadowColor: AppColors.blackColor,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  height: size.height * 0.26,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    color: AppColors.th1blue2,
+                    borderRadius: BorderRadius.circular(10),
+                    //color: Colors.white30,
+                    // gradient: AppColors.gradient10
                   ),
-                  Container(
-                    height: size.height * 0.26,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Connection Sub Type',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: size.height * 0.26,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
                             ),
-                          ),
-                          subtitle: Text(
-                            'High Tension',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                        child: Column(
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'Load',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.035,
+                              title: Text(
+                                'Connection Type:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.034,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Industrial',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            '88kVA',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.040,
-                                color: Colors.white),
-                          ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Tariff:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.034,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'HTS-I',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Phase:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                '3',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        height: size.height * 0.26,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
+                            ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Connection Sub Type:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.034,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'High Tension',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Load:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.035,
+                                ),
+                              ),
+                              subtitle: Text(
+                                '88kVA',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.040,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
 
@@ -487,7 +513,7 @@ class PreviewFormmsDetails extends StatelessWidget {
                   height: size.height * 0.04,
                   width: size.width,
                   decoration: BoxDecoration(
-                    color: AppColors.a19,
+                    color: AppColors.th1wht2,
                     borderRadius: BorderRadius.circular(0),
                   ),
                   child: Center(
@@ -505,192 +531,209 @@ class PreviewFormmsDetails extends StatelessWidget {
             SizedBox(
               height: size.height * 0.001,
             ),
-            Container(
-              //height: size.height * 0.444,
-              width: size.width,
-              decoration: BoxDecoration(
-                  //color: Colors.white30,
-                  gradient: AppColors.gradient10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    //height: size.height * 0.444,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Ownership Type',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Partnership',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Name Of Applicant',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Kavi Singh',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Name of Business Firm/Industry',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Kavi Corp',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'Descriptions of Business Firm/Industry',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'For Agriculture purpose',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-                          title: Text(
-                            'Father\'s/Husband Name',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Ravi Singh',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.02, vertical: size.height * 0.01),
+              child: PhysicalModel(
+                elevation: 10,
+                color: AppColors.th1wht3,
+                shadowColor: AppColors.blackColor,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  //height: size.height * 0.26,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    color: AppColors.th1blue2,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  Container(
-                    //height: size.height * 0.444,
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        // gradient: AppColors.gradient10,
-                        ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
-
-                          title: Text(
-                            'New Connection Installation Address',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
+                  // width: size.width,
+                  // decoration: BoxDecoration(
+                  //     //color: Colors.white30,
+                  //     gradient: AppColors.gradient10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        //height: size.height * 0.444,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
                             ),
-                          ),
-                          subtitle: Text(
-                            'House1 Street 1 Adress Line 1 Lakhisarai 811106',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'Patmanent Address',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
+                              title: Text(
+                                'Ownership Type:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Partnership',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            'House1 Street 1 Adress Line 1 Lakhisarai 811106',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
-                        ),
-                        ListTile(
-                          dense:
-                              true, // Add this line to reduce vertical padding
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
 
-                          title: Text(
-                            'Email Id',
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.width * 0.031,
+                              title: Text(
+                                'Name Of Applicant:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Kavi Singh',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
                             ),
-                          ),
-                          subtitle: Text(
-                            'kavi@gmail.com',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                fontSize: size.width * 0.036,
-                                color: Colors.white),
-                          ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Name of Business Firm/Industry:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Kavi Corp',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Descriptions of Business Firm/Industry:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'For Agriculture purpose',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+                              title: Text(
+                                'Father\'s/Husband Name:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'Ravi Singh',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        //height: size.height * 0.444,
+                        width: size.width * 0.4,
+                        decoration: BoxDecoration(
+                            //color: Colors.white,
+                            // gradient: AppColors.gradient10,
+                            ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'New Connection Installation Address:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'House1 Street 1 Adress Line 1 Lakhisarai 811106',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Patmanent Address:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'House1 Street 1 Adress Line 1 Lakhisarai 811106',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            ListTile(
+                              dense:
+                                  true, // Add this line to reduce vertical padding
+
+                              title: Text(
+                                'Email Id:',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: size.width * 0.031,
+                                ),
+                              ),
+                              subtitle: Text(
+                                'kavi@gmail.com',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: size.width * 0.036,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(

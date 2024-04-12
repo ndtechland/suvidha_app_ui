@@ -134,13 +134,16 @@ class SelectPahseLineRange extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: PhysicalModel(
-              color: tileColor,
-              elevation: 5,
+              color: AppColors.a1,
+              shadowColor: AppColors.blackColor,
+              elevation: 10,
+              borderRadius: BorderRadius.circular(10),
               child: Container(
                 height: size.height * 0.09,
                 width: size.width,
                 decoration: BoxDecoration(
-                  color: tileColor,
+                  color: AppColors.th1wht2,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
@@ -152,14 +155,14 @@ class SelectPahseLineRange extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title1[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle1[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.03,
                             fontWeight: FontWeight.w500,
                           ),
@@ -170,14 +173,14 @@ class SelectPahseLineRange extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title2[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle2[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.03,
                             fontWeight: FontWeight.w500,
                           ),
@@ -188,14 +191,14 @@ class SelectPahseLineRange extends StatelessWidget {
                         children: [
                           ThreeDtext(
                             text: title3[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                           ),
                           //ThreeDtext2
                           ThreeDtext2(
                             text: subtitle3[index],
-                            fontColor: Colors.white,
+                            fontColor: Colors.black,
                             fontSize: size.width * 0.03,
                             fontWeight: FontWeight.w500,
                           ),

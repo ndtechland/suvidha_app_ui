@@ -72,7 +72,23 @@ class AppColors {
   static var newgray3 = Color(0xffe0e0e0);
   static var newbluegray = Color(0xffeceff1);
 
-  ///
+  ///todo: theme..1
+  static var th1org = Color(0xfff66753);
+  static var th1blk = Color(0xff191815);
+  static var th1blk2 = Color(0xff201f1f);
+  static var th1gry = Color(0xff4e4e4e);
+  static var th1whtbackgrd = Color(0xfff7f5f8);
+  static var th1wht2 = Color(0xffffffff);
+  static var th1wht3 = Color(0xffF7F7F7);
+
+  static var th1whtbackgrd2 = Color(0xffBFC2C6);
+  static var th1blue = Color(0xff0761AB);
+  static var th1blue2 = Colors.blue;
+  static var th1blue3 = Color(0xff002d8b);
+
+  //F7F7F7
+
+  ///todo:end theme 1
   static var a1 = Color(0xffFFF7F3);
   static var a2 = Color(0xffB7ECFC);
   static var a3 = Color(0xff3E6DA1);
@@ -89,8 +105,8 @@ class AppColors {
   static var a14 = Color(0xff042e6f);
   static var a15 = Color(0xff002d8b);
   static var a16 = Color(0xff009be1);
-  static var a17 = Color(0xffB4D4FF);
-  static var a18 = Color(0xff86B6F6);
+  static var a18 = Color(0xffB4D4FF);
+  static var a17 = Color(0xff86B6F6);
   static var a19 = Color(0xffEEF5FF);
   static var a20 = Color(0xffFEFBF6);
   static var a21 = Color(0xff1B1A55);

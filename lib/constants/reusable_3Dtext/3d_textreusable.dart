@@ -10,13 +10,16 @@ class ThreeDtext extends StatelessWidget {
   final TextOverflow overflow;
   final Color? fontColor;
   final double? letterSpacing;
-  final Color? shadowColor; // Make shadowColor optional
-  final double? shadowBlurRadius; // Make letterSpacing optional
+  final Color? shadowColor;
+  // Make shadowColor optional
+  final double? shadowBlurRadius;
+  // Make letterSpacing optional
 // Make fontColor optional by using Color?
 
   const ThreeDtext({
     Key? key,
-    this.color = Colors.red, // Default color
+    this.color = Colors.red,
+    // Default color
     this.text = 'Click me!', // Default text
     this.fontSize = 16.0, // Default font size
     this.fontWeight = FontWeight.normal, // Default font weight

@@ -14,6 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/reusable_3Dtext/3d_textreusable.dart';
 import 'package:suvidha_app_ui/constants/reusable_webview/webview_reusable.dart';
+import 'package:suvidha_app_ui/constants/testing_page.dart';
 import 'package:suvidha_app_ui/screens/apply_disconnection/apply_disconnection1.dart';
 import 'package:suvidha_app_ui/screens/apply_solar_roof_net_material/apply_solar_roof_net_1.dart';
 import 'package:suvidha_app_ui/screens/bill_and_payment_service/billingdashbord.dart';
@@ -248,32 +249,32 @@ class HomePage extends StatelessWidget {
                 vertical: size.height * 0.017,
               ),
               child: Container(
-                  height: size.height * 0.04,
-                  width: size.width * 0.22,
-                  decoration: BoxDecoration(
-                      //shape: BoxShape.circle,
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: AppColors.textmaroon505)
+                height: size.height * 0.04,
+                width: size.width * 0.22,
+                decoration: BoxDecoration(
+                    //shape: BoxShape.circle,
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: AppColors.textmaroon505)
 
-                      //image:
-                      // DecorationImage(
-                      //     image: AssetImage('lib/assets/video/language23.gif'
-                      //         //'lib/assets/video/right-arrow.gif'
-                      //         ),
-                      //     fit: BoxFit.fill)
-                      ),
-                  child: ThreeDtext(
-                    text: 'English'.tr,
-                    fontColor: AppColors.textmaroon505,
-                    fontSize: size.width * 0.04,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black,
-                    shadowColor: AppColors.white,
-                    shadowBlurRadius: 2,
-                  )
-                  // child: Image.asset('lib/assets/images/right-arrow.gif')
-                  ),
+                    //image:
+                    // DecorationImage(
+                    //     image: AssetImage('lib/assets/video/language23.gif'
+                    //         //'lib/assets/video/right-arrow.gif'
+                    //         ),
+                    //     fit: BoxFit.fill)
+                    ),
+                child: ThreeDtext(
+                  text: 'English'.tr,
+                  fontColor: AppColors.textmaroon505,
+                  fontSize: size.width * 0.04,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.black,
+                  shadowColor: AppColors.white,
+                  shadowBlurRadius: 2,
+                ),
+                // child: Image.asset('lib/assets/images/right-arrow.gif')
+              ),
             ),
             // Lottie.network(
             //   //https://lottie.host/b14c01a1-d38b-403e-ad43-c02da3404a19/QaZZTqLEwp.lottie
@@ -719,7 +720,7 @@ class HomePage extends StatelessWidget {
 
                               //Get.to(SelectPahseLineRange());
 
-                              ///Get.to(() => FranchisesProfilePage());
+                              Get.to(() => SmsVerificationPage());
                             } else if (index == 1) {
                               // await FlutterPhoneDirectCaller.callNumber(
                               //     customercare);
@@ -760,21 +761,6 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          // Container(
-                          //   height: size.height * 0.07,
-                          //   width: size.width * 0.15,
-                          //   decoration: BoxDecoration(
-                          //     color: AppColors.golden,
-                          //     borderRadius: BorderRadius.circular(20),
-                          //   ),
-                          //   child: Center(
-                          //     child: Icon(
-                          //       iconList3[index],
-                          //       size: size.height * 0.04,
-                          //       color: Colors.grey.shade700,
-                          //     ),
-                          //   ),
-                          // ),
                         ),
                         SizedBox(
                           height: size.height * 0.005,
