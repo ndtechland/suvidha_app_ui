@@ -50,21 +50,22 @@ class _HorizontalgreenButtonState extends State<HorizontalgreenButton> {
         height: widget.height,
         width: widget.width,
         decoration: BoxDecoration(
-          gradient: AppColors.gradient2,
+          //gradient: AppColors.gradient2,
+          color: AppColors.g2,
           borderRadius: BorderRadius.circular(10),
           boxShadow: _isPressed
               ? [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.99),
-                    blurRadius: 5.0,
+                    color: Colors.green.withOpacity(0.3),
+                    blurRadius: 1.0,
                     spreadRadius: 5.0,
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.99),
-                    blurRadius: 1.0,
-                    spreadRadius: 3.0,
+                    color: Colors.grey.withOpacity(0.3),
+                    blurRadius: 2.0,
+                    spreadRadius: 5.0,
                   ),
                 ],
         ),

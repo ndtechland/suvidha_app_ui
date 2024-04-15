@@ -113,6 +113,8 @@ class AppColors {
   static var a22 = Color(0xff535C91);
   static var a23 = Color(0xff9290C3);
   static var a24 = Color(0xff337CCF);
+
+  ///......
   //  static var a22 = Color(0xff535C91);
   //static var a22 = Color(0xff535C91);
 

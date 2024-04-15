@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connection_guideline.dart';
 import 'package:suvidha_app_ui/screens/official_discome_login/discome_apply_new_connection.dart';
+import 'package:suvidha_app_ui/screens/view_check_appli_status_request_load/enter_request_load.dart';
 
 import '../../constants/reusable_appbar/reusable_appbar.dart';
 
@@ -319,40 +320,45 @@ class NewConnectionPage1 extends StatelessWidget {
                   Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: size.width * 0.05),
-                    child: Container(
-                        height: size.height * 0.16,
-                        width: size.width * 0.35,
-                        decoration: BoxDecoration(
-                          color: AppColors.a15,
-                        ),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(4.0),
-                              child: Icon(
-                                Icons.remove_red_eye,
-                                color: Colors.white,
-                                size: size.height * 0.06,
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(EnterRequestNo1());
+                      },
+                      child: Container(
+                          height: size.height * 0.16,
+                          width: size.width * 0.35,
+                          decoration: BoxDecoration(
+                            color: AppColors.a15,
+                          ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.white,
+                                  size: size.height * 0.06,
+                                ),
                               ),
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: size.height * 0.006,
-                                    horizontal: size.width * 0.05),
-                                child: Text(
-                                  'view/Check\n Application\n     Status',
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: size.width * 0.030,
-                                    color: Colors.white,
+                              Align(
+                                alignment: Alignment.center,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: size.height * 0.006,
+                                      horizontal: size.width * 0.05),
+                                  child: Text(
+                                    'view/Check\n Application\n     Status',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: size.width * 0.030,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        )),
+                            ],
+                          )),
+                    ),
                   ),
                 ],
               ),

@@ -100,7 +100,7 @@ class _HorizontalButtonState extends State<HorizontalButton> {
                           Shadow(
                             color: Colors.black45,
                             blurRadius: 0,
-                            offset: Offset(1, 1),
+                            offset: Offset(0, 0),
                           ),
                         ],
                         // color: Colors.white,

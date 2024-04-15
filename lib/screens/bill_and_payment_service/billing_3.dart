@@ -26,7 +26,7 @@ class BillingPage3 extends StatelessWidget {
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Pay Bill',
-
+        //
         leadingIcon: Icons.arrow_back_ios_outlined,
 
         centerTitle: true,

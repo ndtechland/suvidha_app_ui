@@ -34,7 +34,7 @@ class LoadChangeIncDec extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Load Change - लोड परिवर्तन',
@@ -59,24 +59,25 @@ class LoadChangeIncDec extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    //
-                    ///'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-                    //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
-                    //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
-                    //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-
-                    ///'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //
-                    ),
-                fit: BoxFit.cover)),
+            // image: DecorationImage(
+            //     image: NetworkImage(
+            //         //
+            //         ///'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //         //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
+            //         //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //
+            //         //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //
+            //         ///'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //
+            //         ),
+            //     fit: BoxFit.cover)
+            ),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -86,14 +87,18 @@ class LoadChangeIncDec extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                 child: PhysicalModel(
-                  color: Colors.black,
+                  color: Colors.transparent,
                   elevation: 5,
+                  shadowColor: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
                   child: Container(
                     height: size.height * 0.26,
                     width: size.width,
                     decoration: BoxDecoration(
-                      //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
+                      color: AppColors.th1blue,
+                      borderRadius: BorderRadius.circular(10),
+
+                      //gradient: AppColors.gradient19,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
@@ -101,7 +106,10 @@ class LoadChangeIncDec extends StatelessWidget {
                         height: size.height * 0.08,
                         width: size.width,
                         decoration: BoxDecoration(
-                          gradient: AppColors.gradient7,
+                          // color: AppColors.th1blue2,
+                          borderRadius: BorderRadius.circular(10),
+
+                          //  gradient: AppColors.gradient7,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,213 +117,233 @@ class LoadChangeIncDec extends StatelessWidget {
                             SizedBox(
                               height: size.height * 0.0,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'Consumer ID:',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.02),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'Consumer ID:',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.a18),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        '102167392',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          '102167392',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.white),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             SizedBox(
                               height: size.height * 0.0,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'Consumer Name:',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.02),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'Consumer Name:',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.a18),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'Er. Kavi Singh',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'Er. Kavi Singh',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.white),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'Enter Load:',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.02),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'Enter Load:',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.a18),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        '2.0000000 KV',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          '2.0000000 KV',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.white),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'No Of Phase:',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.02),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'No Of Phase:',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.a18),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        '1 Phase',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          '1 Phase',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.white),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'Load Type:',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.02),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'Load Type:',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.a18),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.44,
-                                  height: size.height * 0.05,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: size.width * 0.03),
-                                      child: Text(
-                                        'DS-IID',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                  SizedBox(
+                                    width: size.width * 0.44,
+                                    height: size.height * 0.05,
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width * 0.03),
+                                        child: Text(
+                                          'DS-IID',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.035,
+                                              color: AppColors.white),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             // Row(
                             //   children: [
@@ -449,93 +477,60 @@ class LoadChangeIncDec extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.03,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                child: PhysicalModel(
-                  color: Colors.black,
-                  elevation: 5,
-                  child: Container(
-                    height: size.height * 0.14,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                      //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(0.0),
-                      child: Container(
-                        height: size.height * 0.08,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                          gradient: AppColors.gradient19,
-                        ),
-                        child: Column(
-                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              height: size.height * 0.007,
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: size.width * 0.03),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Select Service/सेवा का चयन करें',
-                                    style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: size.width * 0.033,
-                                      color: AppColors.a15,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: size.height * 0.01,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: size.width * 0.05),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  HorizontalgreenButton(
-                                    height: size.height * 0.055,
-                                    width: size.width * 0.38,
-                                    text: "Increase Load\n    लोड बढ़ाएँ",
-                                    onPressed: () {
-                                      showOtpDialog(context);
-
-                                      //Get.to(SmartMeterService2());
-                                      // if (_formKey.currentState!.validate()) {
-                                      //   // If all fields are valid, toggle selection and navigate
-                                      //   selectionController.toggleSelection(0);
-                                      //   //Get.to(UploadReport1());
-                                      // }
-                                    },
-                                    //isSelected: selectionController.selectedIndices.contains(0),
-                                  ),
-                                  HorizontalCircularButton(
-                                    height: size.height * 0.055,
-                                    width: size.width * 0.38,
-                                    text: 'Decrease Load\n     लोड घटायें',
-                                    borderRadius: 10,
-                                    onPressed: () {
-                                      showOtpDialog2(context);
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+              SizedBox(
+                height: size.height * 0.007,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Select Service/सेवा का चयन करें',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: size.width * 0.033,
+                        color: AppColors.a15,
                       ),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.01,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HorizontalgreenButton(
+                      height: size.height * 0.055,
+                      width: size.width * 0.38,
+                      text: "Increase Load\n    लोड बढ़ाएँ",
+                      onPressed: () {
+                        showOtpDialog(context);
+
+                        //Get.to(SmartMeterService2());
+                        // if (_formKey.currentState!.validate()) {
+                        //   // If all fields are valid, toggle selection and navigate
+                        //   selectionController.toggleSelection(0);
+                        //   //Get.to(UploadReport1());
+                        // }
+                      },
+                      //isSelected: selectionController.selectedIndices.contains(0),
+                    ),
+                    HorizontalCircularButton(
+                      height: size.height * 0.055,
+                      width: size.width * 0.38,
+                      text: 'Decrease Load\n     लोड घटायें',
+                      borderRadius: 10,
+                      onPressed: () {
+                        showOtpDialog2(context);
+                      },
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: size.height * 0.02),
@@ -574,6 +569,8 @@ class LoadChangeIncDec extends StatelessWidget {
             Get.back();
           },
           onSubmitPressed: () {
+            Get.back();
+
             Get.to(IncreaseLoad1());
             // Get.back();
           },
@@ -607,6 +604,8 @@ class LoadChangeIncDec extends StatelessWidget {
             Get.back();
           },
           onSubmitPressed: () {
+            Get.back();
+
             Get.to(DecreaseLoad1());
             //Get.back();
           },

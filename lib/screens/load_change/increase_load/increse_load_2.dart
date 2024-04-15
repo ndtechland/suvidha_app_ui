@@ -11,11 +11,13 @@ import 'package:suvidha_app_ui/constants/dailloge_box_reusable/reusable_dailoge_
 import 'package:suvidha_app_ui/constants/reusable_appbar/reusable_appbar.dart';
 import 'package:suvidha_app_ui/constants/text_field_custon_weight/textfield_weight.dart';
 import 'package:suvidha_app_ui/controllers/application_detail_controller.dart';
+import 'package:suvidha_app_ui/controllers/vrify_mobile_controllers11.dart';
 
 class IncreaseLoad2 extends StatelessWidget {
   IncreaseLoad2({Key? key}) : super(key: key);
   final SelectionController selectionController =
       Get.put(SelectionController());
+  final OTPController otpController = Get.put(OTPController());
 
   @override
   Widget build(BuildContext context) {
@@ -55,22 +57,23 @@ class IncreaseLoad2 extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(''
-                    //
-                    ///'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-                    //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
-                    //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    ////'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-
-                    //'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    /// 'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //
-                    ),
-                fit: BoxFit.cover)),
+            // image: DecorationImage(
+            //     image: NetworkImage(''
+            //         //
+            //         ///'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //         //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
+            //         //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         ////'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //
+            //         //'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         /// 'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //
+            //         ),
+            //     fit: BoxFit.cover)
+            ),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -80,14 +83,17 @@ class IncreaseLoad2 extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                 child: PhysicalModel(
-                  color: Colors.black,
+                  color: Colors.transparent,
                   elevation: 5,
+                  shadowColor: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
                   child: Container(
                     height: size.height * 0.26,
                     width: size.width,
                     decoration: BoxDecoration(
                       //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
+                      color: AppColors.th1blue,
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
@@ -95,7 +101,8 @@ class IncreaseLoad2 extends StatelessWidget {
                         height: size.height * 0.08,
                         width: size.width,
                         decoration: BoxDecoration(
-                          gradient: AppColors.gradient7,
+                          //color: AppColors.th1blue2,
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,7 +126,9 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18
+                                            //
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -137,7 +146,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -163,7 +172,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -181,7 +190,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -204,7 +213,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -222,7 +231,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -245,7 +254,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -263,7 +272,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -286,7 +295,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -304,7 +313,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -443,106 +452,202 @@ class IncreaseLoad2 extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.03,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                child: PhysicalModel(
-                  color: Colors.black,
-                  elevation: 5,
-                  child: Container(
-                    height: size.height * 0.14,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                      //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(0.0),
-                      child: Container(
-                        height: size.height * 0.08,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                          gradient: AppColors.gradient19,
-                        ),
-                        child: Column(
-                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // SizedBox(
-                            //   height: size.height * 0.007,
-                            // ),
-                            // Align(
-                            //   alignment: Alignment.center,
-                            //   child: Padding(
-                            //     padding: EdgeInsets.symmetric(
-                            //         horizontal: size.width * 0.03),
-                            //     child: Text(
-                            //       'OTP Verification for Increase Load',
-                            //       style: GoogleFonts.poppins(
-                            //         fontWeight: FontWeight.w700,
-                            //         fontSize: size.width * 0.035,
-                            //         color: AppColors.a15,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            SizedBox(
-                              height: size.height * 0.02,
-                            ),
-                            SizedBox(
-                              //height: size.height * 0.05,
-                              width: size.width * 0.6,
-                              child: Directionality(
-                                textDirection: TextDirection.ltr,
-                                child: CustomTextField(
-                                  obscureText: false,
-                                  hintText: 'Enter OTP',
-                                  keyboardType: TextInputType.text,
-
-                                  prefixIcon: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: Icon(
-                                          Icons.account_box,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  // Icon(
-                                  //   Icons.phone_android_outlined,
-                                  //   color: Colors.black,
-                                  // ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: size.height * 0.01,
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: size.width * 0.03),
-                                child: Text(
-                                  'Resend OTP (111)',
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: size.width * 0.028,
-                                    color: AppColors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+              SizedBox(
+                height: size.height * 0.01,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                  child: Text(
+                    '   Enter Your OTP',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600,
+                      fontSize: size.width * 0.031,
+                      color: AppColors.a15,
                     ),
                   ),
                 ),
               ),
+              SizedBox(
+                height: size.height * 0.005,
+              ),
+              Container(
+                /// height: size.height * 0.12,
+                width: size.width,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: size.height * 0.012),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: List.generate(
+                      4,
+                      (index) => _buildOTPTextField(context, index),
+                    ),
+                  ),
+                ),
+              ),
+              // Observe only the parts of UI that depend on observable variables
+              const SizedBox(
+                height: 10,
+              ),
+
+              ///
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //   child: PhysicalModel(
+              //     color: Colors.black,
+              //     elevation: 5,
+              //     child: Container(
+              //       height: size.height * 0.14,
+              //       width: size.width,
+              //       decoration: BoxDecoration(
+              //         //color: AppColors.a20,
+              //         gradient: AppColors.gradient19,
+              //       ),
+              //       child: Padding(
+              //         padding: const EdgeInsets.all(0.0),
+              //         child: Container(
+              //           height: size.height * 0.08,
+              //           width: size.width,
+              //           decoration: BoxDecoration(
+              //             gradient: AppColors.gradient19,
+              //           ),
+              //           child: Column(
+              //             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //             children: [
+              //               // SizedBox(
+              //               //   height: size.height * 0.007,
+              //               // ),
+              //               // Align(
+              //               //   alignment: Alignment.center,
+              //               //   child: Padding(
+              //               //     padding: EdgeInsets.symmetric(
+              //               //         horizontal: size.width * 0.03),
+              //               //     child: Text(
+              //               //       'OTP Verification for Increase Load',
+              //               //       style: GoogleFonts.poppins(
+              //               //         fontWeight: FontWeight.w700,
+              //               //         fontSize: size.width * 0.035,
+              //               //         color: AppColors.a15,
+              //               //       ),
+              //               //     ),
+              //               //   ),
+              //               // ),
+              //               SizedBox(
+              //                 height: size.height * 0.02,
+              //               ),
+              //               SizedBox(
+              //                 //height: size.height * 0.05,
+              //                 width: size.width * 0.6,
+              //                 child: Directionality(
+              //                   textDirection: TextDirection.ltr,
+              //                   child: CustomTextField(
+              //                     obscureText: false,
+              //                     hintText: 'Enter OTP',
+              //                     keyboardType: TextInputType.text,
+              //
+              //                     prefixIcon: Row(
+              //                       mainAxisAlignment: MainAxisAlignment.center,
+              //                       mainAxisSize: MainAxisSize.min,
+              //                       children: [
+              //                         Padding(
+              //                           padding: const EdgeInsets.symmetric(
+              //                               horizontal: 8.0),
+              //                           child: Icon(
+              //                             Icons.account_box,
+              //                             color: Colors.black,
+              //                           ),
+              //                         ),
+              //                       ],
+              //                     ),
+              //                     // Icon(
+              //                     //   Icons.phone_android_outlined,
+              //                     //   color: Colors.black,
+              //                     // ),
+              //                   ),
+              //                 ),
+              //               ),
+              //               SizedBox(
+              //                 height: size.height * 0.01,
+              //               ),
+              //               Align(
+              //                 alignment: Alignment.center,
+              //                 child: Padding(
+              //                   padding: EdgeInsets.symmetric(
+              //                       horizontal: size.width * 0.03),
+              //                   child: Text(
+              //                     'Resend OTP (111)',
+              //                     style: GoogleFonts.poppins(
+              //                       fontWeight: FontWeight.w500,
+              //                       fontSize: size.width * 0.028,
+              //                       color: AppColors.black,
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              Obx(() {
+                if (otpController.resendButtonEnabled) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      otpController.resetTimer();
+                      showOtpDialogOTP(context);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                        (Set<MaterialState> states) {
+                          if (states.contains(MaterialState.disabled)) {
+                            // Button is disabled
+                            return Colors.grey; // Change to disabled color
+                          }
+                          // Button is enabled
+                          return AppColors.th1org; // Change to enabled color
+                        },
+                      ),
+                      foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                        (Set<MaterialState> states) {
+                          if (states.contains(MaterialState.disabled)) {
+                            // Button is disabled
+                            return Colors.black.withOpacity(
+                                0.5); // Change to disabled text color
+                          }
+                          // Button is enabled
+                          return Colors.white; // Change to enabled text color
+                        },
+                      ),
+                    ),
+                    child: Text('Resend OTP'),
+                  );
+                } else {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "'Resend OTP' button will enable in ",
+                        style: GoogleFonts.roboto(
+                          color: AppColors.black,
+                          //fontSize: 14
+                        ),
+                      ),
+                      Text(
+                        ' ${otpController.timerCountdown} s',
+                        style: GoogleFonts.roboto(
+                          color: AppColors.th1org,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  );
+                }
+              }),
               SizedBox(height: size.height * 0.02),
               Align(
                 alignment: Alignment.center,
@@ -551,7 +656,7 @@ class IncreaseLoad2 extends StatelessWidget {
                   child: Text(
                     'Increase Load',
                     style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w500,
                       fontSize: size.height * 0.016,
                       color: AppColors.black,
                     ),
@@ -568,8 +673,8 @@ class IncreaseLoad2 extends StatelessWidget {
                   child: Text(
                     '*New Load (नया लोड)',
                     style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
-                      fontSize: size.width * 0.033,
+                      fontWeight: FontWeight.w600,
+                      fontSize: size.width * 0.031,
                       color: AppColors.a15,
                     ),
                   ),
@@ -676,7 +781,7 @@ class IncreaseLoad2 extends StatelessWidget {
                   child: Text(
                     'Do you want to change Phase? (क्या आप Phase बदलना चाहते हैं?)',
                     style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.027,
                       color: AppColors.a15,
                     ),
@@ -723,14 +828,18 @@ class IncreaseLoad2 extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                 child: PhysicalModel(
-                  color: Colors.black,
+                  color: Colors.transparent,
                   elevation: 5,
+                  shadowColor: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
                   child: Container(
                     height: size.height * 0.2,
                     width: size.width,
                     decoration: BoxDecoration(
+                      color: AppColors.th1blue,
+                      borderRadius: BorderRadius.circular(10),
                       //color: AppColors.a20,
-                      gradient: AppColors.gradient11,
+                      // gradient: AppColors.gradient11,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
@@ -738,8 +847,9 @@ class IncreaseLoad2 extends StatelessWidget {
                         height: size.height * 0.08,
                         width: size.width,
                         decoration: BoxDecoration(
-                          gradient: AppColors.gradient11,
-                        ),
+
+                            //gradient: AppColors.gradient11,
+                            ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -820,7 +930,8 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            //color: Colors.                                             color: AppColors.a18
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -861,7 +972,7 @@ class IncreaseLoad2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -940,7 +1051,7 @@ class IncreaseLoad2 extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
-                    '* On Successful validation, Submit Button will be appear at button',
+                    '* On Successful validation, Submit Button will be appear at bottom',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,
                       fontSize: size.width * 0.022,
@@ -959,7 +1070,7 @@ class IncreaseLoad2 extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
-                    '* सफल सत्यापन पर, सबमिट बटन बटन पर दिखाई देगा।',
+                    '* सफल सत्यापन पर, सबमिट बटन नीचे दिखाई देगा।',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,
                       fontSize: size.width * 0.022,
@@ -997,7 +1108,7 @@ class IncreaseLoad2 extends StatelessWidget {
     );
   }
 
-  showOtpDialog(BuildContext context) {
+  showOtpDialogOTP(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     showCupertinoDialog(
       barrierDismissible: true, // Set barrierDismissible to true
@@ -1011,18 +1122,20 @@ class IncreaseLoad2 extends StatelessWidget {
 
           additionalTextColor1: Colors.green,
           //additionalTextColor2: Colors.red,
-          titleText: 'Confirm Service-सेवा की पुष्टि करें',
+          titleText: 'Resend OTP Sent',
           //contentText
-          contentText: '\nSelected Service - चयनित सेवा',
-          additionalText1: "Increase Load"
-              "\nलोड बढ़ाएँ",
-          cancelText: 'Cancel- रद्द करें',
-          submitText: 'Proceed-आगे बढ़ें',
+          contentText: '\nResend OTP Sent Successfully to mobile no',
+          additionalText1: "*********233",
+          cancelText: 'Cancel',
+          submitText: 'OK',
           onCancelPressed: () {
             Get.back();
           },
           onSubmitPressed: () {
             Get.back();
+
+            //Get.to(EnterRequestNoOTP2());
+            // Get.back();
           },
         );
       },
@@ -1060,4 +1173,78 @@ class IncreaseLoad2 extends StatelessWidget {
       },
     );
   }
+}
+
+Widget _buildOTPTextField(BuildContext context, int index) {
+  final OTPController otpController = Get.put(OTPController());
+  Size size = MediaQuery.of(context).size;
+
+  return PhysicalModel(
+    color: Colors.transparent,
+    shadowColor: AppColors.a1,
+    elevation: 5,
+    borderRadius: BorderRadius.circular(5),
+    child: SizedBox(
+      width: 59,
+      // height: 70,
+      child: TextFormField(
+        style: TextStyle(
+          color: AppColors.white,
+          fontSize: size.height * 0.023,
+          fontWeight: FontWeight.bold,
+        ),
+        controller: TextEditingController(
+            text: otpController.otp[index]), // Set initial text
+        focusNode: otpController.focusNodes[index],
+        onChanged: (value) {
+          if (value.length > 1) {
+            otpController.otp[index] = value.substring(value.length - 1);
+            otpController.otpController.text = otpController.otp[index];
+            otpController.focusNodes[index].unfocus();
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          } else if (value.isEmpty) {
+            otpController.otp[index] = '';
+            if (index > 0) {
+              otpController.requestFocus(index - 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index - 1]);
+              });
+            }
+          } else {
+            otpController.otp[index] = value;
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          }
+        },
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        maxLength: 1,
+        cursorColor: AppColors.th1blue,
+        decoration: InputDecoration(
+          counterText: '',
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+                color: Colors.transparent, width: 2), // Change color as needed
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+                color: AppColors.th1wht2, width: 3), // Change color as needed
+          ),
+          fillColor: AppColors.a17,
+          filled: true,
+        ),
+      ),
+    ),
+  );
 }

@@ -76,12 +76,12 @@ class UploadReport1 extends StatelessWidget {
                 height: size.height * 0.01,
               ),
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Request No : 5234556654555',
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w700,
                       fontSize: size.width * 0.036,
                       color: AppColors.a14,
@@ -92,6 +92,26 @@ class UploadReport1 extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
+              SizedBox(
+                height: size.height * 0.01,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                  child: Text(
+                    'Icons Descriptions',
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w700,
+                      fontSize: size.width * 0.034,
+                      color: AppColors.black,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.005,
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -101,13 +121,13 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.check_circle,
                         color: Colors.green,
-                        size: size.height * 0.025,
+                        size: size.height * 0.022,
                       ),
                       Text(
                         ' Upload success',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: size.width * 0.036,
+                        style: GoogleFonts.roboto(
+                          // fontWeight: FontWeight.w500,
+                          fontSize: size.width * 0.033,
                           color: AppColors.black,
                         ),
                       ),
@@ -127,13 +147,13 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.cancel,
                         color: Colors.red,
-                        size: size.height * 0.025,
+                        size: size.height * 0.022,
                       ),
                       Text(
                         ' Pending for upload, application incomplete.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: size.width * 0.036,
+                        style: GoogleFonts.roboto(
+                          //fontWeight: FontWeight.w500,
+                          fontSize: size.width * 0.033,
                           color: AppColors.black,
                         ),
                       ),
@@ -153,13 +173,13 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.camera_alt,
                         color: Colors.black,
-                        size: size.height * 0.025,
+                        size: size.height * 0.022,
                       ),
                       Text(
                         ' Ready for update.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: size.width * 0.036,
+                        style: GoogleFonts.roboto(
+                          //fontWeight: FontWeight.w500,
+                          fontSize: size.width * 0.033,
                           color: AppColors.black,
                         ),
                       ),
@@ -184,8 +204,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Applicant Photo',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -207,51 +227,58 @@ class UploadReport1 extends StatelessWidget {
                         onTap: handleImageSelection1,
                         child: Obx(
                           () => selectionController.selectedPath.value != ''
-                              ? Container(
-                                  height: size.height * 0.13,
-                                  width: size.width * 0.45,
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        //.withOpacity(1), // Shadow color
-                                        spreadRadius: 2, // Spread radius
-                                        blurRadius: 0, // Blur radius
-                                        offset: Offset(
-                                            1, 1), // Offset from the top-left
-                                      ),
-                                      BoxShadow(
-                                        color: Colors.white, // Highlight color
-                                        spreadRadius:
-                                            -2, // Negative spread radius for inner shadow
-                                        blurRadius: 10, // Blur radius
-                                        offset: Offset(-2,
-                                            -2), // Offset from the bottom-right
-                                      ),
-                                    ],
-                                    gradient: LinearGradient(
-                                      // Gradient to give it a softer look
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: [
-                                        Colors.green.shade200,
-                                        Colors.green.shade300,
+                              ? PhysicalModel(
+                                  color: AppColors.white,
+                                  shadowColor: Colors.black,
+                                  borderRadius: BorderRadius.circular(10),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: size.height * 0.13,
+                                    width: size.width * 0.45,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: AppColors.g3,
+                                          //.withOpacity(1), // Shadow color
+                                          spreadRadius: 1, // Spread radius
+                                          blurRadius: 0, // Blur radius
+                                          offset: Offset(
+                                              0, 0), // Offset from the top-left
+                                        ),
+                                        BoxShadow(
+                                          color: AppColors.containercolor8,
+                                          spreadRadius:
+                                              -0, // Negative spread radius for inner shadow
+                                          blurRadius: 10, // Blur radius
+                                          offset: Offset(-0,
+                                              -0), // Offset from the bottom-right
+                                        ),
                                       ],
+                                      gradient: LinearGradient(
+                                        // Gradient to give it a softer look
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                        colors: [
+                                          Colors.green.shade200,
+                                          Colors.green.shade300,
+                                        ],
+                                      ),
+                                      border: Border.all(
+                                        width: size.width * 0.01,
+                                        color: AppColors.g3,
+
+                                        //.withOpacity(0.8), // Border color
+                                      ),
                                     ),
-                                    border: Border.all(
-                                      width: size.width * 0.01,
-                                      color: Colors.green
-                                          .withOpacity(0.8), // Border color
-                                    ),
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.file(
-                                      File(selectionController
-                                          .selectedPath.value),
-                                      fit: BoxFit.fill,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.file(
+                                        File(selectionController
+                                            .selectedPath.value),
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
                                 )
@@ -285,8 +312,8 @@ class UploadReport1 extends StatelessWidget {
                                     ),
                                     child: Icon(
                                       Icons.camera_alt,
-                                      color: AppColors.th1gry,
-                                      size: size.width * 0.13,
+                                      color: AppColors.greyColor,
+                                      size: size.width * 0.09,
                                     ),
                                   ),
                                 ),
@@ -423,8 +450,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Select Id Proof Documents',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -485,7 +512,7 @@ class UploadReport1 extends StatelessWidget {
                           'Select Id Proof',
                           'Passport',
                           'Pan Card',
-                          'Aadhar Card',
+                          'Aadhaar Card',
                           'Voter Card',
                           'Driving License',
                           'Other Photo Id issues by any Government',
@@ -496,9 +523,9 @@ class UploadReport1 extends StatelessWidget {
                             value: item,
                             child: Text(
                               item,
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                 fontSize: size.height * 0.017,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           );
@@ -507,7 +534,7 @@ class UploadReport1 extends StatelessWidget {
                     )),
               ),
               SizedBox(
-                height: size.height * 0.007,
+                height: size.height * 0.009,
               ),
 
               ///todo: Id proof,,,,
@@ -517,11 +544,11 @@ class UploadReport1 extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                          EdgeInsets.symmetric(horizontal: size.width * 0.04),
                       child: Text(
-                        'Id Proof Photo 1',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600,
+                        'Id Proof Front',
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.035,
                         ),
                       ),
@@ -534,11 +561,11 @@ class UploadReport1 extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                          EdgeInsets.symmetric(horizontal: size.width * 0.06),
                       child: Text(
-                        'Id Proof Photo 2',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600,
+                        'Id Proof Back',
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.035,
                         ),
                       ),
@@ -642,8 +669,8 @@ class UploadReport1 extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.camera_alt,
-                                          color: AppColors.th1gry,
-                                          size: size.width * 0.13,
+                                          color: AppColors.greyColor,
+                                          size: size.width * 0.09,
                                         ),
                                       ),
                                     ),
@@ -848,8 +875,8 @@ class UploadReport1 extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.camera_alt,
-                                          color: AppColors.th1gry,
-                                          size: size.width * 0.13,
+                                          color: AppColors.greyColor,
+                                          size: size.width * 0.09,
                                         ),
                                       ),
                                     ),
@@ -991,8 +1018,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Ownership Documents',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -1070,10 +1097,10 @@ class UploadReport1 extends StatelessWidget {
                                           child: Center(
                                             child: Obx(() => Text(
                                                   'PDF Name: \n${selectionController.selectedPDFName.value}',
-                                                  style: GoogleFonts.poppins(
+                                                  style: GoogleFonts.roboto(
                                                     //fontWeight: FontWeight.w600,
                                                     fontSize:
-                                                        size.width * 0.037,
+                                                        size.width * 0.034,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
 
@@ -1131,19 +1158,15 @@ class UploadReport1 extends StatelessWidget {
                                             child: Center(
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
-                                                  Icon(
-                                                    Icons.picture_as_pdf,
-                                                    color: AppColors.th1gry,
-                                                    size: size.width * 0.13,
-                                                  ),
                                                   Text(
-                                                    'Document Pending',
-                                                    style: GoogleFonts.poppins(
+                                                    '',
+                                                    style: GoogleFonts.roboto(
                                                       //fontWeight: FontWeight.w600,
                                                       fontSize:
-                                                          size.width * 0.033,
+                                                          size.width * 0.032,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.black,
@@ -1152,7 +1175,32 @@ class UploadReport1 extends StatelessWidget {
                                                         Shadow(
                                                           color: Colors.black45,
                                                           blurRadius: 0,
-                                                          offset: Offset(1, 1),
+                                                          offset: Offset(0, 0),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.greyColor,
+                                                    size: size.width * 0.09,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.roboto(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.032,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
+
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(0, 0),
                                                         ),
                                                       ],
                                                       // color: Colors.white,
@@ -1381,7 +1429,7 @@ class UploadReport1 extends StatelessWidget {
                                                   Shadow(
                                                     color: Colors.black45,
                                                     blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                    offset: Offset(0, 0),
                                                   ),
                                                 ],
                                                 // color: Colors.white,
@@ -1582,23 +1630,23 @@ class UploadReport1 extends StatelessWidget {
               ///todo: upload documents...button.
 
               ///
-
-              SizedBox(
-                height: 20,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Text(
-                    'Selected Documents: No Documents selected',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: size.width * 0.035,
-                    ),
-                  ),
-                ),
-              ),
+              //
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Text(
+              //       'Selected Documents: No Documents selected',
+              //       style: GoogleFonts.roboto(
+              //         fontWeight: FontWeight.w600,
+              //         fontSize: size.width * 0.035,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: size.height * 0.007,
               ),
@@ -1614,12 +1662,12 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.picture_as_pdf,
                         color: Colors.black,
-                        size: size.height * 0.025,
+                        size: size.height * 0.015,
                       ),
                       Text(
                         ' Documents must be in .pdf format only, max size 10 MB.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.03,
                           color: AppColors.black,
                         ),
@@ -1628,34 +1676,34 @@ class UploadReport1 extends StatelessWidget {
                   ),
                 ),
               ),
+              // SizedBox(
+              //   height: size.height * 0.005,
+              // ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Row(
+              //       children: [
+              //         Icon(
+              //           Icons.folder_copy,
+              //           color: Colors.black,
+              //           size: size.height * 0.025,
+              //         ),
+              //         Text(
+              //           ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
+              //           style: GoogleFonts.poppins(
+              //             fontWeight: FontWeight.w500,
+              //             fontSize: size.width * 0.03,
+              //             color: AppColors.black,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
               SizedBox(
-                height: size.height * 0.005,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.folder_copy,
-                        color: Colors.black,
-                        size: size.height * 0.025,
-                      ),
-                      Text(
-                        ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          fontSize: size.width * 0.03,
-                          color: AppColors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.0,
               ),
 
               ///todo: divider...
@@ -1681,8 +1729,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Select Address Proof',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -1754,9 +1802,9 @@ class UploadReport1 extends StatelessWidget {
                             value: item,
                             child: Text(
                               item,
-                              style: GoogleFonts.poppins(
+                              style: GoogleFonts.roboto(
                                 fontSize: size.height * 0.017,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           );
@@ -1778,8 +1826,8 @@ class UploadReport1 extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: size.width * 0.03),
                       child: Text(
                         'Address proof Front',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600,
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.035,
                         ),
                       ),
@@ -1792,12 +1840,12 @@ class UploadReport1 extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.03),
+                          EdgeInsets.symmetric(horizontal: size.width * 0.06),
                       child: Text(
                         'Address proof back',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600,
-                          fontSize: size.width * 0.035,
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
+                          fontSize: size.width * 0.036,
                         ),
                       ),
                     ),
@@ -1900,8 +1948,8 @@ class UploadReport1 extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.camera_alt,
-                                          color: AppColors.th1gry,
-                                          size: size.width * 0.13,
+                                          color: AppColors.greyColor,
+                                          size: size.width * 0.09,
                                         ),
                                       ),
                                     ),
@@ -2106,8 +2154,8 @@ class UploadReport1 extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.camera_alt,
-                                          color: AppColors.th1gry,
-                                          size: size.width * 0.13,
+                                          color: AppColors.greyColor,
+                                          size: size.width * 0.09,
                                         ),
                                       ),
                                     ),
@@ -2254,8 +2302,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Power of Attorney Document',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -2333,10 +2381,10 @@ class UploadReport1 extends StatelessWidget {
                                           child: Center(
                                             child: Obx(() => Text(
                                                   'PDF Name: \n${selectionController.selectedPDFName.value}',
-                                                  style: GoogleFonts.poppins(
+                                                  style: GoogleFonts.roboto(
                                                     //fontWeight: FontWeight.w600,
                                                     fontSize:
-                                                        size.width * 0.037,
+                                                        size.width * 0.035,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
 
@@ -2345,7 +2393,7 @@ class UploadReport1 extends StatelessWidget {
                                                         color: Colors.black45,
                                                         blurRadius: 1,
                                                         offset:
-                                                            Offset(0.5, 0.5),
+                                                            Offset(0.1, 0.1),
                                                       ),
                                                     ],
                                                     // color: Colors.white,
@@ -2394,19 +2442,15 @@ class UploadReport1 extends StatelessWidget {
                                             child: Center(
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
-                                                  Icon(
-                                                    Icons.picture_as_pdf,
-                                                    color: AppColors.th1gry,
-                                                    size: size.width * 0.13,
-                                                  ),
                                                   Text(
-                                                    'Document Pending',
-                                                    style: GoogleFonts.poppins(
+                                                    '',
+                                                    style: GoogleFonts.roboto(
                                                       //fontWeight: FontWeight.w600,
                                                       fontSize:
-                                                          size.width * 0.033,
+                                                          size.width * 0.032,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.black,
@@ -2415,7 +2459,32 @@ class UploadReport1 extends StatelessWidget {
                                                         Shadow(
                                                           color: Colors.black45,
                                                           blurRadius: 0,
-                                                          offset: Offset(1, 1),
+                                                          offset: Offset(0, 0),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.greyColor,
+                                                    size: size.width * 0.09,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.roboto(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.032,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
+
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(0, 0),
                                                         ),
                                                       ],
                                                       // color: Colors.white,
@@ -2640,7 +2709,7 @@ class UploadReport1 extends StatelessWidget {
                                                   Shadow(
                                                     color: Colors.black45,
                                                     blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                    offset: Offset(0, 0),
                                                   ),
                                                 ],
                                                 // color: Colors.white,
@@ -2840,26 +2909,26 @@ class UploadReport1 extends StatelessWidget {
 
               ///todo: upload documents..attorney.
               SizedBox(
-                height: 20,
+                height: 10,
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Text(
-                    'Selected Documents: No Documents selected',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: size.width * 0.035,
-                    ),
-                  ),
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Text(
+              //       'Selected Documents: No Documents selected',
+              //       style: GoogleFonts.poppins(
+              //         fontWeight: FontWeight.w600,
+              //         fontSize: size.width * 0.035,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: size.height * 0.007,
+              // ),
               SizedBox(
-                height: size.height * 0.007,
-              ),
-              SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.0,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -2870,12 +2939,12 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.picture_as_pdf,
                         color: Colors.black,
-                        size: size.height * 0.025,
+                        size: size.height * 0.015,
                       ),
                       Text(
                         ' Documents must be in .pdf format only, max size 10 MB.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.03,
                           color: AppColors.black,
                         ),
@@ -2885,40 +2954,40 @@ class UploadReport1 extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.005,
+                height: size.height * 0.00,
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.folder_copy,
-                        color: Colors.black,
-                        size: size.height * 0.025,
-                      ),
-                      Text(
-                        ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          fontSize: size.width * 0.03,
-                          color: AppColors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Row(
+              //       children: [
+              //         Icon(
+              //           Icons.folder_copy,
+              //           color: Colors.black,
+              //           size: size.height * 0.025,
+              //         ),
+              //         Text(
+              //           ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
+              //           style: GoogleFonts.poppins(
+              //             fontWeight: FontWeight.w500,
+              //             fontSize: size.width * 0.03,
+              //             color: AppColors.black,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: size.height * 0.02,
+              // ),
 
               ///todo:end power of attorney...
               ///
               ///todo: Article of association Document.....
               SizedBox(
-                height: 20,
+                height: 0,
               ),
 
               ///todo: divider...
@@ -2944,8 +3013,8 @@ class UploadReport1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
                   child: Text(
                     'Article Of Association Documents',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
                       fontSize: size.width * 0.036,
                     ),
                   ),
@@ -3023,19 +3092,19 @@ class UploadReport1 extends StatelessWidget {
                                           child: Center(
                                             child: Obx(() => Text(
                                                   'PDF Name: \n${selectionController.selectedPDFName.value}',
-                                                  style: GoogleFonts.poppins(
+                                                  style: GoogleFonts.roboto(
                                                     //fontWeight: FontWeight.w600,
                                                     fontSize:
-                                                        size.width * 0.037,
+                                                        size.width * 0.034,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black,
 
                                                     shadows: [
                                                       Shadow(
                                                         color: Colors.black45,
-                                                        blurRadius: 1,
+                                                        blurRadius: 0,
                                                         offset:
-                                                            Offset(0.5, 0.5),
+                                                            Offset(0.1, 0.1),
                                                       ),
                                                     ],
                                                     // color: Colors.white,
@@ -3084,19 +3153,15 @@ class UploadReport1 extends StatelessWidget {
                                             child: Center(
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
-                                                  Icon(
-                                                    Icons.picture_as_pdf,
-                                                    color: AppColors.th1gry,
-                                                    size: size.width * 0.13,
-                                                  ),
                                                   Text(
-                                                    'Document Pending',
-                                                    style: GoogleFonts.poppins(
+                                                    '',
+                                                    style: GoogleFonts.roboto(
                                                       //fontWeight: FontWeight.w600,
                                                       fontSize:
-                                                          size.width * 0.033,
+                                                          size.width * 0.032,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.black,
@@ -3105,7 +3170,32 @@ class UploadReport1 extends StatelessWidget {
                                                         Shadow(
                                                           color: Colors.black45,
                                                           blurRadius: 0,
-                                                          offset: Offset(1, 1),
+                                                          offset: Offset(0, 0),
+                                                        ),
+                                                      ],
+                                                      // color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.picture_as_pdf,
+                                                    color: AppColors.greyColor,
+                                                    size: size.width * 0.09,
+                                                  ),
+                                                  Text(
+                                                    'Document Pending',
+                                                    style: GoogleFonts.roboto(
+                                                      //fontWeight: FontWeight.w600,
+                                                      fontSize:
+                                                          size.width * 0.032,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
+
+                                                      shadows: [
+                                                        Shadow(
+                                                          color: Colors.black45,
+                                                          blurRadius: 0,
+                                                          offset: Offset(0, 0),
                                                         ),
                                                       ],
                                                       // color: Colors.white,
@@ -3330,7 +3420,7 @@ class UploadReport1 extends StatelessWidget {
                                                   Shadow(
                                                     color: Colors.black45,
                                                     blurRadius: 0,
-                                                    offset: Offset(1, 1),
+                                                    offset: Offset(0, 0),
                                                   ),
                                                 ],
                                                 // color: Colors.white,
@@ -3529,24 +3619,24 @@ class UploadReport1 extends StatelessWidget {
               ),
 
               ///todo: upload documents...button.
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Text(
+              //       'Selected Documents: No Documents selected',
+              //       style: GoogleFonts.poppins(
+              //         fontWeight: FontWeight.w600,
+              //         fontSize: size.width * 0.035,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
-                height: 20,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Text(
-                    'Selected Documents: No Documents selected',
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: size.width * 0.035,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.007,
+                height: size.height * 0.01,
               ),
               SizedBox(
                 height: size.height * 0.01,
@@ -3560,12 +3650,12 @@ class UploadReport1 extends StatelessWidget {
                       Icon(
                         Icons.picture_as_pdf,
                         color: Colors.black,
-                        size: size.height * 0.025,
+                        size: size.height * 0.015,
                       ),
                       Text(
                         ' Documents must be in .pdf format only, max size 10 MB.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
                           fontSize: size.width * 0.03,
                           color: AppColors.black,
                         ),
@@ -3574,34 +3664,34 @@ class UploadReport1 extends StatelessWidget {
                   ),
                 ),
               ),
+              // SizedBox(
+              //   height: size.height * 0.005,
+              // ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+              //     child: Row(
+              //       children: [
+              //         Icon(
+              //           Icons.folder_copy,
+              //           color: Colors.black,
+              //           size: size.height * 0.025,
+              //         ),
+              //         Text(
+              //           ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
+              //           style: GoogleFonts.poppins(
+              //             fontWeight: FontWeight.w500,
+              //             fontSize: size.width * 0.03,
+              //             color: AppColors.black,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
               SizedBox(
-                height: size.height * 0.005,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.folder_copy,
-                        color: Colors.black,
-                        size: size.height * 0.025,
-                      ),
-                      Text(
-                        ' Documents must be in this device to select. If not copy\n the documents to this device and proceed.',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          fontSize: size.width * 0.03,
-                          color: AppColors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.0,
               ),
 
               ///todo: end of article of association documents...

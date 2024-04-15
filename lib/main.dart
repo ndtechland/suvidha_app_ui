@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/language_string/language_text.dart';
 import 'package:suvidha_app_ui/screens/welcome_page.dart';
 
@@ -33,14 +34,21 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       translations: AppTranslations(),
+      defaultTransition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(microseconds: 500),
       locale: Get.deviceLocale,
       fallbackLocale: Locale('en', 'US'),
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        primarySwatch: Colors.blue,
+        primarySwatch: AppColors.th1blue2,
       ),
       home: WelcomePage(),
+
+      //OTPScreen(),
+      //WelcomePage(),
+      //VerifyMobilenumber1(),
+      //WelcomePage(),
     );
   }
 }

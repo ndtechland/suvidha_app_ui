@@ -1,54 +1,120 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sms_autofill/sms_autofill.dart';
 import 'package:suvidha_app_ui/constants/buttons/horizontal_button.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
-import 'package:suvidha_app_ui/controllers/my_connection_controller/my_connection_controllerrr.dart';
+import 'package:suvidha_app_ui/controllers/vrify_mobile_controllers11.dart';
 import 'package:suvidha_app_ui/screens/verify_mobilescreens/verify_otp2.dart';
 
 import '../../constants/reusable_appbar/reusable_appbar.dart';
 
-class VerifyMobilenumber extends StatefulWidget {
-  @override
-  State<VerifyMobilenumber> createState() => _VerifyMobilenumberState();
-}
-
-class _VerifyMobilenumberState extends State<VerifyMobilenumber>
-    with SingleTickerProviderStateMixin {
+class VerifyMobilenumber extends StatelessWidget {
+//   @override
+//   State<VerifyMobilenumber> createState() => _VerifyMobilenumberState();
+// }
+//
+// class _VerifyMobilenumberState extends State<VerifyMobilenumber>
+//     with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
-  int levelClock = 2 * 60;
+  int levelClock = 1 * 30;
+  String otp = ''; // Hold the OTP value
 
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-        vsync: this, duration: Duration(seconds: levelClock));
+  int secondsRemaining = 30;
+  bool enableResend = false;
+  late Timer timer;
 
-    _animationController!.forward();
-
-    _listenSmsCode();
-  }
-
-  @override
-  void dispose() {
-    SmsAutoFill().unregisterListener();
-    _animationController!.dispose();
-    super.dispose();
-  }
-
-  _listenSmsCode() async {
-    await SmsAutoFill().listenForCode();
-  }
+  // @override
+  // void initState() {
+  //   ///todo: second timer button
+  //   // timer = Timer.periodic(Duration(seconds: 1), (_) {
+  //   //   if (secondsRemaining != 0) {
+  //   //     setState(() {
+  //   //       secondsRemaining--;
+  //   //     });
+  //   //   } else {
+  //   //     setState(() {
+  //   //       enableResend = true;
+  //   //     });
+  //   //   }
+  //   // });
+  //
+  //   ///todo: second timer resenf button end
+  //   super.initState();
+  //   _animationController = AnimationController(
+  //       vsync: this, duration: Duration(seconds: levelClock));
+  //
+  //   _animationController!.forward();
+  //
+  //   _listenSmsCode();
+  //   // Start the countdown timer
+  //   timer = Timer.periodic(Duration(seconds: 1), (_) {
+  //     if (secondsRemaining != 0) {
+  //       setState(() {
+  //         secondsRemaining--;
+  //       });
+  //     } else {
+  //       setState(() {
+  //         enableResend = true; // Enable resend button after 30 seconds
+  //       });
+  //       timer.cancel(); // Cancel the timer after 30 seconds
+  //     }
+  //   });
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   timer.cancel(); // Cancel the timer when the widget is disposed
+  //
+  //   // timer.cancel();
+  //   SmsAutoFill().unregisterListener();
+  //   _animationController!.dispose();
+  //   super.dispose();
+  // }
+  //
+  // _listenSmsCode() async {
+  //   await SmsAutoFill().listenForCode();
+  // }
+  //
+  // void _resendCode() {
+  //   // Reset the timer and enable the resend button
+  //   setState(() {
+  //     secondsRemaining = 30;
+  //     enableResend = false;
+  //   });
+  //   timer = Timer.periodic(Duration(seconds: 1), (_) {
+  //     if (secondsRemaining != 0) {
+  //       setState(() {
+  //         secondsRemaining--;
+  //       });
+  //     } else {
+  //       setState(() {
+  //         enableResend = true; // Enable resend button after 30 seconds
+  //       });
+  //       timer.cancel(); // Cancel the timer after 30 seconds
+  //     }
+  //   });
+  // }
+  //
+  // // Function to update OTP value
+  // void updateOtp(String newOtp) {
+  //   setState(() {
+  //     otp = newOtp;
+  //   });
+  // }
 
   final GlobalKey<FormState> _formconnectionKey = GlobalKey<FormState>();
+
+  final OTPController otpController = Get.put(OTPController());
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    MyConnectionController _myconnection = Get.put(MyConnectionController());
+    // MyConnectionController _myconnection = Get.put(MyConnectionController());
     return Scaffold(
       backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
@@ -88,7 +154,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                     child: Text(
                       'Please verify if the Mobile No entered is correct.',
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         fontSize: size.width * 0.035,
                       ),
                     ),
@@ -108,7 +174,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                         child: Text(
                           'Selected District.',
                           style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             fontSize: size.width * 0.035,
                           ),
                         ),
@@ -169,13 +235,13 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                                       fontSize: size.width * 0.042,
                                       shadows: [
                                         Shadow(
-                                          offset: Offset(-1.0, -1.0),
-                                          blurRadius: 3.0,
+                                          offset: Offset(-0.0, -0.0),
+                                          blurRadius: 1.0,
                                           color: Colors.black.withOpacity(0.2),
                                         ),
                                         Shadow(
                                           offset: Offset(1.0, 1.0),
-                                          blurRadius: 3.0,
+                                          blurRadius: 1.0,
                                           color: Colors.white.withOpacity(0.7),
                                         ),
                                       ],
@@ -208,7 +274,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                                       color: AppColors.a11,
                                       shadows: [
                                         Shadow(
-                                          offset: Offset(-1.0, -1.0),
+                                          offset: Offset(-0.0, -0.0),
                                           blurRadius: 3.0,
                                           color: Colors.black.withOpacity(0.2),
                                         ),
@@ -241,7 +307,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                         child: Text(
                           'Your Mobile No.',
                           style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             fontSize: size.width * 0.035,
                           ),
                         ),
@@ -304,7 +370,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                                       fontSize: size.width * 0.042,
                                       shadows: [
                                         Shadow(
-                                          offset: Offset(-1.0, -1.0),
+                                          offset: Offset(-0.0, -0.0),
                                           blurRadius: 3.0,
                                           color: Colors.black.withOpacity(0.2),
                                         ),
@@ -343,7 +409,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                                       color: AppColors.a11,
                                       shadows: [
                                         Shadow(
-                                          offset: Offset(-1.0, -1.0),
+                                          offset: Offset(-0.0, -0.0),
                                           blurRadius: 3.0,
                                           color: Colors.black.withOpacity(0.2),
                                         ),
@@ -364,7 +430,7 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                     )
                     //),
                     ),
-                SizedBox(height: size.height * 0.05),
+                SizedBox(height: size.height * 0.03),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -373,14 +439,14 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                     child: Text(
                       'Enter OTP sent to Mobile No entered.',
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         fontSize: size.width * 0.035,
                       ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: size.height * 0.002,
+                  height: size.height * 0.00,
                 ),
                 // Directionality(
                 //   textDirection: TextDirection.ltr,
@@ -428,68 +494,237 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                 //   ),
                 // ),
                 SizedBox(
-                  height: size.height * 0.02,
+                  height: size.height * 0.0,
                 ),
 
-                ///add new code........
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.045,
-                      vertical: size.height * 0.00),
-                  child: Center(
-                    child: PhysicalModel(
-                      color: AppColors.th1wht3,
-                      shadowColor: AppColors.th1wht3,
-                      elevation: 1,
-                      child: PinFieldAutoFill(
-                        codeLength: 4,
-                        autoFocus: true,
-                        decoration: UnderlineDecoration(
-                          lineHeight: 0,
-                          lineStrokeCap: StrokeCap.square,
-                          bgColorBuilder: PinListenColorBuilder(
-                              AppColors.a18, AppColors.th1whtbackgrd2),
-                          colorBuilder: FixedColorBuilder(
-                            Colors.transparent,
-                          ),
-                        ),
+                ///add new code........for autofill..
+                // Padding(
+                //   padding: EdgeInsets.symmetric(
+                //       horizontal: size.width * 0.045,
+                //       vertical: size.height * 0.00),
+                //   child: Center(
+                //     child: PhysicalModel(
+                //       color: AppColors.th1wht3,
+                //       shadowColor: AppColors.th1wht3,
+                //       elevation: 1,
+                //       child: PinFieldAutoFill(
+                //         codeLength: 4,
+                //         // Use the state variable 'otp' to dynamically fill the fields
+                //         currentCode: otp,
+                //
+                //         autoFocus: true,
+                //
+                //         /// enabled: false,
+                //
+                //         // listenForCode: false, // Disable SMS autofill
+                //         decoration: UnderlineDecoration(
+                //           lineHeight: 0,
+                //           lineStrokeCap: StrokeCap.square,
+                //           bgColorBuilder: PinListenColorBuilder(
+                //               AppColors.a18, AppColors.black),
+                //           colorBuilder: FixedColorBuilder(
+                //             Colors.transparent,
+                //           ),
+                //         ),
+                //         // Here's where updateOtp is likely called
+                //         onCodeChanged: (String? newOtp) {
+                //           // Call updateOtp function here
+                //           updateOtp(newOtp!);
+                //         },
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                ///add new code.....end...
+
+                ///todo: it will be custom field for otp...
+                Container(
+                  /// height: size.height * 0.12,
+                  width: size.width,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: size.height * 0.012),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: List.generate(
+                        4,
+                        (index) => _buildOTPTextField(context, index),
                       ),
                     ),
                   ),
                 ),
+                // Observe only the parts of UI that depend on observable variables
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Resend code after: "),
-                    Countdown(
-                      animation: StepTween(
-                        begin: levelClock, // THIS IS A USER ENTERED NUMBER
-                        end: 0,
-                      ).animate(_animationController!),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 36,
-                  width: 100,
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      //?  use this code to get sms signature for your app
-                      // final String signature = await SmsAutoFill().getAppSignature;
-                      // print("Signature: $signature");
+                Obx(() {
+                  if (otpController.resendButtonEnabled) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        otpController.resetTimer();
+                      },
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.disabled)) {
+                              // Button is disabled
+                              return Colors.grey; // Change to disabled color
+                            }
+                            // Button is enabled
+                            return AppColors.th1org; // Change to enabled color
+                          },
+                        ),
+                        foregroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.disabled)) {
+                              // Button is disabled
+                              return Colors.black.withOpacity(
+                                  0.5); // Change to disabled text color
+                            }
+                            // Button is enabled
+                            return Colors.white; // Change to enabled text color
+                          },
+                        ),
+                      ),
+                      child: Text('Resend OTP'),
+                    );
+                  } else {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Resend OTP in seconds:',
+                          style: GoogleFonts.roboto(
+                            color: AppColors.black,
+                            //fontSize: 14
+                          ),
+                        ),
+                        Text(
+                          ' ${otpController.timerCountdown} s',
+                          style: GoogleFonts.roboto(
+                            color: AppColors.th1org,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                }),
 
-                      _animationController!.reset();
-                      _animationController!.forward();
-                    },
-                    child: const Text("Resend"),
-                  ),
+                ///submit
+                // ElevatedButton(
+                //   onPressed: () {
+                //     otpController.submitOTP();
+                //     // Reset timer after OTP submission
+                //     otpController.resetTimer();
+                //     //otpController.onClose();
+                //   },
+                //   child: Text('Submit'),
+                // ),
+
+                ///todo: end custom otp....
+
+                ///add new otp....
+                // Text(
+                //   tOtpTitle,
+                //   style: GoogleFonts.montserrat(
+                //       fontWeight: FontWeight.bold, fontSize: 80.0),
+                // ),
+                ///
+                // Text(tOtpSubTitle.toUpperCase(),
+                //     style: Theme.of(context).textTheme.headline6),
+                /// SizedBox(height: 40.0),
+                // Text("$tOtpMessage support@codingwitht.com",
+                //     textAlign: TextAlign.center),
+                ///otp: Package...
+                // const SizedBox(height: 20.0),
+                // OtpTextField(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     numberOfFields: 4,
+                //     fillColor: Colors.red.withOpacity(0.1),
+                //     filled: true,
+                //     onSubmit: (code) => print("OTP is => $code")),
+                // const SizedBox(height: 10.0),
+
+                ///otp: Package...
+
+                const SizedBox(
+                  height: 10,
                 ),
+
+                ///todo: resend...
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     const Text("Resend code after: "),
+                //     Countdown(
+                //       animation: StepTween(
+                //         begin: levelClock, // THIS IS A USER ENTERED NUMBER
+                //         end: 0,
+                //       ).animate(_animationController!),
+                //     ),
+                //   ],
+                // ),
+                ///resend red button
+
+                // SizedBox(
+                //   height: 36,
+                //   width: 100,
+                //   child: ElevatedButton(
+                //     onPressed: enableResend
+                //         ? () {
+                //             _resendCode(); // Resend code function
+                //             _animationController!.reset();
+                //             _animationController!.forward();
+                //             // Get.back(); // Navigate back
+                //           }
+                //         : null,
+                //     style: ButtonStyle(
+                //       backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                //         (Set<MaterialState> states) {
+                //           if (states.contains(MaterialState.disabled)) {
+                //             // Button is disabled
+                //             return Colors.grey; // Change to disabled color
+                //           }
+                //           // Button is enabled
+                //           return AppColors.th1org; // Change to enabled color
+                //         },
+                //       ),
+                //       foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                //         (Set<MaterialState> states) {
+                //           if (states.contains(MaterialState.disabled)) {
+                //             // Button is disabled
+                //             return Colors.black.withOpacity(
+                //                 0.5); // Change to disabled text color
+                //           }
+                //           // Button is enabled
+                //           return Colors.white; // Change to enabled text color
+                //         },
+                //       ),
+                //     ),
+                //     child: const Text("Resend"),
+                //   ),
+                //
+                //   ///
+                //   // ElevatedButton(
+                //   //   onPressed: () async {
+                //   //     enableResend ? _resendCode : null;
+                //   //
+                //   //     Get.back();
+                //   //
+                //   //     //?  use this code to get sms signature for your app
+                //   //     // final String signature = await SmsAutoFill().getAppSignature;
+                //   //     // print("Signature: $signature");
+                //   //
+                //   //     _animationController!.reset();
+                //   //     _animationController!.forward();
+                //   //   },
+                //   //   child: const Text("Resend"),
+                //   // ),
+                // ),
 
                 ///todo.......     ............   ............
                 ///end new code for autofill sms..
@@ -498,6 +733,9 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                   text: 'Verify OTP',
                   onClick: () {
                     Get.to(Verifyotp2());
+                    otpController.submitOTP();
+                    // Reset timer after OTP submission
+                    otpController.resetTimer();
                     // Your onClick logic here
                     print('Container clicked!');
                   },
@@ -548,9 +786,9 @@ class _VerifyMobilenumberState extends State<VerifyMobilenumber>
                 //     ),
                 //   ),
                 // ),
-                SizedBox(
-                  height: size.height * 0.005,
-                ),
+                // SizedBox(
+                //   height: size.height * 0.005,
+                // ),
                 // HorizontalButton
                 // HorizontalButton(
                 //   text: 'Verify OTP',
@@ -588,4 +826,128 @@ class Countdown extends AnimatedWidget {
       ),
     );
   }
+
+  ///custom text field weights...
+  Widget _buildOTPTextField(BuildContext context, int index) {
+    final OTPController otpController = Get.put(OTPController());
+
+    return SizedBox(
+      width: 50,
+      child: TextFormField(
+        controller: TextEditingController(
+            text: otpController.otp[index]), // Set initial text
+        focusNode: otpController.focusNodes[index],
+        onChanged: (value) {
+          if (value.length > 1) {
+            otpController.otp[index] = value.substring(value.length - 1);
+            otpController.otpController.text = otpController.otp[index];
+            otpController.focusNodes[index].unfocus();
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          } else if (value.isEmpty) {
+            otpController.otp[index] = '';
+            if (index > 0) {
+              otpController.requestFocus(index - 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index - 1]);
+              });
+            }
+          } else {
+            otpController.otp[index] = value;
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          }
+        },
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        maxLength: 1,
+        decoration: InputDecoration(
+          counterText: '',
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
+}
+
+Widget _buildOTPTextField(BuildContext context, int index) {
+  final OTPController otpController = Get.put(OTPController());
+  Size size = MediaQuery.of(context).size;
+
+  return PhysicalModel(
+    color: Colors.transparent,
+    shadowColor: AppColors.a1,
+    elevation: 5,
+    borderRadius: BorderRadius.circular(5),
+    child: SizedBox(
+      width: 59,
+      // height: 70,
+      child: TextFormField(
+        style: TextStyle(
+          color: AppColors.white,
+          fontSize: size.height * 0.023,
+          fontWeight: FontWeight.bold,
+        ),
+        controller: TextEditingController(
+            text: otpController.otp[index]), // Set initial text
+        focusNode: otpController.focusNodes[index],
+        onChanged: (value) {
+          if (value.length > 1) {
+            otpController.otp[index] = value.substring(value.length - 1);
+            otpController.otpController.text = otpController.otp[index];
+            otpController.focusNodes[index].unfocus();
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          } else if (value.isEmpty) {
+            otpController.otp[index] = '';
+            if (index > 0) {
+              otpController.requestFocus(index - 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index - 1]);
+              });
+            }
+          } else {
+            otpController.otp[index] = value;
+            if (index < otpController.focusNodes.length - 1) {
+              otpController.requestFocus(index + 1, () {
+                FocusScope.of(context)
+                    .requestFocus(otpController.focusNodes[index + 1]);
+              });
+            }
+          }
+        },
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        maxLength: 1,
+        cursorColor: AppColors.th1blue,
+        decoration: InputDecoration(
+          counterText: '',
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+                color: Colors.transparent, width: 2), // Change color as needed
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+                color: AppColors.th1wht2, width: 3), // Change color as needed
+          ),
+          fillColor: AppColors.a17,
+          filled: true,
+        ),
+      ),
+    ),
+  );
 }

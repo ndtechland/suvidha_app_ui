@@ -53,21 +53,22 @@ class _HorizontalCircularButtonState extends State<HorizontalCircularButton> {
         height: widget.height,
         width: widget.width,
         decoration: BoxDecoration(
-          gradient: AppColors.gradient5,
+          // gradient: AppColors.gradient5,
+          color: AppColors.th1org,
           borderRadius: BorderRadius.circular(widget.borderRadius),
           boxShadow: _isPressed
               ? [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.99),
-                    blurRadius: 5.0,
+                    color: Colors.red.withOpacity(0.3),
+                    blurRadius: 1.0,
                     spreadRadius: 5.0,
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.99),
-                    blurRadius: 1.0,
-                    spreadRadius: 3.0,
+                    color: Colors.grey.withOpacity(0.3),
+                    blurRadius: 2.0,
+                    spreadRadius: 5.0,
                   ),
                 ],
         ),
