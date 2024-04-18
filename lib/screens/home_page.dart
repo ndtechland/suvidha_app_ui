@@ -49,12 +49,12 @@ List<String> Services3 = [
   'Apply For Solar Rooftop \n              NetMatering',
 ];
 List<String> Services4 = [
-  'Update Email & Mobile',
-  'Address Correction',
+  //'Update Email & Mobile',
+  //'Address Correction',
   'Load Change',
   'Apply Disconnection',
   'Go Green/E-Bill',
-  'Refund Security\n      Deposite',
+  //'Refund Security\n      Deposite',
 ];
 
 List<IconData> iconList1 = [
@@ -80,12 +80,12 @@ List<IconData> iconList3 = [
 ];
 
 List<IconData> iconList4 = [
-  Icons.contact_phone_rounded,
-  Icons.pin_drop,
+  //Icons.contact_phone_rounded,
+  //Icons.pin_drop,
   Icons.electric_bolt,
   Icons.cancel_presentation_rounded,
   Icons.grass_outlined,
-  Icons.currency_rupee,
+  //Icons.currency_rupee,
   //Icons.electric_meter_sharp,
   // Icons.settings,
 ];
@@ -387,19 +387,48 @@ class HomePage extends StatelessWidget {
 
                           }
                         },
-                        child: Container(
-                          height: size.height * 0.07,
-                          width: size.width * 0.14,
-                          decoration: BoxDecoration(
-                              color: AppColors.textmaroon505,
-                              shape: BoxShape.circle
-                              //borderRadius: BorderRadius.circular(20),
+                        child: PhysicalModel(
+                          color: Colors.transparent,
+                          shadowColor: AppColors.th1blue,
+                          borderRadius: BorderRadius.circular(15),
+                          elevation: 6,
+                          //th1orgback3
+                          child: Container(
+                            height: size.height * 0.08,
+                            width: size.width * 0.16,
+                            decoration: BoxDecoration(
+                              color: AppColors.th1prpl2,
+                              borderRadius: BorderRadius.circular(15),
+                              // gradient: AppColors.gradient2,
+                              // shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: PhysicalModel(
+                                color: AppColors.a19,
+                                shadowColor: AppColors.a17,
+                                borderRadius: BorderRadius.circular(15),
+                                elevation: 10,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(1.0),
+                                  child: Container(
+                                    height: size.height * 0.065,
+                                    width: size.width * 0.13,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.th1prpl3,
+                                        //textmaroon505,
+                                        shape: BoxShape.circle
+                                        //borderRadius: BorderRadius.circular(20),
+                                        ),
+                                    child: Center(
+                                      child: Icon(
+                                        iconList1[index],
+                                        size: size.height * 0.04,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
-                          child: Center(
-                            child: Icon(
-                              iconList1[index],
-                              size: size.height * 0.04,
-                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -595,34 +624,48 @@ class HomePage extends StatelessWidget {
 
                               } else if (index == 3) {}
                             },
-                            child: Container(
-                              height: size.height * 0.07,
-                              width: size.width * 0.14,
-                              decoration: BoxDecoration(
-                                color: AppColors.newbrown,
-                                // gradient: AppColors.gradient2,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                child: PhysicalModel(
-                                  elevation: 5,
-                                  color: AppColors.a1,
-                                  shadowColor: AppColors.a15,
-                                  shape: BoxShape.circle,
-                                  child: Container(
-                                    height: size.height * 0.06,
-                                    width: size.width * 0.13,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.th1blue,
-                                        // gradient: AppColors.gradient11,
-                                        shape: BoxShape.circle
-                                        // borderRadius: BorderRadius.circular(20),
+                            child: PhysicalModel(
+                              color: Colors.transparent,
+
+                              ///clipBehavior: Clip.none,
+                              shadowColor: AppColors.th1blue,
+                              borderRadius: BorderRadius.circular(15),
+                              elevation: 5,
+                              child: Container(
+                                height: size.height * 0.08,
+                                width: size.width * 0.16,
+                                decoration: BoxDecoration(
+                                  color: AppColors.a18,
+                                  borderRadius: BorderRadius.circular(15),
+                                  // gradient: AppColors.gradient2,
+                                  // shape: BoxShape.circle,
+                                ),
+                                child: Center(
+                                  child: PhysicalModel(
+                                    color: AppColors.a19,
+                                    shadowColor: AppColors.a17,
+                                    borderRadius: BorderRadius.circular(15),
+                                    elevation: 10,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Container(
+                                        height: size.height * 0.06,
+                                        width: size.width * 0.13,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.a17,
+                                            //th1blue,
+                                            // gradient: AppColors.gradient11,
+                                            shape: BoxShape.circle
+                                            // borderRadius: BorderRadius.circular(20),
+                                            ),
+                                        child: Center(
+                                          child: Icon(
+                                            iconList2[index],
+                                            size: size.height * 0.035,
+                                            color: AppColors.whiteColor,
+                                            //Colors.grey.shade100,
+                                          ),
                                         ),
-                                    child: Center(
-                                      child: Icon(
-                                        iconList2[index],
-                                        size: size.height * 0.04,
-                                        color: Colors.grey.shade100,
                                       ),
                                     ),
                                   ),
@@ -729,34 +772,49 @@ class HomePage extends StatelessWidget {
                               Get.to(() => ApplySolarRoofNetMaterial1());
                             }
                           },
-                          child: Container(
-                            height: size.height * 0.06,
-                            width: size.width * 0.14,
-                            decoration: BoxDecoration(
-                              color: AppColors.a15,
-                              // gradient: AppColors.gradient2,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: PhysicalModel(
-                                elevation: 5,
-                                color: AppColors.a1,
-                                shadowColor: AppColors.black,
-                                shape: BoxShape.circle,
-                                child: Container(
-                                  height: size.height * 0.06,
-                                  width: size.width * 0.13,
-                                  decoration: BoxDecoration(
-                                      color: AppColors.a16,
-                                      //gradient: AppColors.gradient9,
-                                      shape: BoxShape.circle
-                                      // borderRadius: BorderRadius.circular(20),
+                          child: PhysicalModel(
+                            color: Colors.transparent,
+
+                            ///clipBehavior: Clip.none,
+                            shadowColor: AppColors.th1blue,
+                            borderRadius: BorderRadius.circular(15),
+                            elevation: 6,
+                            child: Container(
+                              height: size.height * 0.08,
+                              width: size.width * 0.16,
+                              decoration: BoxDecoration(
+                                color: AppColors.neworange2,
+                                borderRadius: BorderRadius.circular(15),
+
+                                // gradient: AppColors.gradient2,
+                                //shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: PhysicalModel(
+                                  elevation: 5,
+                                  color: AppColors.whiteColor,
+                                  shadowColor: AppColors.neworange3,
+                                  borderRadius: BorderRadius.circular(10),
+
+                                  // shape: BoxShape.circle,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(1.0),
+                                    child: Container(
+                                      height: size.height * 0.06,
+                                      width: size.width * 0.13,
+                                      decoration: BoxDecoration(
+                                          color: AppColors.neworange3,
+                                          //gradient: AppColors.gradient9,
+                                          shape: BoxShape.circle
+                                          // borderRadius: BorderRadius.circular(20),
+                                          ),
+                                      child: Center(
+                                        child: Icon(
+                                          iconList3[index],
+                                          size: size.height * 0.04,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                  child: Center(
-                                    child: Icon(
-                                      iconList3[index],
-                                      size: size.height * 0.04,
-                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -765,10 +823,10 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: size.height * 0.005,
+                          height: size.height * 0.00,
                         ),
                         SizedBox(
-                          height: size.height * 0.0535,
+                          height: size.height * 0.04,
                           width: size.width * 0.34,
                           child: Center(
                             child: Align(
@@ -803,24 +861,44 @@ class HomePage extends StatelessWidget {
               //   color: AppColors.a19,
               //   thickness: 10,
               // ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Other Services'.tr,
-                    style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.015,
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.02),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Other Services'.tr,
+                        style: GoogleFonts.poppins(
+                            fontSize: size.height * 0.015,
+                            color: AppColors.black,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.02),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'View All'.tr,
+                        style: GoogleFonts.roboto(
+                            fontSize: size.height * 0.017,
+                            color: AppColors.th1org,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: size.height * 0.016,
               ),
               Container(
-                height: size.height * 0.30,
+                // height: size.height * 0.30,
                 width: size.width,
                 color: AppColors.th1wht2,
 
@@ -846,12 +924,17 @@ class HomePage extends StatelessWidget {
                             //Get.to(() => IndustryHighTension());
 
                             if (index == 0) {
+                              Get.to(() => LoadChangeScreen1());
                             } else if (index == 1) {
+                              Get.to(() => ApplyDisconnection1());
+
                               // await FlutterPhoneDirectCaller.callNumber(
                               //     customercare);
                               ///Get.to(() => LoadChangeScreen1());
                             } else if (index == 2) {
-                              Get.to(() => LoadChangeScreen1());
+                              Get.to(() => Go_Green_1());
+
+                              //Get.to(() => LoadChangeScreen1());
                               // await FlutterPhoneDirectCaller.callNumber(
                               //     customercare);
                               //Get.to(() => ApplySolarRoofNetMaterial1());
@@ -860,7 +943,7 @@ class HomePage extends StatelessWidget {
                               //     customercare);
                               Get.to(() => ApplyDisconnection1());
                             } else if (index == 4) {
-                              Get.to(() => Go_Green_1());
+                              // Get.to(() => Go_Green_1());
                               // await FlutterPhoneDirectCaller.callNumber(
                               //     customercare);
                               //Get.to(() => ApplySolarRoofNetMaterial1());
@@ -870,34 +953,48 @@ class HomePage extends StatelessWidget {
                               //Get.to(() => ApplySolarRoofNetMaterial1());
                             }
                           },
-                          child: Container(
-                            height: size.height * 0.06,
-                            width: size.width * 0.14,
-                            decoration: BoxDecoration(
-                              //color: AppColors.a1,
-                              // gradient: AppColors.gradient2,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: PhysicalModel(
-                                elevation: 5,
-                                color: AppColors.th1wht2,
-                                shadowColor: AppColors.greyColor,
-                                shape: BoxShape.circle,
-                                child: Container(
-                                  height: size.height * 0.06,
-                                  width: size.width * 0.13,
-                                  decoration: BoxDecoration(
-                                      color: AppColors.a3,
-                                      // gradient: AppColors.gradient7,
-                                      shape: BoxShape.circle
-                                      // borderRadius: BorderRadius.circular(20),
+                          child: PhysicalModel(
+                            color: Colors.transparent,
+
+                            ///clipBehavior: Clip.none,
+                            shadowColor: AppColors.th1blue,
+                            borderRadius: BorderRadius.circular(15),
+                            elevation: 6,
+                            child: Container(
+                              height: size.height * 0.08,
+                              width: size.width * 0.16,
+                              decoration: BoxDecoration(
+                                color: AppColors.a3,
+                                borderRadius: BorderRadius.circular(15),
+                                //color: AppColors.a1,
+                                // gradient: AppColors.gradient2,
+                                //shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: PhysicalModel(
+                                  color: AppColors.a19,
+                                  shadowColor: AppColors.a2,
+                                  borderRadius: BorderRadius.circular(15),
+                                  elevation: 10,
+                                  //shape: BoxShape.circle,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(1.0),
+                                    child: Container(
+                                      height: size.height * 0.06,
+                                      width: size.width * 0.13,
+                                      decoration: BoxDecoration(
+                                          color: AppColors.th1blue,
+                                          // gradient: AppColors.gradient7,
+                                          shape: BoxShape.circle
+                                          // borderRadius: BorderRadius.circular(20),
+                                          ),
+                                      child: Center(
+                                        child: Icon(
+                                          iconList4[index],
+                                          size: size.height * 0.04,
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                  child: Center(
-                                    child: Icon(
-                                      iconList4[index],
-                                      size: size.height * 0.04,
-                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -906,13 +1003,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: size.height * 0.01,
-                        ),
-                        SizedBox(
-                          height: size.height * 0.005,
-                        ),
-                        SizedBox(
-                          height: size.height * 0.0535,
+                          height: size.height * 0.054,
                           width: size.width * 0.34,
                           child: Center(
                             child: Align(
@@ -989,7 +1080,8 @@ class Mycrusial extends StatelessWidget {
           height: size.height * 0.28,
           width: size.width,
           decoration: BoxDecoration(
-            color: AppColors.textmaroon505,
+            // color: AppColors.th1blue,
+            //textmaroon505,
             //a12,
             borderRadius: BorderRadius.circular(10),
           ),
@@ -1000,30 +1092,30 @@ class Mycrusial extends StatelessWidget {
               elevation: 0,
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppColors.textmaroon505,
+                  //color: AppColors.textmaroon505,
                   //.a15,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: CarouselSlider.builder(
                   key: _sliderKey,
                   unlimitedMode: true,
-                  autoSliderTransitionTime: Duration(seconds: 2),
+                  autoSliderTransitionTime: Duration(seconds: 1),
                   slideBuilder: (index) {
                     final items = imageList;
                     // _userHomepageController
                     // .getuserbannerlist?.banner;
                     return Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 1),
                       child: Material(
                         elevation: 12,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(5),
                         child: Container(
                           height: size.height * 38,
                           width: size.width,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: AppColors.p3,
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               border:
                                   Border.all(color: Colors.white, width: 0.5),
                               image: DecorationImage(

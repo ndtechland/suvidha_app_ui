@@ -81,6 +81,31 @@ class AppColors {
   static var th1wht2 = Color(0xffffffff);
   static var th1wht3 = Color(0xffF7F7F7);
 
+  static var th1prpl1 = Color(0xff9997AF);
+  static var th1prpl2 = Color(0xff60607E);
+  static var th1prpl3 = Color(0xff545270);
+  static var th1orgback1 = Color(0xffC1BFCB);
+  static var th1orgback2 = Color(0xffCCC1C6);
+  static var th1orgback3 = Color(0xff7B5862);
+  static var th1grnbk1 = Color(0xffC0CBCA);
+  static var th1grnbk2 = Color(0xff393E60);
+
+  static var th1pnkbk1 = Color(0xffffdbe9);
+  static var th1pnkbk2 = Color(0xffffe6ee);
+  static var th1pnkbk3 = Color(0xfff4c2c2);
+  static var th1pnkbk4 = Color(0xffffdadf);
+
+  // static var th1wht3 = Color(0xffF7F7F7);
+
+  //9997AF
+  //60607E
+  //545270
+  //C1BFCB
+  //CCC1C6
+  //7B5862
+  //C0CBCA
+  //393E60
+
   static var th1whtbackgrd2 = Color(0xffBFC2C6);
   static var th1blue = Color(0xff0761AB);
   static var th1blue2 = Colors.blue;
