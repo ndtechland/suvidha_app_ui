@@ -23,7 +23,7 @@ class BillingPage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Bill Summary',
@@ -51,19 +51,20 @@ class BillingPage2 extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(
-            gradient: AppColors.gradient11,
-            image: DecorationImage(
-                image: NetworkImage(
-                    //
-                    'https://images.unsplash.com/photo-1508514023703-7332e6c3f407?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    // 'https://images.unsplash.com/photo-1556341984-69c93f636618?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8'
-                    //'https://images.unsplash.com/photo-1654512270536-d8244a23e878?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D'
-                    // 'https://images.unsplash.com/photo-1672545556384-369582b1b7f5?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D'
-                    //  'https://images.unsplash.com/photo-1634148677018-5b6593666884?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
-                    //'https://images.unsplash.com/photo-1696971275047-5d62468bcfb4?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //
-                    ),
-                fit: BoxFit.cover)),
+            // gradient: AppColors.gradient11,
+            // image: DecorationImage(
+            //     image: NetworkImage(
+            //         //
+            //         'https://images.unsplash.com/photo-1508514023703-7332e6c3f407?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         // 'https://images.unsplash.com/photo-1556341984-69c93f636618?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8'
+            //         //'https://images.unsplash.com/photo-1654512270536-d8244a23e878?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D'
+            //         // 'https://images.unsplash.com/photo-1672545556384-369582b1b7f5?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D'
+            //         //  'https://images.unsplash.com/photo-1634148677018-5b6593666884?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
+            //         //'https://images.unsplash.com/photo-1696971275047-5d62468bcfb4?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //
+            //         ),
+            //     fit: BoxFit.cover)
+            ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -81,8 +82,8 @@ class BillingPage2 extends StatelessWidget {
                   //height: size.height * 0.12,
                   width: size.width,
                   decoration: BoxDecoration(
-                    // color: AppColors.white,
-                    gradient: AppColors.gradient11,
+                    color: AppColors.th1blue,
+                    // gradient: AppColors.gradient11,
                     borderRadius: BorderRadius.circular(10),
                     //gradient: AppColors.gradient19,
                   ),
@@ -278,8 +279,9 @@ class BillingPage2 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             HorizontalCircularButton(
-                              height: size.height * 0.04,
+                              height: size.height * 0.05,
                               width: size.width * 0.4,
+                              borderRadius: 10,
                               text: "DOWNLOAD BILL",
                               onPressed: () {
                                 // Get.to(ApplySolarRoofNetMaterial2());
@@ -292,7 +294,7 @@ class BillingPage2 extends StatelessWidget {
                               //isSelected: selectionController.selectedIndices.contains(0),
                             ),
                             HorizontalgreenButton(
-                              height: size.height * 0.04,
+                              height: size.height * 0.05,
                               width: size.width * 0.4,
                               text: "Pay Bill",
                               onPressed: () {
@@ -314,13 +316,13 @@ class BillingPage2 extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: size.width * 0.05),
+                                horizontal: size.width * 0.02),
                             child: Text(
                               'See Your downloaded bill "Suvidha" folder in internal Storage of your mobile',
                               style: GoogleFonts.poppins(
                                 fontSize: size.width * 0.027,
                                 fontWeight: FontWeight.w500,
-                                color: AppColors.containercolor18,
+                                color: AppColors.white,
                                 shadows: [
                                   Shadow(
                                     color: Colors.black45,

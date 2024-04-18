@@ -17,7 +17,7 @@ PreferredSizeWidget myAppBar({
     backgroundColor: AppColors.a15,
     title: Text(
       title,
-      style: GoogleFonts.poppins(
+      style: GoogleFonts.roboto(
         color: AppColors.white,
         fontSize:
             titleFontSize ?? 17, // Use provided font size or default to 17

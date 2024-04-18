@@ -18,8 +18,8 @@ class AppTranslations extends Translations {
           'Report Electricity Theft': 'Report Electricity Theft',
           'Consumer Grievance': 'Consumer\nGrievance',
           'Bill Generated\n   Self Service': 'Bill Generated\n   Self Service',
-          'Bill & Payment Service': 'Bill & Payment Service',
-          'Smart Meter Services': 'Smart Meter Services',
+          'Bill & Payment\n        Service': 'Bill & Payment\n        Service',
+          'Smart Meter\n      Services': 'Smart Meter\n      Services',
           'Apply New Connection for Solar Rooftop':
               'Apply New Connection for Solar Rooftop',
           'Apply For Solar Rooftop NetMatering':
@@ -41,13 +41,13 @@ class AppTranslations extends Translations {
           'Billing & Payment Services': 'बिलिंग एवं भुगतान सेवाएँ',
           'Solar Rooftop Services': 'सौर छत सेवाएँ',
           'Other Services': 'अन्य सेवाएं',
-          'Bill On Miss Call': 'मिस कॉल पर बिल',
+          'Bill On Miss Call': 'मिस कॉल   पर बिल',
           'Customer Care 1912': 'ग्राहक सेवा 1912',
           'Report Electricity Theft': 'बिजली चोरी की रिपोर्ट करें',
           'Consumer Grievance': 'उपभोक्ता शिकायत',
           'Bill Generated\n   Self Service': 'बिल जनित स्वयं सेवा',
-          'Bill & Payment Service': 'बिल एवं भुगतान सेवा',
-          'Smart Meter Services': 'स्मार्ट मीटर सेवाएँ',
+          'Bill & Payment\n        Service': 'बिल एवं भुगतान सेवा',
+          'Smart Meter\n      Services': 'स्मार्ट मीटर सेवाएँ',
           'Apply New Connection for Solar Rooftop':
               'सोलर रूफटॉप के लिए नया कनेक्शन लागू करें',
           'Apply For Solar Rooftop NetMatering':
@@ -76,9 +76,10 @@ class AppTranslations extends Translations {
           'Consumer Grievance': 'उपभोक्ता के शिकायत बा',
           'Bill Generated\n   Self Service':
               'बिल से जनरेट कइल गइल स्वयंसेवी सेवा',
-          'Bill & Payment Service':
+          'Bill & Payment\n        Service':
               'बिल अउर भुगतान सेवा के बारे में बतावल गइल बा',
-          'Smart Meter Services': 'स्मार्ट मीटर सेवा के बारे में बतावल गईल बा',
+          'Smart Meter\n      Services':
+              'स्मार्ट मीटर सेवा के बारे में बतावल गईल बा',
           'Apply New Connection for Solar Rooftop':
               'सोलर रूफटॉप खातिर नया कनेक्शन लागू करीं',
           'Apply For Solar Rooftop NetMatering':
@@ -105,8 +106,8 @@ class AppTranslations extends Translations {
           'Report Electricity Theft': 'बिजली चोरी के रिपोर्ट करू',
           'Consumer Grievance': 'उपभोक्ता शिकायत',
           'Bill Generated\n   Self Service': 'बिल उत्पन्न स्वयंसेवी सेवा',
-          'Bill & Payment Service': 'बिल एवं भुगतान सेवा',
-          'Smart Meter Services': 'स्मार्ट मीटर सेवा',
+          'Bill & Payment\n        Service': 'बिल एवं भुगतान सेवा',
+          'Smart Meter\n      Services': 'स्मार्ट मीटर सेवा',
           'Apply New Connection for Solar Rooftop':
               'सोलर रूफटॉप के लिये नया कनेक्शन लागू करे',
           'Apply For Solar Rooftop NetMatering':

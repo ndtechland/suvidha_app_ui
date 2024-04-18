@@ -50,7 +50,7 @@ class _HorizontalButtonState extends State<HorizontalButton> {
         height: _height + _shadowHeight,
         width: size.width * 0.98,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade400,

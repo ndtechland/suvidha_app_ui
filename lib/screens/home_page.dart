@@ -14,7 +14,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/reusable_3Dtext/3d_textreusable.dart';
 import 'package:suvidha_app_ui/constants/reusable_webview/webview_reusable.dart';
-import 'package:suvidha_app_ui/constants/testing_page.dart';
 import 'package:suvidha_app_ui/screens/apply_disconnection/apply_disconnection1.dart';
 import 'package:suvidha_app_ui/screens/apply_solar_roof_net_material/apply_solar_roof_net_1.dart';
 import 'package:suvidha_app_ui/screens/bill_and_payment_service/billingdashbord.dart';
@@ -177,7 +176,7 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
@@ -418,7 +417,7 @@ class HomePage extends StatelessWidget {
                               "${Services1[index]}".tr,
                               style: GoogleFonts.poppins(
                                 fontSize: size.height * 0.012,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w600,
                                 color: AppColors.textmaroon505,
                               ),
                             ),
@@ -523,7 +522,7 @@ class HomePage extends StatelessWidget {
                       'Services for existing Consumers'.tr,
                       style: GoogleFonts.poppins(
                         color: Colors.black,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         fontSize: size.width * 0.033,
                       ),
                     ),
@@ -541,9 +540,9 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Billing & Payment Services'.tr,
                     style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.014,
+                        fontSize: size.height * 0.015,
                         color: AppColors.black,
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
@@ -553,7 +552,9 @@ class HomePage extends StatelessWidget {
               Container(
                 height: size.height * 0.14,
                 width: size.width,
-                color: AppColors.newgray,
+                color: AppColors.th1wht2,
+
+                // color: AppColors.newgray,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -604,16 +605,16 @@ class HomePage extends StatelessWidget {
                               ),
                               child: Center(
                                 child: PhysicalModel(
-                                  elevation: 10,
-                                  color: AppColors.a15,
+                                  elevation: 5,
+                                  color: AppColors.a1,
                                   shadowColor: AppColors.a15,
                                   shape: BoxShape.circle,
                                   child: Container(
                                     height: size.height * 0.06,
                                     width: size.width * 0.13,
                                     decoration: BoxDecoration(
-                                        // color: AppColors.a16,
-                                        gradient: AppColors.gradient11,
+                                        color: AppColors.th1blue,
+                                        // gradient: AppColors.gradient11,
                                         shape: BoxShape.circle
                                         // borderRadius: BorderRadius.circular(20),
                                         ),
@@ -645,7 +646,7 @@ class HomePage extends StatelessWidget {
                                     "${Services2[index]}".tr,
                                     style: GoogleFonts.poppins(
                                       fontSize: size.height * 0.012,
-                                      fontWeight: FontWeight.w700,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ),
@@ -677,9 +678,9 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Solar Rooftop Services'.tr,
                     style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.014,
+                        fontSize: size.height * 0.015,
                         color: AppColors.black,
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
@@ -689,7 +690,8 @@ class HomePage extends StatelessWidget {
               Container(
                 height: size.height * 0.14,
                 width: size.width,
-                color: AppColors.ContainerUnSelectedColor,
+                color: AppColors.th1wht2,
+                //ContainerUnSelectedColor,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -720,7 +722,7 @@ class HomePage extends StatelessWidget {
 
                               //Get.to(SelectPahseLineRange());
 
-                              Get.to(() => SmsVerificationPage());
+                              ///Get.to(() => SmsVerificationPage());
                             } else if (index == 1) {
                               // await FlutterPhoneDirectCaller.callNumber(
                               //     customercare);
@@ -737,16 +739,16 @@ class HomePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: PhysicalModel(
-                                elevation: 10,
+                                elevation: 5,
                                 color: AppColors.a1,
-                                shadowColor: AppColors.a1,
+                                shadowColor: AppColors.black,
                                 shape: BoxShape.circle,
                                 child: Container(
                                   height: size.height * 0.06,
                                   width: size.width * 0.13,
                                   decoration: BoxDecoration(
-                                      // color: AppColors.a16,
-                                      gradient: AppColors.gradient9,
+                                      color: AppColors.a16,
+                                      //gradient: AppColors.gradient9,
                                       shape: BoxShape.circle
                                       // borderRadius: BorderRadius.circular(20),
                                       ),
@@ -778,7 +780,7 @@ class HomePage extends StatelessWidget {
                                   "${Services3[index]}".tr,
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.012,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ),
@@ -808,9 +810,9 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Other Services'.tr,
                     style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.014,
+                        fontSize: size.height * 0.015,
                         color: AppColors.black,
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
@@ -820,7 +822,9 @@ class HomePage extends StatelessWidget {
               Container(
                 height: size.height * 0.30,
                 width: size.width,
-                color: AppColors.a20,
+                color: AppColors.th1wht2,
+
+                ///color: AppColors.a20,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -870,22 +874,22 @@ class HomePage extends StatelessWidget {
                             height: size.height * 0.06,
                             width: size.width * 0.14,
                             decoration: BoxDecoration(
-                              color: AppColors.a15,
+                              //color: AppColors.a1,
                               // gradient: AppColors.gradient2,
                               shape: BoxShape.circle,
                             ),
                             child: Center(
                               child: PhysicalModel(
-                                elevation: 10,
-                                color: AppColors.greyColor,
+                                elevation: 5,
+                                color: AppColors.th1wht2,
                                 shadowColor: AppColors.greyColor,
                                 shape: BoxShape.circle,
                                 child: Container(
                                   height: size.height * 0.06,
                                   width: size.width * 0.13,
                                   decoration: BoxDecoration(
-                                      // color: AppColors.a16,
-                                      gradient: AppColors.gradient7,
+                                      color: AppColors.a3,
+                                      // gradient: AppColors.gradient7,
                                       shape: BoxShape.circle
                                       // borderRadius: BorderRadius.circular(20),
                                       ),
@@ -920,7 +924,7 @@ class HomePage extends StatelessWidget {
                                   "${Services4[index]}".tr,
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.012,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ),

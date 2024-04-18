@@ -46,7 +46,7 @@ class BillingDashbord extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Billing Dashboard',
@@ -101,7 +101,7 @@ class BillingDashbord extends StatelessWidget {
                             vertical: size.height * 0.00),
                         child: Text(
                           '2.5% Rebate',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontSize: size.width * 0.035,
                             fontWeight: FontWeight.bold,
                             color: AppColors.a15,
@@ -109,7 +109,7 @@ class BillingDashbord extends StatelessWidget {
                               Shadow(
                                 color: Colors.black45,
                                 blurRadius: 0,
-                                offset: Offset(0.5, 0.5),
+                                offset: Offset(0.1, 0.1),
                               ),
                             ],
                           ),
@@ -123,7 +123,7 @@ class BillingDashbord extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: size.width * 0.05),
                         child: Text(
                           'Get 2.5 % Rebate on your electricity bill if paid within due date through this app.',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontSize: size.width * 0.027,
                             fontWeight: FontWeight.w500,
                             color: AppColors.a15,
@@ -131,7 +131,7 @@ class BillingDashbord extends StatelessWidget {
                               Shadow(
                                 color: Colors.black45,
                                 blurRadius: 0,
-                                offset: Offset(0.5, 0.5),
+                                offset: Offset(0.0, 0.0),
                               ),
                             ],
                           ),
@@ -146,7 +146,7 @@ class BillingDashbord extends StatelessWidget {
                             vertical: size.height * 0.01),
                         child: Text(
                           'Terms & Conditions',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontSize: size.width * 0.033,
                             fontWeight: FontWeight.bold,
                             color: AppColors.containercolor18,
@@ -154,7 +154,7 @@ class BillingDashbord extends StatelessWidget {
                               Shadow(
                                 color: Colors.black45,
                                 blurRadius: 0,
-                                offset: Offset(0.5, 0.5),
+                                offset: Offset(0.0, 0.0),
                               ),
                             ],
                           ),
@@ -217,16 +217,16 @@ class BillingDashbord extends StatelessWidget {
                       }
                     },
                     child: PhysicalModel(
+                      elevation: 5,
                       color: Colors.transparent,
-                      shadowColor: Colors.black54,
-                      elevation: 12,
+                      shadowColor: AppColors.a15,
                       shape: BoxShape.circle,
                       child: Container(
                         height: size.height * 0.08,
                         width: size.width * 0.16,
                         decoration: BoxDecoration(
-                          //  color: AppColors.a13,
-                          gradient: AppColors.gradient14,
+                          color: AppColors.th1blue,
+                          //gradient: AppColors.gradient14,
                           //sweepGradient1,
                           //gradient14,
                           shape: BoxShape.circle,
@@ -236,7 +236,7 @@ class BillingDashbord extends StatelessWidget {
                           child: Icon(
                             iconList1[index],
                             size: size.height * 0.04,
-                            color: AppColors.textmaroon4,
+                            color: AppColors.white,
                           ),
                         ),
                       ),
@@ -253,8 +253,8 @@ class BillingDashbord extends StatelessWidget {
                         alignment: Alignment.topCenter,
                         child: Text(
                           "${billcatagary[index]}",
-                          style: GoogleFonts.poppins(
-                            fontSize: size.height * 0.012,
+                          style: GoogleFonts.roboto(
+                            fontSize: size.height * 0.0125,
                             fontWeight: FontWeight.w700,
                             color: AppColors.textmaroon4,
                           ),

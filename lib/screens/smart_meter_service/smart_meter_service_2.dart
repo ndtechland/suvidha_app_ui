@@ -31,7 +31,7 @@ class SmartMeterService2 extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
         title: 'Payment',
@@ -56,25 +56,26 @@ class SmartMeterService2 extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    //
-                    // 'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D'
-                    //'https://images.unsplash.com/photo-1590845947698-8924d7409b56?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1503427315916-2ba435dee667?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-                    //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
-                    //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
-                    'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    // 'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    //
-                    ),
-                fit: BoxFit.cover)),
+            // image: DecorationImage(
+            //     image: NetworkImage(
+            //         //
+            //         // 'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D'
+            //         //'https://images.unsplash.com/photo-1590845947698-8924d7409b56?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1503427315916-2ba435dee667?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1609780252796-ff1937cbeb92?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //         //'https://images.unsplash.com/photo-1628021778961-74ba4acdc8c6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D'
+            //         //'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1610056494085-05e9fb6673ee?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1551715909-80e5b0ded6a0?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1553119179-1992c69de2de?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8'
+            //         'https://images.unsplash.com/photo-1579970474466-22301c101d27?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         // 'https://plus.unsplash.com/premium_photo-1679917152960-b9e43c2141f1?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //'https://images.unsplash.com/photo-1517358133568-31ec5656304e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            //         //
+            //         ),
+            //     fit: BoxFit.cover)
+            ),
         child: SingleChildScrollView(
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
@@ -87,12 +88,13 @@ class SmartMeterService2 extends StatelessWidget {
                 child: PhysicalModel(
                   color: Colors.black,
                   elevation: 5,
+                  shadowColor: AppColors.greyColor,
                   child: Container(
                     height: size.height * 0.12,
                     width: size.width,
                     decoration: BoxDecoration(
-                      //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
+                      color: AppColors.a20,
+                      //gradient: AppColors.gradient19,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
@@ -100,7 +102,8 @@ class SmartMeterService2 extends StatelessWidget {
                         height: size.height * 0.08,
                         width: size.width,
                         decoration: BoxDecoration(
-                          gradient: AppColors.gradient7,
+                          color: AppColors.th1blue,
+                          //gradient: AppColors.gradient7,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,7 +127,7 @@ class SmartMeterService2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -142,7 +145,7 @@ class SmartMeterService2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -168,7 +171,7 @@ class SmartMeterService2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: Colors.white),
+                                            color: AppColors.a18),
                                       ),
                                     ),
                                   ),
@@ -186,7 +189,7 @@ class SmartMeterService2 extends StatelessWidget {
                                         style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w600,
                                             fontSize: size.width * 0.035,
-                                            color: AppColors.a11),
+                                            color: AppColors.white),
                                       ),
                                     ),
                                   ),
@@ -218,7 +221,7 @@ class SmartMeterService2 extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: size.width * 0.03),
                         child: Text(
                           '9765443344',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontWeight: FontWeight.w500,
                             fontSize: size.width * 0.038,
                             color: AppColors.black,
@@ -241,7 +244,7 @@ class SmartMeterService2 extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: size.width * 0.03),
                         child: Text(
                           'Email Id not provided by Application',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.roboto(
                             fontWeight: FontWeight.w500,
                             fontSize: size.width * 0.038,
                             color: AppColors.black,
@@ -260,20 +263,24 @@ class SmartMeterService2 extends StatelessWidget {
                 child: PhysicalModel(
                   color: Colors.black,
                   elevation: 5,
+                  borderRadius: BorderRadius.circular(10),
+                  shadowColor: AppColors.greyColor,
                   child: Container(
                     height: size.height * 0.14,
                     width: size.width,
                     decoration: BoxDecoration(
-                      //color: AppColors.a20,
-                      gradient: AppColors.gradient19,
-                    ),
+                        //color: AppColors.a20,
+                        // gradient: AppColors.gradient19,
+                        ),
                     child: Padding(
                       padding: const EdgeInsets.all(0.0),
                       child: Container(
                         height: size.height * 0.08,
                         width: size.width,
                         decoration: BoxDecoration(
-                          gradient: AppColors.gradient7,
+                          color: AppColors.th1wht2,
+                          //gradient: AppColors.gradient7,
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -292,10 +299,10 @@ class SmartMeterService2 extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
                                         'Amount Payable:',
-                                        style: GoogleFonts.poppins(
+                                        style: GoogleFonts.roboto(
                                           fontWeight: FontWeight.w600,
                                           fontSize: size.width * 0.040,
-                                          color: AppColors.white,
+                                          color: AppColors.th1org,
                                         ),
                                       ),
                                     ),
@@ -310,7 +317,7 @@ class SmartMeterService2 extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
                                         'Rs. 200',
-                                        style: GoogleFonts.poppins(
+                                        style: GoogleFonts.roboto(
                                           fontWeight: FontWeight.w700,
                                           fontSize: size.width * 0.046,
                                           color: AppColors.a15,
