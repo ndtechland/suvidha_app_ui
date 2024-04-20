@@ -7,6 +7,8 @@ class HorizontalCircularButton extends StatefulWidget {
   final String text;
   final VoidCallback? onPressed;
   final double borderRadius; // New parameter for border radius
+  final Color? textColor; // New parameter for text color, optional
+  final double? fontSize; // New parameter for font size, optional
 
   const HorizontalCircularButton({
     Key? key,
@@ -15,6 +17,8 @@ class HorizontalCircularButton extends StatefulWidget {
     required this.text,
     required this.onPressed,
     this.borderRadius = 80, // Default border radius
+    this.textColor, // Text color, optional
+    this.fontSize, // Font size, optio
   }) : super(key: key);
 
   @override
@@ -28,6 +32,8 @@ class _HorizontalCircularButtonState extends State<HorizontalCircularButton> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
+    final double defaultFontSize = size.width * 0.039;
 
     return GestureDetector(
       onTapDown: (_) {
@@ -78,8 +84,8 @@ class _HorizontalCircularButtonState extends State<HorizontalCircularButton> {
             child: Text(
               widget.text,
               style: TextStyle(
-                color: AppColors.whiteColor,
-                fontSize: size.width * 0.039,
+                color: widget.textColor ?? AppColors.whiteColor,
+                fontSize: widget.fontSize ?? defaultFontSize,
                 fontWeight: FontWeight.bold,
                 shadows: [
                   Shadow(

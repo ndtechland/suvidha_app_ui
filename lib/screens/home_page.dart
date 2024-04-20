@@ -19,11 +19,13 @@ import 'package:suvidha_app_ui/screens/apply_solar_roof_net_material/apply_solar
 import 'package:suvidha_app_ui/screens/bill_and_payment_service/billingdashbord.dart';
 import 'package:suvidha_app_ui/screens/bill_sgenerated_self_servicess/bill_generated_self_service.dart';
 import 'package:suvidha_app_ui/screens/go_green_pages/go_green_1.dart';
-import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
 import 'package:suvidha_app_ui/screens/load_change/load_change_screen_1.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
+import 'package:suvidha_app_ui/screens/side_drower/side_drawer.dart';
 import 'package:suvidha_app_ui/screens/smart_meter_service/smart_meter_services_1.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../constants/buttons/circular_horizontal_buttom.dart';
 
 List<Color> colorList = [
   Colors.red,
@@ -106,6 +108,8 @@ List<String> imageList = [
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
+  GlobalKey<ScaffoldState> _key = new GlobalKey();
+
   String micccallnumber = "7666008833";
 
   String customercare = "1912";
@@ -114,7 +118,7 @@ class HomePage extends StatelessWidget {
       'http://hargharbijli.bsphcl.co.in/Grievanceportal/default.aspx');
 
   //http://hargharbijli.bsphcl.co.in/Grievanceportal/default.aspx
-  ///whats app launcher for mobile..
+  ///whats app launcher for mobile.....
 
   _launchWhatsApp() async {
     var whatsapp = "+917033355555";
@@ -176,11 +180,24 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: AppColors.th1whtbackgrd,
+      backgroundColor: AppColors.white,
+      key: _key,
+
+      //th1whtbackgrd,
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.white,
+        centerTitle: true,
+        leading: InkWell(
+            onTap: () {
+              /// Get.to(LoginEmailPage());
+              _key.currentState!.openDrawer();
+            },
+            child: Icon(
+              Icons.menu,
+              color: AppColors.a15,
+            )),
 
         //AppColors.a15,
         // centerTitle: true,
@@ -209,18 +226,16 @@ class HomePage extends StatelessWidget {
         //   color: Colors.white,
         //   size: size.width * 0.09,
         // ),
-        title: Padding(
-          padding: EdgeInsets.only(right: size.width * 0.28),
-          child: ThreeDtext(
-            text: 'SUVIDHA',
-            fontColor: AppColors.textmaroon505,
-            fontSize: size.height * 0.034,
-            fontWeight: FontWeight.w700,
-            color: AppColors.black,
-            letterSpacing: 1,
-            shadowColor: AppColors.white,
-            shadowBlurRadius: 3.0,
-          ),
+        title: ThreeDtext(
+          text: 'SUVIDHA',
+          fontColor: AppColors.a15,
+          //textmaroon505,
+          fontSize: size.height * 0.030,
+          fontWeight: FontWeight.w700,
+          color: AppColors.black,
+          letterSpacing: 1,
+          shadowColor: AppColors.white,
+          shadowBlurRadius: 3.0,
         )
         // Container(
         //   height: size.height * 0.05,
@@ -231,74 +246,79 @@ class HomePage extends StatelessWidget {
         // ),
         ,
         actions: [
-          // Icon(
-          //   Icons.support_agent,
-          //   color: Colors.white,
-          //   size: size.width * 0.09,
-          // ),
-          // SizedBox(
-          //   width: size.width * 0.04,
-          // ),
-          InkWell(
-            onTap: () {
-              Get.to(() => LanguagePagess());
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: size.height * 0.017,
-              ),
-              child: Container(
-                height: size.height * 0.04,
-                width: size.width * 0.22,
-                decoration: BoxDecoration(
-                    //shape: BoxShape.circle,
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppColors.textmaroon505)
-
-                    //image:
-                    // DecorationImage(
-                    //     image: AssetImage('lib/assets/video/language23.gif'
-                    //         //'lib/assets/video/right-arrow.gif'
-                    //         ),
-                    //     fit: BoxFit.fill)
-                    ),
-                child: ThreeDtext(
-                  text: 'English'.tr,
-                  fontColor: AppColors.textmaroon505,
-                  fontSize: size.width * 0.04,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.black,
-                  shadowColor: AppColors.white,
-                  shadowBlurRadius: 2,
-                ),
-                // child: Image.asset('lib/assets/images/right-arrow.gif')
-              ),
-            ),
-            // Lottie.network(
-            //   //https://lottie.host/b14c01a1-d38b-403e-ad43-c02da3404a19/QaZZTqLEwp.lottie
-            //   'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
-            //   //'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
-            //   //'https://app.lottiefiles.com/animation/2fbfe658-4d63-4348-8cbf-254f00a89a29?panel=download',
-            //   //'https://assets1.lottiefiles.com/private_files/lf30_QLsD8M.json',
-            //   height: 400.0,
-            //   repeat: true,
-            //   reverse: true,
-            //   animate: true,
-            // ),
-            ///
-            // Icon(
-            //   Icons.translate,
-            //   color: Colors.white,
-            //   size: size.width * 0.08,
-            // ),
+          Icon(
+            Icons.notifications,
+            color: AppColors.a15,
+            size: size.width * 0.08,
           ),
           SizedBox(
             width: size.width * 0.04,
           ),
+
+          ///
+          // InkWell(
+          //   onTap: () {
+          //    // Get.to(() => LanguagePagess());
+          //   },
+          //   child: Padding(
+          //     padding: EdgeInsets.symmetric(
+          //       vertical: size.height * 0.017,
+          //     ),
+          //     child: Container(
+          //       height: size.height * 0.04,
+          //       width: size.width * 0.22,
+          //       decoration: BoxDecoration(
+          //           //shape: BoxShape.circle,
+          //           color: AppColors.white,
+          //           borderRadius: BorderRadius.circular(12),
+          //           border: Border.all(color: AppColors.textmaroon505)
+          //
+          //           //image:
+          //           // DecorationImage(
+          //           //     image: AssetImage('lib/assets/video/language23.gif'
+          //           //         //'lib/assets/video/right-arrow.gif'
+          //           //         ),
+          //           //     fit: BoxFit.fill)
+          //           ),
+          //       child: ThreeDtext(
+          //         text: 'English'.tr,
+          //         fontColor: AppColors.textmaroon505,
+          //         fontSize: size.width * 0.04,
+          //         fontWeight: FontWeight.w600,
+          //         color: AppColors.black,
+          //         shadowColor: AppColors.white,
+          //         shadowBlurRadius: 2,
+          //       ),
+          //       // child: Image.asset('lib/assets/images/right-arrow.gif')
+          //     ),
+          //   ),
+          //   // Lottie.network(
+          //   //   //https://lottie.host/b14c01a1-d38b-403e-ad43-c02da3404a19/QaZZTqLEwp.lottie
+          //   //   'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
+          //   //   //'https://lottie.host/2adb7b33-4d1c-4977-ae68-9f148d2a036e/dts6uVWOCe.json',
+          //   //   //'https://app.lottiefiles.com/animation/2fbfe658-4d63-4348-8cbf-254f00a89a29?panel=download',
+          //   //   //'https://assets1.lottiefiles.com/private_files/lf30_QLsD8M.json',
+          //   //   height: 400.0,
+          //   //   repeat: true,
+          //   //   reverse: true,
+          //   //   animate: true,
+          //   // ),
+          //   ///
+          //   // Icon(
+          //   //   Icons.translate,
+          //   //   color: Colors.white,
+          //   //   size: size.width * 0.08,
+          //   // ),
+          // ),
+          ///
+          SizedBox(
+            width: size.width * 0.02,
+          ),
         ],
         //Text("Suvidha"),
       ),
+      drawer: MainSuvidhaDrawer(),
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -306,7 +326,7 @@ class HomePage extends StatelessWidget {
             //mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: size.height * 0.19,
+                height: size.height * 0.17,
                 width: size.width,
                 decoration: BoxDecoration(
                   color: AppColors.white,
@@ -316,13 +336,13 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     height: size.height * 0.15,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(2.0),
                       child: Container(
                         height: size.height * 0.10,
                         decoration: BoxDecoration(
@@ -340,7 +360,90 @@ class HomePage extends StatelessWidget {
               ),
 
               SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.01,
+              ),
+              InkWell(
+                onTap: () {
+                  ///Get.to(NewConnectionPage1());
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
+                  child: Container(
+                    height: size.height * 0.055,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      //color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      // border: Border.all(color: Colors.black, width: 2),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(0.0),
+                      child: Container(
+                        height: size.height * 0.055,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                          color: AppColors.a19,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: size.width * 0.02),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Current bill:  ',
+                                    style: GoogleFonts.nunitoSans(
+                                      fontSize: size.width * 0.035,
+                                      letterSpacing: 0.2,
+                                      color: AppColors.a15,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  Text(
+                                    '₹ 299/-',
+                                    style: GoogleFonts.nunitoSans(
+                                      fontSize: size.width * 0.038,
+                                      letterSpacing: 0.2,
+                                      color: AppColors.th1org,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: size.width * 0.01),
+                                child: HorizontalCircularButton(
+                                  height: size.height * 0.04,
+                                  width: size.width * 0.23,
+                                  borderRadius: 10,
+                                  fontSize: size.width * 0.037,
+                                  text: "Recharge",
+
+                                  onPressed: () {
+                                    // if (_formKey.currentState!.validate()) {
+                                    //   // If all fields are valid, toggle selection and navigate
+                                    //   selectionController.toggleSelection(0);
+                                    //Get.to(LoadChangeIncDec());
+                                    // }
+                                  },
+                                  //isSelected: selectionController.selectedIndices.contains(0),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.015,
               ),
               //Spacer(),
 
@@ -387,46 +490,23 @@ class HomePage extends StatelessWidget {
 
                           }
                         },
-                        child: PhysicalModel(
-                          color: Colors.transparent,
-                          shadowColor: AppColors.th1blue,
-                          borderRadius: BorderRadius.circular(15),
-                          elevation: 6,
-                          //th1orgback3
-                          child: Container(
-                            height: size.height * 0.08,
-                            width: size.width * 0.16,
-                            decoration: BoxDecoration(
-                              color: AppColors.th1prpl2,
-                              borderRadius: BorderRadius.circular(15),
-                              // gradient: AppColors.gradient2,
-                              // shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: PhysicalModel(
-                                color: AppColors.a19,
-                                shadowColor: AppColors.a17,
-                                borderRadius: BorderRadius.circular(15),
-                                elevation: 10,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(1.0),
-                                  child: Container(
-                                    height: size.height * 0.065,
-                                    width: size.width * 0.13,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.th1prpl3,
-                                        //textmaroon505,
-                                        shape: BoxShape.circle
-                                        //borderRadius: BorderRadius.circular(20),
-                                        ),
-                                    child: Center(
-                                      child: Icon(
-                                        iconList1[index],
-                                        size: size.height * 0.04,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(1.0),
+                            child: Container(
+                              height: size.height * 0.065,
+                              width: size.width * 0.13,
+                              decoration: BoxDecoration(
+                                color: AppColors.textmaroon505,
+                                //textmaroon505,
+                                //shape: BoxShape.circle
+                                borderRadius: BorderRadius.circular(17),
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  iconList1[index],
+                                  size: size.height * 0.04,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
@@ -434,7 +514,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: size.height * 0.005,
+                        height: size.height * 0.00,
                       ),
                       SizedBox(
                         height: size.height * 0.05,
@@ -444,10 +524,10 @@ class HomePage extends StatelessWidget {
                             alignment: Alignment.topCenter,
                             child: Text(
                               "${Services1[index]}".tr,
-                              style: GoogleFonts.poppins(
-                                fontSize: size.height * 0.012,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.textmaroon505,
+                              style: GoogleFonts.nunitoSans(
+                                fontSize: size.height * 0.013,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.black,
                               ),
                             ),
                           ),
@@ -462,70 +542,71 @@ class HomePage extends StatelessWidget {
                   Get.to(NewConnectionPage1());
                 },
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
                   child: Container(
-                    height: size.height * 0.054,
+                    height: size.height * 0.044,
                     width: size.width,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      //color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black, width: 2),
+                      // border: Border.all(color: Colors.black, width: 2),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(3.0),
+                      padding: EdgeInsets.all(0.0),
                       child: Container(
-                        height: size.height * 0.054,
+                        height: size.height * 0.044,
                         width: size.width,
                         decoration: BoxDecoration(
                           color: AppColors.a19,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: Text(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: size.width * 0.02),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
                                 'New Connection Services'.tr,
-                                style: GoogleFonts.poppins(
-                                  fontSize: size.width * 0.04,
-                                  letterSpacing: 0.5,
+                                style: GoogleFonts.nunitoSans(
+                                  fontSize: size.width * 0.034,
+                                  letterSpacing: 0.2,
                                   color: AppColors.a15,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                            ),
-                            // Padding(
-                            //   padding: EdgeInsets.symmetric(
-                            //       horizontal: size.width * 0.01),
-                            //   child: Material(
-                            //     elevation: 2,
-                            //     // color: Colors.black12,
-                            //     //shadowColor: Colors.grey.shade100,
-                            //     borderRadius: BorderRadius.circular(100),
-                            //     child: Container(
-                            //       height: size.height * 0.04,
-                            //       width: size.width * 0.08,
-                            //       decoration: BoxDecoration(
-                            //           shape: BoxShape.circle,
-                            //           image: DecorationImage(
-                            //               image: AssetImage(
-                            //                   //'lib/assets/video/contact.gif'
-                            //                   'lib/assets/video/right-arrow.gif'),
-                            //               fit: BoxFit.fitWidth)),
-                            //       // child: Image.asset('lib/assets/images/right-arrow.gif')
-                            //     ),
-                            //   ),
-                            //   // Text(
-                            //   //   'My Connection'.tr,
-                            //   //   style: GoogleFonts.poppins(
-                            //   //       fontSize: size.height * 0.015,
-                            //   //       fontWeight: FontWeight.w600,
-                            //   //       color: AppColors.a15),
-                            //   // ),
-                            // ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: size.width * 0.01),
+                                child: Material(
+                                  elevation: 2,
+                                  // color: Colors.black12,
+                                  //shadowColor: Colors.grey.shade100,
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: Container(
+                                    height: size.height * 0.04,
+                                    width: size.width * 0.08,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                //'lib/assets/video/contact.gif'
+                                                'lib/assets/video/right-arrow.gif'),
+                                            fit: BoxFit.fitWidth)),
+                                    // child: Image.asset('lib/assets/images/right-arrow.gif')
+                                  ),
+                                ),
+                                // Text(
+                                //   'My Connection'.tr,
+                                //   style: GoogleFonts.poppins(
+                                //       fontSize: size.height * 0.015,
+                                //       fontWeight: FontWeight.w600,
+                                //       color: AppColors.a15),
+                                // ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -537,51 +618,51 @@ class HomePage extends StatelessWidget {
               ),
 
               SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.0,
               ),
-              Container(
-                height: size.height * 0.04,
-                width: size.width,
-                color: AppColors.white,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Services for existing Consumers'.tr,
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: size.width * 0.033,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.01,
-              ),
+              // Container(
+              //   height: size.height * 0.04,
+              //   width: size.width,
+              //   color: AppColors.white,
+              //   child: Padding(
+              //     padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
+              //     child: Align(
+              //       alignment: Alignment.center,
+              //       child: Text(
+              //         'Services for existing Consumers'.tr,
+              //         style: GoogleFonts.poppins(
+              //           color: Colors.black,
+              //           fontWeight: FontWeight.w600,
+              //           fontSize: size.width * 0.033,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: size.height * 0.01,
+              // ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Billing & Payment Services'.tr,
-                    style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.015,
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: size.width * 0.025),
+              //   child: Align(
+              //     alignment: Alignment.centerLeft,
+              //     child: Text(
+              //       'Billing & Payment Services'.tr,
+              //       style: GoogleFonts.nunitoSans(
+              //           fontSize: size.height * 0.015,
+              //           color: AppColors.black,
+              //           fontWeight: FontWeight.w700),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: size.height * 0.01,
               ),
               Container(
-                height: size.height * 0.14,
+                // height: size.height * 0.14,
                 width: size.width,
-                color: AppColors.th1wht2,
+                //color: AppColors.th1wht3,
 
                 // color: AppColors.newgray,
                 child: GridView.builder(
@@ -597,13 +678,10 @@ class HomePage extends StatelessWidget {
                       ),
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(0.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: size.height * 0.0,
-                          ),
                           InkWell(
                             onTap: () async {
                               //Get.to(() => IndustryHighTension());
@@ -624,57 +702,39 @@ class HomePage extends StatelessWidget {
 
                               } else if (index == 3) {}
                             },
-                            child: PhysicalModel(
-                              color: Colors.transparent,
+                            child: Center(
+                              child: PhysicalModel(
+                                color: Colors.transparent,
+                                shadowColor: AppColors.a17,
+                                borderRadius: BorderRadius.circular(20),
+                                //shape: BoxShape.circle,
+                                elevation: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(1.0),
+                                  child: Container(
+                                    height: size.height * 0.065,
+                                    width: size.width * 0.13,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.th1blue3,
+                                      borderRadius: BorderRadius.circular(17),
 
-                              ///clipBehavior: Clip.none,
-                              shadowColor: AppColors.th1blue,
-                              borderRadius: BorderRadius.circular(15),
-                              elevation: 5,
-                              child: Container(
-                                height: size.height * 0.08,
-                                width: size.width * 0.16,
-                                decoration: BoxDecoration(
-                                  color: AppColors.a18,
-                                  borderRadius: BorderRadius.circular(15),
-                                  // gradient: AppColors.gradient2,
-                                  // shape: BoxShape.circle,
-                                ),
-                                child: Center(
-                                  child: PhysicalModel(
-                                    color: AppColors.a19,
-                                    shadowColor: AppColors.a17,
-                                    borderRadius: BorderRadius.circular(15),
-                                    elevation: 10,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(1.0),
-                                      child: Container(
-                                        height: size.height * 0.06,
-                                        width: size.width * 0.13,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.a17,
-                                            //th1blue,
-                                            // gradient: AppColors.gradient11,
-                                            shape: BoxShape.circle
-                                            // borderRadius: BorderRadius.circular(20),
-                                            ),
-                                        child: Center(
-                                          child: Icon(
-                                            iconList2[index],
-                                            size: size.height * 0.035,
-                                            color: AppColors.whiteColor,
-                                            //Colors.grey.shade100,
-                                          ),
-                                        ),
+                                      //th1blue,
+                                      // gradient: AppColors.gradient11,
+                                      //shape: BoxShape.circle
+                                      // borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        iconList2[index],
+                                        size: size.height * 0.035,
+                                        color: AppColors.whiteColor,
+                                        //Colors.grey.shade100,
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.00,
                           ),
                           SizedBox(
                             height: size.height * 0.052,
@@ -687,9 +747,9 @@ class HomePage extends StatelessWidget {
                                       vertical: size.height * 0.01),
                                   child: Text(
                                     "${Services2[index]}".tr,
-                                    style: GoogleFonts.poppins(
+                                    style: GoogleFonts.nunitoSans(
                                       fontSize: size.height * 0.012,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.w700,
                                     ),
                                   ),
                                 ),
@@ -697,7 +757,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: size.height * 0.005,
+                            height: size.height * 0.00,
                           ),
                         ],
                       ),
@@ -714,26 +774,36 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.02,
-                    vertical: size.height * 0.013),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Solar Rooftop Services'.tr,
-                    style: GoogleFonts.poppins(
-                        fontSize: size.height * 0.015,
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500),
+                    horizontal: size.width * 0.00, vertical: size.height * 0.0),
+                child: Container(
+                  height: size.height * 0.043,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    color: AppColors.a19,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width * 0.02,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Solar Rooftop Services'.tr,
+                        style: GoogleFonts.nunitoSans(
+                            fontSize: size.height * 0.015,
+                            color: AppColors.th1blue,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: size.height * 0.0,
-              ),
+
               Container(
-                height: size.height * 0.14,
+                //height: size.height * 0.14,
                 width: size.width,
-                color: AppColors.th1wht2,
+                //color: AppColors.th1wht3,
                 //ContainerUnSelectedColor,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -750,9 +820,6 @@ class HomePage extends StatelessWidget {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          height: size.height * 0.012,
-                        ),
                         InkWell(
                           onTap: () async {
                             //Get.to(() => IndustryHighTension());
@@ -772,50 +839,43 @@ class HomePage extends StatelessWidget {
                               Get.to(() => ApplySolarRoofNetMaterial1());
                             }
                           },
-                          child: PhysicalModel(
-                            color: Colors.transparent,
-
-                            ///clipBehavior: Clip.none,
-                            shadowColor: AppColors.th1blue,
-                            borderRadius: BorderRadius.circular(15),
-                            elevation: 6,
-                            child: Container(
-                              height: size.height * 0.08,
-                              width: size.width * 0.16,
-                              decoration: BoxDecoration(
-                                color: AppColors.neworange2,
-                                borderRadius: BorderRadius.circular(15),
-
-                                // gradient: AppColors.gradient2,
-                                //shape: BoxShape.circle,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(1.0),
+                              child: Container(
+                                height: size.height * 0.065,
+                                width: size.width * 0.13,
+                                decoration: BoxDecoration(
+                                  color: AppColors.a17,
+                                  //gradient: AppColors.gradient9,
+                                  //shape: BoxShape.circle
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                child: Center(
+                                  child: Icon(
+                                    iconList3[index],
+                                    size: size.height * 0.04,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
-                              child: Center(
-                                child: PhysicalModel(
-                                  elevation: 5,
-                                  color: AppColors.whiteColor,
-                                  shadowColor: AppColors.neworange3,
-                                  borderRadius: BorderRadius.circular(10),
-
-                                  // shape: BoxShape.circle,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Container(
-                                      height: size.height * 0.06,
-                                      width: size.width * 0.13,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.neworange3,
-                                          //gradient: AppColors.gradient9,
-                                          shape: BoxShape.circle
-                                          // borderRadius: BorderRadius.circular(20),
-                                          ),
-                                      child: Center(
-                                        child: Icon(
-                                          iconList3[index],
-                                          size: size.height * 0.04,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          // height: size.height * 0.04,
+                          //width: size.width * 0.34,
+                          child: Center(
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: size.height * 0.01),
+                                child: Text(
+                                  "${Services3[index]}".tr,
+                                  style: GoogleFonts.nunitoSans(
+                                    fontSize: size.height * 0.012,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                               ),
@@ -825,77 +885,59 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: size.height * 0.00,
                         ),
-                        SizedBox(
-                          height: size.height * 0.04,
-                          width: size.width * 0.34,
-                          child: Center(
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: size.height * 0.01),
-                                child: Text(
-                                  "${Services3[index]}".tr,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: size.height * 0.012,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: size.height * 0.005,
-                        ),
                       ],
                     );
                   },
                 ),
               ),
 
-              SizedBox(
-                height: size.height * 0.016,
-              ),
               // Divider(
               //   color: AppColors.a19,
               //   thickness: 10,
               // ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Other Services'.tr,
-                        style: GoogleFonts.poppins(
-                            fontSize: size.height * 0.015,
-                            color: AppColors.black,
-                            fontWeight: FontWeight.w500),
+              Container(
+                height: size.height * 0.043,
+                width: size.width,
+                decoration: BoxDecoration(
+                  color: AppColors.a19,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.032),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Other Services'.tr,
+                          style: GoogleFonts.nunitoSans(
+                              fontSize: size.height * 0.015,
+                              color: AppColors.th1blue,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        'View All'.tr,
-                        style: GoogleFonts.roboto(
-                            fontSize: size.height * 0.017,
-                            color: AppColors.th1org,
-                            fontWeight: FontWeight.w600),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.033),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'View All'.tr,
+                          style: GoogleFonts.roboto(
+                              fontSize: size.height * 0.017,
+                              color: AppColors.th1org,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(
-                height: size.height * 0.016,
+                height: size.height * 0.0,
               ),
               Container(
                 // height: size.height * 0.30,
@@ -917,8 +959,8 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: size.height * 0.012,
-                        ),
+                            //height: size.height * 0.012,
+                            ),
                         InkWell(
                           onTap: () async {
                             //Get.to(() => IndustryHighTension());
@@ -953,49 +995,23 @@ class HomePage extends StatelessWidget {
                               //Get.to(() => ApplySolarRoofNetMaterial1());
                             }
                           },
-                          child: PhysicalModel(
-                            color: Colors.transparent,
-
-                            ///clipBehavior: Clip.none,
-                            shadowColor: AppColors.th1blue,
-                            borderRadius: BorderRadius.circular(15),
-                            elevation: 6,
-                            child: Container(
-                              height: size.height * 0.08,
-                              width: size.width * 0.16,
-                              decoration: BoxDecoration(
-                                color: AppColors.a3,
-                                borderRadius: BorderRadius.circular(15),
-                                //color: AppColors.a1,
-                                // gradient: AppColors.gradient2,
-                                //shape: BoxShape.circle,
-                              ),
-                              child: Center(
-                                child: PhysicalModel(
-                                  color: AppColors.a19,
-                                  shadowColor: AppColors.a2,
-                                  borderRadius: BorderRadius.circular(15),
-                                  elevation: 10,
-                                  //shape: BoxShape.circle,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Container(
-                                      height: size.height * 0.06,
-                                      width: size.width * 0.13,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.th1blue,
-                                          // gradient: AppColors.gradient7,
-                                          shape: BoxShape.circle
-                                          // borderRadius: BorderRadius.circular(20),
-                                          ),
-                                      child: Center(
-                                        child: Icon(
-                                          iconList4[index],
-                                          size: size.height * 0.04,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(1.0),
+                              child: Container(
+                                height: size.height * 0.065,
+                                width: size.width * 0.13,
+                                decoration: BoxDecoration(
+                                  color: AppColors.th1blue,
+                                  // gradient: AppColors.gradient7,
+                                  //shape: BoxShape.circle
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                child: Center(
+                                  child: Icon(
+                                    iconList4[index],
+                                    size: size.height * 0.04,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -1013,9 +1029,9 @@ class HomePage extends StatelessWidget {
                                     vertical: size.height * 0.01),
                                 child: Text(
                                   "${Services4[index]}".tr,
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.nunitoSans(
                                     fontSize: size.height * 0.012,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                               ),
@@ -1023,7 +1039,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: size.height * 0.005,
+                          height: size.height * 0.00,
                         ),
                       ],
                     );
@@ -1031,7 +1047,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.03,
+                height: size.height * 0.0,
               ),
               //Spacer(),
             ],
@@ -1077,7 +1093,7 @@ class Mycrusial extends StatelessWidget {
           Padding(
         padding: EdgeInsets.all(0.0),
         child: Container(
-          height: size.height * 0.28,
+          height: size.height * 0.20,
           width: size.width,
           decoration: BoxDecoration(
             // color: AppColors.th1blue,
@@ -1099,7 +1115,7 @@ class Mycrusial extends StatelessWidget {
                 child: CarouselSlider.builder(
                   key: _sliderKey,
                   unlimitedMode: true,
-                  autoSliderTransitionTime: Duration(seconds: 1),
+                  autoSliderTransitionTime: Duration(milliseconds: 500),
                   slideBuilder: (index) {
                     final items = imageList;
                     // _userHomepageController

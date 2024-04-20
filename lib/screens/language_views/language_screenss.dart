@@ -6,7 +6,7 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/buttons/language_buttonss.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
-import 'package:suvidha_app_ui/screens/home_page.dart';
+import 'package:suvidha_app_ui/weight/custom_tab_bar/custom_tab_bar.dart';
 //import 'package:suvidha/constants/buttons/language_buttons.dart';
 
 //import '../home_pagee/home_page.dart';
@@ -82,7 +82,7 @@ class LanguagePagess extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: InkWell(
                       onTap: () {
-                        Get.to(HomePage());
+                        Get.to(BottomNavBar());
                       },
                       child: Container(
                         height: size.height * 0.05,

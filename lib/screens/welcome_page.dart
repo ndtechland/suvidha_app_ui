@@ -9,6 +9,7 @@ import 'package:suvidha_app_ui/account_autologin/autologin_account.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/controllers/profile_controllers.dart';
 import 'package:suvidha_app_ui/screens/home_page.dart';
+import 'package:suvidha_app_ui/weight/custom_tab_bar/custom_tab_bar.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       builder: (context) =>
                           //UploadReport1()
 
-                          HomePage()
+                          BottomNavBar()
                       //
                       ));
             });
