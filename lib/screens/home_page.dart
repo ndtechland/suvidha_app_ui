@@ -21,6 +21,7 @@ import 'package:suvidha_app_ui/screens/bill_sgenerated_self_servicess/bill_gener
 import 'package:suvidha_app_ui/screens/go_green_pages/go_green_1.dart';
 import 'package:suvidha_app_ui/screens/load_change/load_change_screen_1.dart';
 import 'package:suvidha_app_ui/screens/new_connections/new_connections1.dart';
+import 'package:suvidha_app_ui/screens/notificationss/notifications_pages.dart';
 import 'package:suvidha_app_ui/screens/side_drower/side_drawer.dart';
 import 'package:suvidha_app_ui/screens/smart_meter_service/smart_meter_services_1.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -246,10 +247,15 @@ class HomePage extends StatelessWidget {
         // ),
         ,
         actions: [
-          Icon(
-            Icons.notifications,
-            color: AppColors.a15,
-            size: size.width * 0.08,
+          GestureDetector(
+            onTap: () {
+              Get.to(notification_pagess());
+            },
+            child: Icon(
+              Icons.notifications,
+              color: AppColors.a15,
+              size: size.width * 0.08,
+            ),
           ),
           SizedBox(
             width: size.width * 0.04,

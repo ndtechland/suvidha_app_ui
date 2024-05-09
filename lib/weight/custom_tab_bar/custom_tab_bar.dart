@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
-import 'package:suvidha_app_ui/screens/bar_chart_consumption/bar_chart_consumption.dart';
 import 'package:suvidha_app_ui/screens/home_page.dart';
 import 'package:suvidha_app_ui/screens/meter_reading/meter_reading.dart';
 
 import '../../screens/monthly_report/monthly_yrly_report.dart';
+import '../../screens/testing_graph/testing_grapg1.dart';
 import 'nav_bar_controller.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -112,7 +112,19 @@ class BottomNavBar extends StatelessWidget {
               children: [
                 HomePage(),
                 MeterReadingPage(),
-                BarChartConsumptions(),
+
+                LineChartSample2(),
+                // BarChartConsumptions(
+                //   points: [
+                //     PricePoint(0.0, 10.0), // Example PricePoint object
+                //     PricePoint(2.0, 30.0),
+                //     PricePoint(3.0, 40.0),
+                //     PricePoint(4.0, 50.0),
+                //     PricePoint(6.0, 70.0),
+                //     PricePoint(8.0, 90.0), // Example PricePoint object
+                //     // Add more PricePoint objects as needed
+                //   ],
+                // ),
                 MonthlyYrReport(),
               ],
             )),

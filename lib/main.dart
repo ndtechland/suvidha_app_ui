@@ -8,7 +8,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/constants/language_string/language_text.dart';
-import 'package:suvidha_app_ui/screens/welcome_page.dart';
+import 'package:suvidha_app_ui/screens/splash_screenss/splash_screens.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -43,7 +43,9 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: AppColors.th1blue2,
       ),
-      home: WelcomePage(),
+      home: SplashScreen(),
+
+      ///WelcomePage(),
 
       //OTPScreen(),
       //WelcomePage(),

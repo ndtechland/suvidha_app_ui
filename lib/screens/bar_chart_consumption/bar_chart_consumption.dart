@@ -1,38 +1,46 @@
-import 'package:flutter/cupertino.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:suvidha_app_ui/constants/colorrr.dart';
-import 'package:suvidha_app_ui/constants/dailloge_box_reusable/reusable_dailoge_box.dart';
-import 'package:suvidha_app_ui/constants/reusable_appbar/reusable_appbar.dart';
-import 'package:suvidha_app_ui/screens/load_change/decrease_load/decrease_load_1.dart';
-import 'package:suvidha_app_ui/screens/load_change/increase_load/increase_load_1.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:suvidha_app_ui/weight/custom_tab_bar/nav_bar_controller.dart';
 
-//import '../../constants/reusable_appbar/reusable_appbar.dart';
+import '../../constants/colorrr.dart';
+import '../../constants/reusable_appbar/reusable_appbar.dart';
+//import 'package:flutter_chart_demo/data/price_point.dart';
 
-class BarChartConsumptions extends StatelessWidget {
-  BarChartConsumptions({Key? key}) : super(key: key);
+class BarChartConsumptions extends StatefulWidget {
+  BarChartConsumptions({Key? key, required this.points}) : super(key: key);
 
   NavBarController _navcontroller =
       Get.put(NavBarController(), permanent: true);
 
+  final List<PricePoint> points;
+
+  @override
+  State<BarChartConsumptions> createState() =>
+      _BarChartConsumptionsState(points: this.points);
+}
+
+class _BarChartConsumptionsState extends State<BarChartConsumptions> {
+  final List<PricePoint> points;
+
+  _BarChartConsumptionsState({required this.points});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: AppColors.th1whtbackgrd,
       appBar: myAppBar(
         //backgroundColor: AppColors.white,
-        title: 'Bar Chart',
+        title: 'Meter Reading',
         leadingIcon: Icons.arrow_back_ios_outlined,
 
         centerTitle: true,
         titleFontSize: size.width * 0.042, // Specify font size here
         onLeadingPressed: () {
-          _navcontroller.tabIndex(0);
+          //_navcontroller.tabIndex(0);
 
           //Get.back();
           // Get.to(BottomNavBar());
@@ -47,96 +55,94 @@ class BarChartConsumptions extends StatelessWidget {
           // Handle user icon press
         },
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Bar Chart Report......',
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600,
-                fontSize: size.width * 0.033,
-                color: AppColors.a15,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: size.height * 0.80,
+          width: size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: size.height * 0.02,
               ),
-            ),
+              AspectRatio(
+                aspectRatio: 1,
+                child: BarChart(
+                  BarChartData(
+                    backgroundColor: AppColors.th1wht2,
+                    barGroups: _chartGroups(),
+                    borderData: FlBorderData(
+                        border: const Border(
+                            bottom: BorderSide(), left: BorderSide())),
+                    gridData: FlGridData(show: false),
+                    titlesData: FlTitlesData(
+                      bottomTitles: AxisTitles(sideTitles: _bottomTitles),
+                      leftTitles:
+                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      topTitles:
+                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles:
+                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
-
-      // },
-      //),
     );
   }
 
-  showOtpDialog(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    showCupertinoDialog(
-      barrierDismissible: true, // Set barrierDismissible to true
-      context: context,
-      builder: (BuildContext context) {
-        return ReusableCustomDialog(
-          contentColor: AppColors.black,
-          titleColor: Colors.white,
-          titleFontSize:
-              size.height * 0.015, // Use provided or default font size
-
-          additionalTextColor1: Colors.green,
-          //additionalTextColor2: Colors.red,
-          titleText: 'Confirm Service-सेवा की पुष्टि करें',
-          //contentText
-          contentText: '\nSelected Service - चयनित सेवा',
-          additionalText1: "Increase Load"
-              "\nलोड बढ़ाएँ",
-          cancelText: 'Cancel- रद्द करें',
-          submitText: 'Proceed-आगे बढ़ें',
-          onCancelPressed: () {
-            Get.back();
-          },
-          onSubmitPressed: () {
-            Get.back();
-
-            Get.to(IncreaseLoad1());
-            // Get.back();
-          },
-        );
-      },
-    );
+  List<BarChartGroupData> _chartGroups() {
+    return points
+        .map((point) => BarChartGroupData(
+            x: point.x.toInt(), barRods: [BarChartRodData(toY: point.y)]))
+        .toList();
   }
 
-  showOtpDialog2(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    showCupertinoDialog(
-      barrierDismissible: true, // Set barrierDismissible to true
-      context: context,
-      builder: (BuildContext context) {
-        return ReusableCustomDialog(
-          contentColor: AppColors.black,
-          titleColor: Colors.white,
-          titleFontSize:
-              size.height * 0.015, // Use provided or default font size
+  SideTitles get _bottomTitles => SideTitles(
+        showTitles: true,
+        getTitlesWidget: (value, meta) {
+          String text = '';
+          switch (value.toInt()) {
+            case 0:
+              text = 'Jan';
+              break;
+            case 2:
+              text = 'Feb';
+              break;
+            case 3:
+              text = 'Mar';
+              break;
+            case 4:
+              text = 'May';
+              break;
+            case 6:
+              text = 'Jul';
+              break;
+            case 8:
+              text = 'Sep';
+              break;
+            case 10:
+              text = 'Nov';
+              break;
+          }
 
-          additionalTextColor1: Colors.red,
-          //additionalTextColor2: Colors.red,
-          titleText: 'Confirm Service-सेवा की पुष्टि करें',
-          //contentText
-          contentText: '\nSelected Service - चयनित सेवा',
-          additionalText1: "Decrease Load"
-              "\nलोड घटायें",
-          cancelText: 'Cancel- रद्द करें',
-          submitText: 'Proceed-आगे बढ़ें',
-          onCancelPressed: () {
-            Get.back();
-          },
-          onSubmitPressed: () {
-            Get.back();
-
-            Get.to(DecreaseLoad1());
-            //Get.back();
-          },
-        );
-      },
-    );
-  }
+          return Text(text);
+        },
+      );
 }
+
+// Define the PricePoint class
+class PricePoint {
+  final double x; // X-coordinate
+  final double y; // Y-coordinate
+
+  PricePoint(this.x, this.y);
+}
+//import '../../constants/reusable_appbar/reusable_appbar.dart';
+///
+
+///class BarChartConsumptions extends StatelessWidget {

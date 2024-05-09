@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:suvidha_app_ui/constants/colorrr.dart';
 import 'package:suvidha_app_ui/screens/language_views/language_screenss.dart';
 import 'package:suvidha_app_ui/weight/custom_tab_bar/nav_bar_controller.dart';
+
+import '../../constants/reusable_webview/webview_reusable.dart';
+import 'drower_pages/contact_support.dart';
+import 'drower_pages/edit_profile_pages.dart';
+import 'drower_pages/profile_pages/profile_pagesss.dart';
 
 class MainSuvidhaDrawer extends StatelessWidget {
   @override
@@ -15,6 +21,9 @@ class MainSuvidhaDrawer extends StatelessWidget {
         Get.put(NavBarController(), permanent: true);
 
     Size size = MediaQuery.of(context).size;
+
+    final Uri _url = Uri.parse(
+        'http://hargharbijli.bsphcl.co.in/Grievanceportal/default.aspx');
 
     return SafeArea(
       top: false,
@@ -121,7 +130,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
 
                 ///......................................
                 // _navController.tabindex(3);
-                /// Get.to(() => NavBar());
+                Get.to(() => ProfilePages());
                 //Get.to(() => BestDeal());
                 // Get.offNamed('/NavBar');
               },
@@ -150,6 +159,8 @@ class MainSuvidhaDrawer extends StatelessWidget {
                   ? Colors.grey[300]
                   : null,
               onTap: () async {
+                Get.to(EditProfilePages());
+
                 print(Get.currentRoute);
               },
             ),
@@ -180,6 +191,8 @@ class MainSuvidhaDrawer extends StatelessWidget {
                   : null,
               onTap: () async {
                 Get.back();
+
+                _navcontroller.tabIndex(3);
                 //await Get.to(() => UserPaymentHistory());
                 //Get.offNamed('/OurStory');
               },
@@ -236,48 +249,51 @@ class MainSuvidhaDrawer extends StatelessWidget {
                   ? Colors.grey[300]
                   : null,
               onTap: () {
-                print(Get.currentRoute);
                 Get.back();
+
+                Get.to(WebViewwebsitess(url: "$_url"));
+
+                // print(Get.currentRoute);
                 // Get.to(() => WebViewPswebsite());
                 // Get.offNamed('/WhatsAppTrackOrder');
               },
             ),
 
             ///ComplainPage
-            ListTile(
-              //horizontalTitleGap: 2.h,
-              leading: Icon(
-                Icons.compare_arrows_rounded,
-                color: Colors.black,
-                size: 14,
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_sharp,
-                size: 11,
-                color: Colors.black,
-              ),
-              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-              dense: true,
-              //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
-              title: Text(
-                'Comparison',
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
-              ),
-              tileColor:
-                  Get.currentRoute == '/ComplainPage' ? Colors.grey[300] : null,
-              onTap: () {
-                print(Get.currentRoute);
-                Get.back();
-
-                ///.................................................28feb....................new
-                //  _getProfileController.addressidApi();
-                // _getProfileController.update();
-                ///........................................................................................
-
-                // Get.to(() => ComplainPage());
-                Get.offNamed('/ComplainPage');
-              },
-            ),
+            // ListTile(
+            //   //horizontalTitleGap: 2.h,
+            //   leading: Icon(
+            //     Icons.compare_arrows_rounded,
+            //     color: Colors.black,
+            //     size: 14,
+            //   ),
+            //   trailing: Icon(
+            //     Icons.arrow_forward_ios_sharp,
+            //     size: 11,
+            //     color: Colors.black,
+            //   ),
+            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            //   dense: true,
+            //   //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
+            //   title: Text(
+            //     'Comparison',
+            //     style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+            //   ),
+            //   tileColor:
+            //       Get.currentRoute == '/ComplainPage' ? Colors.grey[300] : null,
+            //   onTap: () {
+            //     print(Get.currentRoute);
+            //     Get.back();
+            //
+            //     ///.................................................28feb....................new
+            //     //  _getProfileController.addressidApi();
+            //     // _getProfileController.update();
+            //     ///........................................................................................
+            //
+            //     // Get.to(() => ComplainPage());
+            //     Get.offNamed('/ComplainPage');
+            //   },
+            // ),
 
             ///here from profileeee...............................
             ListTile(
@@ -311,8 +327,8 @@ class MainSuvidhaDrawer extends StatelessWidget {
                 // _getProfileController.update();
                 ///........................................................................................
 
-                // Get.to(() => SupportViewAmbrdComman());
-                Get.offNamed('/PersonalProfile');
+                Get.to(() => support_page());
+                // Get.offNamed('/PersonalProfile');
               },
             ),
 
@@ -342,6 +358,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
+                Get.to(WebViewwebsitess(url: "$_url"));
 
                 ///.................................................28feb....................new
                 //  _getProfileController.addressidApi();
@@ -379,6 +396,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
+                Get.to(WebViewwebsitess(url: "$_url"));
 
                 ///................................................................
                 //  _getProfileController.addressidApi();
@@ -480,7 +498,10 @@ class MainSuvidhaDrawer extends StatelessWidget {
             primary: Colors.red,
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             textStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
-        child: Text("Confirm"));
+        child: Text(
+          "Confirm",
+          style: GoogleFonts.roboto(fontSize: 12, color: AppColors.th1wht2),
+        ));
   }
 
   Widget cancelBtn() {
@@ -492,7 +513,10 @@ class MainSuvidhaDrawer extends StatelessWidget {
             primary: Colors.green,
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             textStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
-        child: Text("Cancel"));
+        child: Text(
+          "Cancel",
+          style: GoogleFonts.roboto(fontSize: 12, color: AppColors.th1wht2),
+        ));
   }
 
   Widget getContent() {
