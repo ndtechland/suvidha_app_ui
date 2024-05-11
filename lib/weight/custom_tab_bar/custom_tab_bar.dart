@@ -20,11 +20,13 @@ class BottomNavBar extends StatelessWidget {
       color: AppColors.a15, fontWeight: FontWeight.w700, fontSize: 10);
 
   buildBottomNavigationMenu(context, landingPageController) {
+    Size size = MediaQuery.of(context).size;
+
     return Obx(
       () => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 2.0),
         child: Container(
-          height: 62,
+          height: size.height * 0.075,
           child: BottomNavigationBar(
             type: BottomNavigationBarType
                 .fixed, // Ensure no movement after selection
@@ -36,18 +38,26 @@ class BottomNavBar extends StatelessWidget {
             backgroundColor: AppColors.white,
             unselectedItemColor: Colors.grey,
             selectedItemColor: AppColors.a15,
-            unselectedLabelStyle: unselectedLabelStyle,
-            selectedLabelStyle: selectedLabelStyle,
+            unselectedLabelStyle: GoogleFonts.roboto(
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+                fontSize: size.height * 0.013),
+            selectedLabelStyle: GoogleFonts.roboto(
+                color: AppColors.a15,
+                fontWeight: FontWeight.w600,
+                fontSize: size.height * 0.013),
             items: [
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
-                  size: 22.0,
+                  size: size.height * 0.024,
+
+                  //22.0,
                   color: Colors.grey, // Set unselected icon color
                 ),
                 activeIcon: FaIcon(
                   Icons.home_rounded,
-                  size: 25.0,
+                  size: size.height * 0.026,
                   color: AppColors.a15,
                 ),
                 label: 'Home',
@@ -55,12 +65,12 @@ class BottomNavBar extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: FaIcon(
                   Icons.gas_meter_outlined,
-                  size: 22.0,
+                  size: size.height * 0.024,
                   color: Colors.grey,
                 ),
                 activeIcon: FaIcon(
                   Icons.gas_meter_rounded,
-                  size: 25.0,
+                  size: size.height * 0.026,
                   color: AppColors.a15,
                 ),
                 label: 'Reading',
@@ -68,29 +78,29 @@ class BottomNavBar extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: FaIcon(
                   Icons.stacked_bar_chart_outlined,
-                  size: 22.0,
+                  size: size.height * 0.024,
                   color: Colors.grey,
                 ),
                 activeIcon: FaIcon(
                   Icons.bar_chart,
                   //bar_chart,
-                  size: 25.0,
+                  size: size.height * 0.026,
                   color: AppColors.a15,
                 ),
-                label: 'Chart',
+                label: 'Reports',
               ),
               BottomNavigationBarItem(
                 icon: FaIcon(
                   Icons.list_alt,
-                  size: 22.0,
+                  size: size.height * 0.024,
                   color: Colors.grey,
                 ),
                 activeIcon: FaIcon(
                   Icons.list_alt,
-                  size: 25.0,
+                  size: size.height * 0.026,
                   color: AppColors.a15,
                 ),
-                label: 'Reports',
+                label: 'More',
               ),
             ],
           ),
@@ -112,8 +122,9 @@ class BottomNavBar extends StatelessWidget {
               children: [
                 HomePage(),
                 MeterReadingPage(),
+                MonthlyYrReport(),
 
-                LineChartSample2(),
+                ///
                 // BarChartConsumptions(
                 //   points: [
                 //     PricePoint(0.0, 10.0), // Example PricePoint object
@@ -125,7 +136,7 @@ class BottomNavBar extends StatelessWidget {
                 //     // Add more PricePoint objects as needed
                 //   ],
                 // ),
-                MonthlyYrReport(),
+                LineChartSample2(),
               ],
             )),
       ),

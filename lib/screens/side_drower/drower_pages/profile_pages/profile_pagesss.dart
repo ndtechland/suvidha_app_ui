@@ -87,7 +87,7 @@ class ProfilePages extends StatelessWidget {
               color: AppColors.th1wht2,
               shadowColor: AppColors.greyColor,
               clipBehavior: Clip.none,
-              elevation: 20,
+              elevation: 5,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30), topRight: Radius.circular(30)),
               child: Container(

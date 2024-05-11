@@ -12,7 +12,9 @@ import 'package:suvidha_app_ui/weight/custom_tab_bar/nav_bar_controller.dart';
 import '../../constants/reusable_webview/webview_reusable.dart';
 import 'drower_pages/contact_support.dart';
 import 'drower_pages/edit_profile_pages.dart';
+import 'drower_pages/feedback_customers.dart';
 import 'drower_pages/profile_pages/profile_pagesss.dart';
+import 'drower_pages/recharge_payment_history.dart';
 
 class MainSuvidhaDrawer extends StatelessWidget {
   @override
@@ -34,7 +36,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
+                padding: EdgeInsets.symmetric(vertical: 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -51,6 +53,22 @@ class MainSuvidhaDrawer extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Spacer(),
+                    Text(
+                      'Kavi Singh',
+                      style: GoogleFonts.poppins(
+                          fontSize: size.height * 0.018,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    ),
+                    Text(
+                      'ID:123455AAFRR65',
+                      style: GoogleFonts.poppins(
+                          fontSize: size.height * 0.016,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    ),
+                    Spacer(),
                   ],
                 ),
               ),
@@ -58,12 +76,13 @@ class MainSuvidhaDrawer extends StatelessWidget {
                 color: AppColors.a15,
               ),
             ),
+
             ListTile(
               //horizontalTitleGap: 2.h,
               leading: Icon(
                 Icons.home_rounded,
                 color: Colors.black,
-                size: 20,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -75,18 +94,18 @@ class MainSuvidhaDrawer extends StatelessWidget {
               // visualDensity: VisualDensity(horizontal: 0, vertical: -4),
               title: Text(
                 'Home',
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
               ),
               // tileColor: Get.currentRoute == '/AllProducts'
               //     ? Colors.grey[300]
               //     : Colors.transparent,
               onTap: () async {
                 print(Get.currentRoute);
-                // Get.back();
+                Get.back();
                 //await Get.to(GoogleSearchPlacesApi());
 
                 //Get.to(SearchLocationScreen());
-                _navcontroller.tabIndex(1);
+                _navcontroller.tabIndex(0);
 
                 ///
                 //await Get.to(GoogleSearchPlacesApi());
@@ -103,7 +122,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.person,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
 
               ///........................................
@@ -116,8 +135,8 @@ class MainSuvidhaDrawer extends StatelessWidget {
               dense: true,
               // visualDensity: VisualDensity(horizontal: 0, vertical: -1),
               title: Text(
-                'Profile',
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
+                'User Profile',
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
               ),
               tileColor:
                   // Get.currentRoute == '/NavBar'
@@ -127,6 +146,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               onTap: () async {
                 print(Get.currentRoute);
                 //Get.back();
+                Get.back();
 
                 ///......................................
                 // _navController.tabindex(3);
@@ -159,6 +179,8 @@ class MainSuvidhaDrawer extends StatelessWidget {
                   ? Colors.grey[300]
                   : null,
               onTap: () async {
+                Get.back();
+
                 Get.to(EditProfilePages());
 
                 print(Get.currentRoute);
@@ -169,9 +191,9 @@ class MainSuvidhaDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 2.h,
               leading: Icon(
-                Icons.history_edu_outlined,
+                Icons.history,
                 color: Colors.black,
-                size: 11,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -182,7 +204,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               dense: true,
               //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
               title: Text(
-                'Report',
+                'Recharge/Payment History',
                 //'Our Story',
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
               ),
@@ -192,17 +214,49 @@ class MainSuvidhaDrawer extends StatelessWidget {
               onTap: () async {
                 Get.back();
 
-                _navcontroller.tabIndex(3);
+                /// _navcontroller.tabIndex(2);
+                await Get.to(() => RechargePaymentHistory());
+                //Get.offNamed('/OurStory');
+              },
+            ),
+            ListTile(
+              // horizontalTitleGap: 2.h,
+              leading: Icon(
+                Icons.auto_graph,
+                color: Colors.black,
+                size: 16,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                size: 11,
+                color: Colors.black,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
+              title: Text(
+                'KWH Consumption report',
+                //'Our Story',
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+              ),
+              tileColor: Get.currentRoute == '/DriverPaymentHistory'
+                  ? Colors.grey[300]
+                  : null,
+              onTap: () async {
+                Get.back();
+
+                _navcontroller.tabIndex(2);
                 //await Get.to(() => UserPaymentHistory());
                 //Get.offNamed('/OurStory');
               },
             ),
+
             ListTile(
               //horizontalTitleGap: 2.h,
               leading: Icon(
                 Icons.language,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -226,12 +280,42 @@ class MainSuvidhaDrawer extends StatelessWidget {
               },
               //
             ),
+
+            ListTile(
+              //horizontalTitleGap: 2.h,
+              leading: Icon(
+                Icons.message_rounded,
+                color: Colors.black,
+                size: 16,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                size: 11,
+                color: Colors.black,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
+              title: Text(
+                'Feedback',
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+              ),
+              tileColor: Get.currentRoute == '/DriverPayoutHistory'
+                  ? Colors.grey[300]
+                  : null,
+              onTap: () async {
+                Get.back();
+
+                Get.to(() => FeedbackScreen());
+              },
+              //
+            ),
             ListTile(
               //horizontalTitleGap: 2.h,
               leading: Icon(
                 Icons.web,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -301,7 +385,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.account_circle,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -338,7 +422,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.business,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -376,7 +460,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.policy,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -387,7 +471,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               dense: true,
               //visualDensity: VisualDensity(horizontal: 0, vertical: -1),
               title: Text(
-                'Privecy Policy',
+                'Privacy Policy',
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
               ),
               tileColor: Get.currentRoute == '/PersonalProfile'
@@ -411,7 +495,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.delete_forever_outlined,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
@@ -453,7 +537,7 @@ class MainSuvidhaDrawer extends StatelessWidget {
               leading: Icon(
                 Icons.login,
                 color: Colors.black,
-                size: 14,
+                size: 16,
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,

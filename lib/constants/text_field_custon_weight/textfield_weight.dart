@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final String? Function(String?)? validator;
+  final int? maxLines; // Optional maxLines property
 
   const CustomTextField({
     Key? key,
@@ -22,6 +23,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.validator,
+    this.maxLines, // Include maxLines in the constructor
   }) : super(key: key);
 
   @override
@@ -29,7 +31,8 @@ class CustomTextField extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Container(
-      height: 50.0,
+      height: maxLines != null ? null : 50.0, // Adjust height based on maxLines
+      //height: 50.0,
       width: width,
       margin: EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
@@ -53,6 +56,7 @@ class CustomTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         keyboardType: keyboardType,
+        maxLines: maxLines, // Pass maxLines to TextFormField
 
         // maxLength: 10, // Limit the input to 10 digits
 

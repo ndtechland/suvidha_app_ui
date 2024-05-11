@@ -3,24 +3,15 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:suvidha_app_ui/constants/colorrr.dart';
 
-import '../../constants/colorrr.dart';
+class LineCharts extends StatelessWidget {
+  LineCharts({Key? key}) : super(key: key);
 
-class BarChartSample8 extends StatefulWidget {
-  BarChartSample8({super.key});
-
-  final Color barBackgroundColor = AppColors.contentColorWhite.withOpacity(0.3);
-  final Color barColor = AppColors.a13;
-
-  @override
-  State<StatefulWidget> createState() => BarChartSample1State();
-}
-
-class BarChartSample1State extends State<BarChartSample8> {
   @override
   Widget build(BuildContext context) {
     // Generate some dummy data for the chart
-    final List<FlSpot> dummyData1 = List.generate(7, (index) {
+    final List<FlSpot> dummyData1 = List.generate(8, (index) {
       return FlSpot(index.toDouble(), index * Random().nextDouble());
     });
 
@@ -94,27 +85,27 @@ class BarChartSample1State extends State<BarChartSample8> {
           text = '0';
           break;
         case 1:
-          text = 'Jan';
+          text = 'Jan1';
           break;
         case 2:
-          text = 'Mar';
+          text = 'Jan5';
           break;
         case 3:
-          text = 'Jun';
+          text = 'Jan10';
           break;
         case 4:
-          text = 'Aug';
+          text = 'Jan15';
           break;
         case 5:
-          text = 'Oct';
+          text = 'Jan20';
           break;
         case 6:
-          text = 'Dec';
+          text = 'Jan25';
           break;
 
-        // case 7:
-        //   text = 'Jan31';
-        //   break;
+        case 7:
+          text = 'Jan31';
+          break;
         default:
           return Container();
       }
@@ -139,26 +130,26 @@ class BarChartSample1State extends State<BarChartSample8> {
           text = '0';
           break;
         case 1:
-          text = '50';
+          text = '30';
           break;
         case 2:
-          text = '100';
+          text = '60';
           break;
         case 3:
-          text = '150';
+          text = '90';
           break;
         case 4:
-          text = '200';
+          text = '120';
           break;
         case 5:
-          text = '250';
+          text = '150';
           break;
         case 6:
-          text = '300';
+          text = '180';
           break;
 
         case 7:
-          text = '350';
+          text = '210';
           break;
         default:
           return Container();
@@ -196,7 +187,7 @@ class BarChartSample1State extends State<BarChartSample8> {
                     child: Column(
                       children: [
                         Text(
-                          '2024',
+                          'Jan - 24',
                           style: GoogleFonts.poppins(
                               fontSize: size.height * 0.02,
                               color: AppColors.graphtopbar),
@@ -278,12 +269,12 @@ class BarChartSample1State extends State<BarChartSample8> {
                                       spots: dummyData1,
                                       isCurved: false,
                                       barWidth: 2,
-                                      color: Colors.red,
+                                      color: Colors.indigo,
 
                                       ///todo: this is the shadow color area....
                                       belowBarData: BarAreaData(
                                         show: true,
-                                        color: Color(0xffF1F1F1),
+                                        color: AppColors.graphshadow1,
                                         // gradient: LinearGradient(
                                         // //  colors: Colors.red,
                                         //   // gradientColors
@@ -297,9 +288,8 @@ class BarChartSample1State extends State<BarChartSample8> {
                                       spots: dummyData1,
                                       isCurved: false,
                                       barWidth: 2,
-                                      color: AppColors.graphline,
-                                      // Colors.indigo.withOpacity(
-                                      //     0.5), // Adjust opacity as needed
+                                      color: Colors.indigo.withOpacity(
+                                          0.5), // Adjust opacity as needed
                                     ),
                                   ],
                                 ),
@@ -318,7 +308,7 @@ class BarChartSample1State extends State<BarChartSample8> {
                                   height: size.height * 0.007,
                                   width: size.width * 0.04,
                                   decoration: BoxDecoration(
-                                    color: AppColors.graphline,
+                                    color: Colors.indigo,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   //color: Colors.red,
@@ -398,7 +388,7 @@ class BarChartSample1State extends State<BarChartSample8> {
                     child: Column(
                       children: [
                         Text(
-                          '2023',
+                          'Feb - 24',
                           style: GoogleFonts.poppins(
                               fontSize: size.height * 0.02,
                               color: AppColors.graphtopbar),
@@ -440,7 +430,7 @@ class BarChartSample1State extends State<BarChartSample8> {
                                         showTitles: true,
                                         interval: 1,
                                         getTitlesWidget: (value, meta) {
-                                          return bottomTitleWidgets2(
+                                          return bottomTitleWidgets(
                                             value,
                                             meta,
                                             constraints.maxWidth,
@@ -480,12 +470,12 @@ class BarChartSample1State extends State<BarChartSample8> {
                                       spots: dummyData1,
                                       isCurved: false,
                                       barWidth: 2,
-                                      color: Colors.red,
+                                      color: Colors.indigo,
 
                                       ///todo: this is the shadow color area....
                                       belowBarData: BarAreaData(
                                         show: true,
-                                        color: Color(0xffF1F1F1),
+                                        color: AppColors.graphshadow1,
                                         // gradient: LinearGradient(
                                         // //  colors: Colors.red,
                                         //   // gradientColors
@@ -499,9 +489,8 @@ class BarChartSample1State extends State<BarChartSample8> {
                                       spots: dummyData1,
                                       isCurved: false,
                                       barWidth: 2,
-                                      color: AppColors.graphline,
-                                      // Colors.indigo.withOpacity(
-                                      //     0.5), // Adjust opacity as needed
+                                      color: Colors.indigo.withOpacity(
+                                          0.5), // Adjust opacity as needed
                                     ),
                                   ],
                                 ),
@@ -520,13 +509,11 @@ class BarChartSample1State extends State<BarChartSample8> {
                                   height: size.height * 0.007,
                                   width: size.width * 0.04,
                                   decoration: BoxDecoration(
-                                    color: AppColors.graphline,
+                                    color: Colors.indigo,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   //color: Colors.red,
                                 ),
-
-                                ///
                                 // SizedBox(
                                 //   height: size.height * 0.012,
                                 // ),
@@ -589,141 +576,3 @@ class BarChartSample1State extends State<BarChartSample8> {
     );
   }
 }
-
-///
-//   Widget build(BuildContext context) {
-//     return AspectRatio(
-//       aspectRatio: 1,
-//       child: Padding(
-//         padding: const EdgeInsets.all(16),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//           children: <Widget>[
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 const Icon(Icons.graphic_eq),
-//                 const SizedBox(
-//                   width: 3,
-//                 ),
-//                 Text(
-//                   'Yearly Consumptions',
-//                   style: TextStyle(
-//                     color: widget.barColor,
-//                     fontSize: 18,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(
-//               height: 37,
-//             ),
-//             Expanded(
-//               child: SizedBox(
-//                 width: 600,
-//                 child: BarChart(
-//                   randomData(),
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-//
-//   BarChartGroupData makeGroupData(
-//     int x,
-//     double y,
-//   ) {
-//     return BarChartGroupData(
-//       x: x,
-//       barRods: [
-//         BarChartRodData(
-//           toY: y,
-//           color: x >= 4 ? Colors.transparent : widget.barColor,
-//           borderRadius: BorderRadius.zero,
-//           //borderDashArray: x >= 4 ? [4, 4] : null,
-//           width: 17,
-//           borderSide: BorderSide(color: widget.barColor, width: 2.0),
-//         ),
-//       ],
-//     );
-//   }
-//
-//   Widget getTitles(double value, TitleMeta meta) {
-//     const style = TextStyle(
-//       color: Colors.black,
-//       fontWeight: FontWeight.bold,
-//       fontSize: 13,
-//     );
-//     List<String> days = [
-//       '2024',
-//       '2023',
-//       '2022',
-//       '2021',
-//       '2020',
-//       '2019',
-//       '2018'
-//     ];
-//
-//     Widget text = Text(
-//       days[value.toInt()],
-//       style: style,
-//     );
-//
-//     return SideTitleWidget(
-//       axisSide: meta.axisSide,
-//       space: 16,
-//       child: text,
-//     );
-//   }
-//
-//   BarChartData randomData() {
-//     return BarChartData(
-//       maxY: 900.0,
-//       barTouchData: BarTouchData(
-//         enabled: true,
-//       ),
-//       titlesData: FlTitlesData(
-//         show: true,
-//         bottomTitles: AxisTitles(
-//           sideTitles: SideTitles(
-//             showTitles: true,
-//             getTitlesWidget: getTitles,
-//             reservedSize: 39,
-//           ),
-//         ),
-//         leftTitles: AxisTitles(
-//           sideTitles: SideTitles(
-//             reservedSize: 34,
-//             showTitles: true,
-//           ),
-//         ),
-//         topTitles: AxisTitles(
-//           sideTitles: SideTitles(
-//             showTitles: false,
-//           ),
-//         ),
-//         rightTitles: AxisTitles(
-//           sideTitles: SideTitles(
-//             showTitles: false,
-//           ),
-//         ),
-//       ),
-//       borderData: FlBorderData(
-//         show: false,
-//       ),
-//       barGroups: List.generate(
-//         5,
-//         (i) => makeGroupData(
-//           i,
-//           Random().nextInt(900).toDouble() + 10,
-//         ),
-//       ),
-//       gridData: FlGridData(show: true),
-//     );
-//   }
-// }

@@ -8,7 +8,7 @@ import 'package:suvidha_app_ui/constants/reusable_appbar/reusable_appbar.dart';
 import 'package:suvidha_app_ui/screens/monthly_report/yearly_reports.dart';
 import 'package:suvidha_app_ui/weight/custom_tab_bar/nav_bar_controller.dart';
 
-import 'daily_reports.dart';
+import '../testing_graph/testing_graph_line2.dart';
 import 'monthly_report.dart';
 
 //import '../../constants/reusable_appbar/reusable_appbar.dart';
@@ -55,8 +55,9 @@ class MonthlyYrReport extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(5.0),
-              child: SizedBox(
+              child: Container(
                 height: size.height * 0.05,
+                color: AppColors.th1wht2,
                 child: TabBar(
                   tabs: [
                     Tab(
@@ -65,9 +66,9 @@ class MonthlyYrReport extends StatelessWidget {
                         height: 40, // Adjust the height for unselected tabs
                         child: Text(
                           'Yearly',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.nunitoSans(
+                            fontSize: size.height * 0.019,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
@@ -78,9 +79,9 @@ class MonthlyYrReport extends StatelessWidget {
                         height: 40, // Adjust the height for unselected tabs
                         child: Text(
                           'Monthly',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.nunitoSans(
+                            fontSize: size.height * 0.019,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
@@ -88,29 +89,31 @@ class MonthlyYrReport extends StatelessWidget {
                     Tab(
                       child: Container(
                         alignment: Alignment.center,
+                        // color: Colors.white,
                         height: 30, // Adjust the height for selected tab
                         child: Text(
                           'Weekly',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.nunitoSans(
+                            fontSize: size.height * 0.019,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
                     ),
                   ],
                   indicator: BoxDecoration(
-                    color: AppColors.th1org,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(10),
-                  ), // Empty box decoration to remove the underline
-                  labelColor: Colors.white, // Color for selected tab
+                  ),
+                  // Empty box decoration to remove the underline
+                  labelColor: AppColors.graphtopbar, // Color for selected tab
                   unselectedLabelColor:
-                      Colors.grey, // Color for unselected tabs
+                      Colors.black, // Color for unselected tabs
                   labelStyle: GoogleFonts.roboto(
-                      fontSize: size.height * 0.02,
+                      fontSize: size.height * 0.017,
                       fontWeight: FontWeight.w300),
                   unselectedLabelStyle: GoogleFonts.roboto(
-                      fontSize: size.height * 0.02,
+                      fontSize: size.height * 0.017,
                       fontWeight: FontWeight.w300),
                 ),
               ),
@@ -122,7 +125,9 @@ class MonthlyYrReport extends StatelessWidget {
                   // monthly_sales(
                   //   isShowingMainData: true,
                   // ),
-                  BarChartSample4(),
+                  LineCharts(),
+
+                  ///BarChartSample4(),
                   // Align(
                   //   alignment: Alignment.center,
                   //   child: Text(

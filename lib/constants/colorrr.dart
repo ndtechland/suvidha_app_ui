@@ -12,6 +12,12 @@ class AppColors {
   static const Color blackColor = Color(0xff000000);
   static const Color greyColor = Color(0xff7a7a7a);
 
+  static const Color graphshadow1 = Color(0xffedf2f6);
+  //static const Color graphline = Color(0xff006597);
+  static const Color graphline = Color(0xff457ba9);
+
+  static const Color graphtopbar = Color(0xffbe3142);
+
   ///graph..
   static const Color primary = contentColorCyan;
   static const Color menuBackground = Color(0xFF090912);
